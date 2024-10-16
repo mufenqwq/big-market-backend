@@ -1,4 +1,4 @@
-package cn.bugstack.infrastructure.persistent.redis;
+package site.mufen.infrastructure.persistent.redis;
 
 import org.redisson.api.*;
 

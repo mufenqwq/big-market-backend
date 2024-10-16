@@ -1,0 +1,137 @@
+24-10-15.17:04:08.565 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 34472 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:04:08.566 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:04:09.879 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.597 seconds (JVM running for 2.069)
+24-10-15.17:10:48.953 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 35284 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:10:48.954 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:10:50.461 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.826 seconds (JVM running for 2.318)
+24-10-15.17:10:50.644 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:10:50.755 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:10:50.897 [main            ] INFO  AwardDaoTest           - 测试结果: []
+24-10-15.17:10:50.906 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:10:50.911 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:13:05.617 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 35676 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:13:05.617 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:13:07.048 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.728 seconds (JVM running for 2.209)
+24-10-15.17:13:07.215 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:13:07.342 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:13:07.496 [main            ] INFO  AwardDaoTest           - 测试结果: [{"awardConfig":"1,100","awardDesc":"用户积分【优先透彻规则范围，如果没有则走配置】","awardId":101,"awardKey":"user_credit_random"},{"awardConfig":"5","awardDesc":"OpenAI 增加使用次数","awardId":102,"awardKey":"openai_use_count"},{"awardConfig":"10","awardDesc":"OpenAI 增加使用次数","awardId":103,"awardKey":"openai_use_count"},{"awardConfig":"20","awardDesc":"OpenAI 增加使用次数","awardId":104,"awardKey":"openai_use_count"},{"awardConfig":"gpt-4","awardDesc":"OpenAI 增加模型","awardId":105,"awardKey":"openai_model"},{"awardConfig":"dall-e-2","awardDesc":"OpenAI 增加模型","awardId":106,"awardKey":"openai_model"},{"awardConfig":"dall-e-3","awardDesc":"OpenAI 增加模型","awardId":107,"awardKey":"openai_model"},{"awardConfig":"100","awardDesc":"OpenAI 增加使用次数","awardId":108,"awardKey":"openai_use_count"},{"awardConfig":"gpt-4,dall-e-2,dall-e-3","awardDesc":"OpenAI 增加模型","awardId":109,"awardKey":"openai_model"}]
+24-10-15.17:13:07.505 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:13:07.511 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:16:34.735 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 36175 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:16:34.736 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:16:36.089 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.632 seconds (JVM running for 2.075)
+24-10-15.17:16:36.257 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:16:36.389 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:16:36.551 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001}]
+24-10-15.17:16:36.561 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:16:36.566 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:17:47.143 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 36434 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:17:47.144 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:17:48.544 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.677 seconds (JVM running for 2.123)
+24-10-15.17:17:48.706 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:17:48.827 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:17:48.966 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001}]
+24-10-15.17:17:48.976 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:17:48.981 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:18:55.674 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 36719 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:18:55.675 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:18:57.023 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.632 seconds (JVM running for 2.108)
+24-10-15.17:18:57.172 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:18:57.295 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:18:57.429 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001}]
+24-10-15.17:18:57.437 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:18:57.442 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-16.18:32:37.470 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 31737 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-16.18:32:37.471 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-16.18:32:38.023 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-10-16.18:32:38.025 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-10-16.18:32:38.040 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-10-16.18:32:38.747 [main            ] INFO  Version                - Redisson 3.23.4
+24-10-16.18:32:38.936 [redisson-netty-2-19] INFO  MasterPubSubConnectionPool - 1 connections initialized for null/28.0.1.42:0
+24-10-16.18:32:38.939 [redisson-netty-2-24] INFO  MasterConnectionPool   - 10 connections initialized for null/28.0.1.42:0
+24-10-16.18:32:40.777 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-10-16.18:32:40.829 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 3.678 seconds (JVM running for 4.274)
+24-10-16.18:32:41.000 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-16.18:32:41.139 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-16.18:32:41.302 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001}]
+24-10-16.18:32:41.317 [main            ] INFO  AwardDaoTest           - 测试结果: [{"awardConfig":"1,100","awardDesc":"用户积分【优先透彻规则范围，如果没有则走配置】","awardId":101,"awardKey":"user_credit_random"},{"awardConfig":"5","awardDesc":"OpenAI 增加使用次数","awardId":102,"awardKey":"openai_use_count"},{"awardConfig":"10","awardDesc":"OpenAI 增加使用次数","awardId":103,"awardKey":"openai_use_count"},{"awardConfig":"20","awardDesc":"OpenAI 增加使用次数","awardId":104,"awardKey":"openai_use_count"},{"awardConfig":"gpt-4","awardDesc":"OpenAI 增加模型","awardId":105,"awardKey":"openai_model"},{"awardConfig":"dall-e-2","awardDesc":"OpenAI 增加模型","awardId":106,"awardKey":"openai_model"},{"awardConfig":"dall-e-3","awardDesc":"OpenAI 增加模型","awardId":107,"awardKey":"openai_model"},{"awardConfig":"100","awardDesc":"OpenAI 增加使用次数","awardId":108,"awardKey":"openai_use_count"},{"awardConfig":"gpt-4,dall-e-2,dall-e-3","awardDesc":"OpenAI 增加模型","awardId":109,"awardKey":"openai_model"}]
+24-10-16.18:32:41.327 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100002}]
+24-10-16.18:32:41.334 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001}]
+24-10-16.18:32:41.344 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-16.18:32:41.354 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-16.18:32:43.370 [redisson-netty-2-27] ERROR rejectedExecution      - Failed to submit a listener notification task. Event loop shut down?
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:344)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:836)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute0(SingleThreadEventExecutor.java:827)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:817)
+	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:862)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:500)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess(DefaultPromise.java:97)
+	at io.netty.channel.group.DefaultChannelGroupFuture.setSuccess0(DefaultChannelGroupFuture.java:200)
+	at io.netty.channel.group.DefaultChannelGroupFuture.access$400(DefaultChannelGroupFuture.java:41)
+	at io.netty.channel.group.DefaultChannelGroupFuture$1.operationComplete(DefaultChannelGroupFuture.java:75)
+	at io.netty.channel.group.DefaultChannelGroupFuture$1.operationComplete(DefaultChannelGroupFuture.java:48)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$CloseFuture.setClosed(AbstractChannel.java:1164)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.doClose0(AbstractChannel.java:755)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:731)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:620)
+	at io.netty.channel.nio.NioEventLoop.closeAll(NioEventLoop.java:838)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:595)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+24-10-16.19:09:01.716 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_422 on myarch with PID 40051 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-16.19:09:01.717 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-10-16.19:09:02.600 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-10-16.19:09:02.603 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-10-16.19:09:02.633 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+24-10-16.19:09:03.616 [main            ] INFO  Version                - Redisson 3.23.4
+24-10-16.19:09:03.869 [redisson-netty-2-21] INFO  MasterPubSubConnectionPool - 1 connections initialized for null/28.0.1.42:0
+24-10-16.19:09:03.872 [redisson-netty-2-24] INFO  MasterConnectionPool   - 10 connections initialized for null/28.0.1.42:0
+24-10-16.19:09:06.692 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-10-16.19:09:06.769 [main            ] INFO  ApiTest                - Started ApiTest in 5.675 seconds (JVM running for 6.809)
+24-10-16.19:09:55.319 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_422 on myarch with PID 40391 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-16.19:09:55.322 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-10-16.19:09:56.683 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-10-16.19:09:56.687 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-10-16.19:09:56.726 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+24-10-16.19:09:57.918 [main            ] INFO  Version                - Redisson 3.23.4
+24-10-16.19:09:58.179 [redisson-netty-2-21] INFO  MasterPubSubConnectionPool - 1 connections initialized for null/28.0.1.42:0
+24-10-16.19:09:58.181 [redisson-netty-2-24] INFO  MasterConnectionPool   - 10 connections initialized for null/28.0.1.42:0
+24-10-16.19:10:00.869 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-10-16.19:10:00.940 [main            ] INFO  ApiTest                - Started ApiTest in 6.33 seconds (JVM running for 7.479)
+24-10-16.22:45:24.030 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_422 on myarch with PID 23004 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-16.22:45:24.032 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-10-16.22:45:24.960 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-10-16.22:45:24.963 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-10-16.22:45:24.992 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+24-10-16.22:45:25.944 [main            ] INFO  Version                - Redisson 3.23.4
+24-10-16.22:45:26.176 [redisson-netty-2-20] INFO  MasterPubSubConnectionPool - 1 connections initialized for null/28.0.0.215:0
+24-10-16.22:45:26.179 [redisson-netty-2-24] INFO  MasterConnectionPool   - 10 connections initialized for null/28.0.0.215:0
+24-10-16.22:45:28.472 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-10-16.22:45:28.543 [main            ] INFO  ApiTest                - Started ApiTest in 5.133 seconds (JVM running for 6.213)
+24-10-16.22:50:39.668 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_422 on myarch with PID 24144 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-16.22:50:39.670 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-10-16.22:50:40.927 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-10-16.22:50:40.933 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-10-16.22:50:40.981 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+24-10-16.22:50:42.579 [main            ] INFO  Version                - Redisson 3.23.4
+24-10-16.22:50:42.933 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-10-16.22:50:42.948 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-10-16.22:50:46.429 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-10-16.22:50:46.671 [main            ] INFO  ApiTest                - Started ApiTest in 7.649 seconds (JVM running for 8.61)
+24-10-16.22:50:46.928 [main            ] INFO  ApiTest                - 测试结果: 101

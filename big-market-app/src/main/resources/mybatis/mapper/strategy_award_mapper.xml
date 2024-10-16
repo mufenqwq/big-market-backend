@@ -23,4 +23,8 @@
         limit 10
     </select>
 
+    <select id="queryStrategyAwardListByStrategyId" resultMap="dataMap">
+        select strategy_id, award_id, award_rate, award_rate, award_count_surplus from strategy_award
+        where strategy_id = #{strategyId}
+    </select>
 </mapper>
