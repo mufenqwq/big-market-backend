@@ -1,0 +1,51 @@
+24-10-15.17:04:08.565 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 34472 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:04:08.566 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:04:09.879 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.597 seconds (JVM running for 2.069)
+24-10-15.17:10:48.953 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 35284 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:10:48.954 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:10:50.461 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.826 seconds (JVM running for 2.318)
+24-10-15.17:10:50.644 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:10:50.755 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:10:50.897 [main            ] INFO  AwardDaoTest           - 测试结果: []
+24-10-15.17:10:50.906 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:10:50.911 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:13:05.617 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 35676 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:13:05.617 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:13:07.048 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.728 seconds (JVM running for 2.209)
+24-10-15.17:13:07.215 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:13:07.342 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:13:07.496 [main            ] INFO  AwardDaoTest           - 测试结果: [{"awardConfig":"1,100","awardDesc":"用户积分【优先透彻规则范围，如果没有则走配置】","awardId":101,"awardKey":"user_credit_random"},{"awardConfig":"5","awardDesc":"OpenAI 增加使用次数","awardId":102,"awardKey":"openai_use_count"},{"awardConfig":"10","awardDesc":"OpenAI 增加使用次数","awardId":103,"awardKey":"openai_use_count"},{"awardConfig":"20","awardDesc":"OpenAI 增加使用次数","awardId":104,"awardKey":"openai_use_count"},{"awardConfig":"gpt-4","awardDesc":"OpenAI 增加模型","awardId":105,"awardKey":"openai_model"},{"awardConfig":"dall-e-2","awardDesc":"OpenAI 增加模型","awardId":106,"awardKey":"openai_model"},{"awardConfig":"dall-e-3","awardDesc":"OpenAI 增加模型","awardId":107,"awardKey":"openai_model"},{"awardConfig":"100","awardDesc":"OpenAI 增加使用次数","awardId":108,"awardKey":"openai_use_count"},{"awardConfig":"gpt-4,dall-e-2,dall-e-3","awardDesc":"OpenAI 增加模型","awardId":109,"awardKey":"openai_model"}]
+24-10-15.17:13:07.505 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:13:07.511 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:16:34.735 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 36175 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:16:34.736 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:16:36.089 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.632 seconds (JVM running for 2.075)
+24-10-15.17:16:36.257 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:16:36.389 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:16:36.551 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001}]
+24-10-15.17:16:36.561 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:16:36.566 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:17:47.143 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 36434 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:17:47.144 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:17:48.544 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.677 seconds (JVM running for 2.123)
+24-10-15.17:17:48.706 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:17:48.827 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:17:48.966 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001}]
+24-10-15.17:17:48.976 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:17:48.981 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:18:55.674 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 36719 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:18:55.675 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:18:57.023 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.632 seconds (JVM running for 2.108)
+24-10-15.17:18:57.172 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:18:57.295 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:18:57.429 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001},{"strategyId":100001}]
+24-10-15.17:18:57.437 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:18:57.442 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-10-15.17:44:31.145 [main            ] INFO  AwardDaoTest           - Starting AwardDaoTest using Java 1.8.0_422 on myarch with PID 39904 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-10-15.17:44:31.146 [main            ] INFO  AwardDaoTest           - The following 1 profile is active: "dev"
+24-10-15.17:44:32.657 [main            ] INFO  AwardDaoTest           - Started AwardDaoTest in 1.805 seconds (JVM running for 2.31)
+24-10-15.17:44:32.818 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-10-15.17:44:32.935 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-10-15.17:44:33.101 [main            ] INFO  AwardDaoTest           - 测试结果: [{"strategyId":100001}]
+24-10-15.17:44:33.111 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-10-15.17:44:33.117 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
