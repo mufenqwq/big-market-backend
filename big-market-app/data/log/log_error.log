@@ -14,7 +14,7 @@ Action:
 
 Consider defining a bean of type 'site.mufen.domain.strategy.repository.IStrategyRepository' in your configuration.
 
-24-10-17.01:20:39.427 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7770f470] to prepare test instance [site.mufen.test.domain.StrategyArmoryTest@2f0bfe17]
+24-10-17.01:20:39.427 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7770f470] to prepare test instance [site.mufen.test.domain.StrategyArmoryDispatchTest@2f0bfe17]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
@@ -90,7 +90,7 @@ Action:
 
 Consider defining a bean of type 'site.mufen.domain.strategy.repository.IStrategyRepository' in your configuration.
 
-24-10-17.01:21:45.562 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@6025e1b6] to prepare test instance [site.mufen.test.domain.StrategyArmoryTest@77681ce4]
+24-10-17.01:21:45.562 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@6025e1b6] to prepare test instance [site.mufen.test.domain.StrategyArmoryDispatchTest@77681ce4]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
@@ -150,3 +150,6 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 43 common frames omitted
+24-10-17.19:13:44.658 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55s936ms943µs149ns).
+24-10-17.19:39:30.979 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s124ms937µs286ns).
+24-10-17.19:40:35.647 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m4s668ms100µs544ns).
