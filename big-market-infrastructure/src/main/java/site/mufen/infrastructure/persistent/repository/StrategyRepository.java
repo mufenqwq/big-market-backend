@@ -91,7 +91,7 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public StrategyEntity queryStrategyEntitybyStrategyId(Long strategyId) {
+    public StrategyEntity queryStrategyEntityByStrategyId(Long strategyId) {
         // 优先从缓存获取
         String cacheKey = Constants.RedisKey.STRATEGY_KEY + strategyId;
         StrategyEntity strategyEntity = redisService.getValue(cacheKey);
@@ -121,6 +121,16 @@ public class StrategyRepository implements IStrategyRepository {
                 .ruleValue(strategyRuleRes.getRuleValue())
                 .ruleDesc(strategyRuleRes.getRuleDesc())
                 .build();
+    }
+
+    @Override
+    public String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel) {
+        StrategyRule strategyRule = StrategyRule.builder()
+                .strategyId(strategyId)
+                .awardId(awardId)
+                .ruleModel(ruleModel)
+                .build();
+        return strategyRuleDao.queryStrategyRuleValue(strategyRule);
     }
 
 }

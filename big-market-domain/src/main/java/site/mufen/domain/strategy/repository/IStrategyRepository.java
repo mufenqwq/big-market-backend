@@ -24,7 +24,9 @@ public interface IStrategyRepository {
 
     Integer getStrategyAwardAssemble(Long strategyId, int rateKey);
 
-    StrategyEntity queryStrategyEntitybyStrategyId(Long strategyId);
+    StrategyEntity queryStrategyEntityByStrategyId(Long strategyId);
 
     StrategyRuleEntity queryStrategyRule(Long strategyId, String ruleModel);
+
+    String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel);
 }

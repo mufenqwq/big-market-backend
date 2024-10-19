@@ -24,4 +24,12 @@
         select  strategy_id, award_id, rule_type, rule_model, rule_desc, rule_value
             from strategy_rule where strategy_id = #{strategyId} and rule_model = #{ruleModel}
     </select>
+
+    <select id="queryStrategyRuleValue" resultType="java.lang.String">
+        select rule_value
+            from strategy_rule where strategy_id = #{strategyId,jdbcType=BIGINT} and rule_model = #{ruleModel}
+        <if test="awardId != null">
+            and award_id = #{awardId}
+        </if>
+    </select>
 </mapper>
