@@ -1,4 +1,4 @@
-package site.mufen.domain.strategy.service.rule.impl;
+package site.mufen.domain.strategy.service.rule.filter.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -7,8 +7,8 @@ import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.RuleMatterEntity;
 import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
-import site.mufen.domain.strategy.service.rule.ILogicFilter;
-import site.mufen.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import site.mufen.domain.strategy.service.rule.filter.ILogicFilter;
+import site.mufen.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 
 import javax.annotation.Resource;
 

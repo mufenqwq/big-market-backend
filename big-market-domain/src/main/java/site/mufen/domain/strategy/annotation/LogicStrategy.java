@@ -1,6 +1,6 @@
 package site.mufen.domain.strategy.annotation;
 
-import site.mufen.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import site.mufen.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

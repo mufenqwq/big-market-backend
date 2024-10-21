@@ -8,12 +8,13 @@ import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.RuleMatterEntity;
 import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
+import site.mufen.domain.strategy.service.AbstractRaffleStrategy;
 import site.mufen.domain.strategy.service.armory.IStrategyDispatch;
-import site.mufen.domain.strategy.service.rule.ILogicFilter;
-import site.mufen.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import site.mufen.domain.strategy.service.rule.filter.ILogicFilter;
+import site.mufen.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -26,13 +27,13 @@ import java.util.stream.Collectors;
  */
 @Service
 @Slf4j
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy{
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
 
     @Resource
     private DefaultLogicFactory logicFactory;
 
-    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch) {
-        super(repository, strategyDispatch);
+    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory) {
+        super(repository, strategyDispatch, defaultChainFactory);
     }
 
     @Override
@@ -73,7 +74,7 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy{
             RuleMatterEntity ruleMatterEntity = new RuleMatterEntity();
             ruleMatterEntity.setUserId(raffleFactorEntity.getUserId());
             ruleMatterEntity.setStrategyId(raffleFactorEntity.getStrategyId());
-            ruleMatterEntity.setAwardId(ruleMatterEntity.getAwardId());
+            ruleMatterEntity.setAwardId(raffleFactorEntity.getAwardId());
             ruleMatterEntity.setRuleModel(ruleModel);
             // todo filter是核心步骤
             ruleActionEntity = logicFilter.filter(ruleMatterEntity);

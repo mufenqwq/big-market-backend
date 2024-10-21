@@ -12,8 +12,8 @@ import site.mufen.domain.strategy.model.entity.RaffleAwardEntity;
 import site.mufen.domain.strategy.model.entity.RaffleFactorEntity;
 import site.mufen.domain.strategy.service.IRaffleStrategy;
 import site.mufen.domain.strategy.service.armory.IStrategyArmory;
-import site.mufen.domain.strategy.service.rule.impl.RuleLockLogicFilter;
-import site.mufen.domain.strategy.service.rule.impl.RuleWeightLogicFilter;
+import site.mufen.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
+import site.mufen.domain.strategy.service.rule.filter.impl.RuleWeightLogicFilter;
 
 import javax.annotation.Resource;
 

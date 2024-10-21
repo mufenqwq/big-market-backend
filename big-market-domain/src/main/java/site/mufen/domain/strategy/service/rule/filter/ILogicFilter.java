@@ -1,4 +1,4 @@
-package site.mufen.domain.strategy.service.rule;
+package site.mufen.domain.strategy.service.rule.filter;
 
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.RuleMatterEntity;

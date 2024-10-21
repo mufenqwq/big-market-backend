@@ -1,4 +1,4 @@
-package site.mufen.domain.strategy.service.rule.factory;
+package site.mufen.domain.strategy.service.rule.filter.factory;
 
 
 import com.alibaba.fastjson2.util.AnnotationUtils;
@@ -7,7 +7,7 @@ import lombok.Getter;
 import org.springframework.stereotype.Service;
 import site.mufen.domain.strategy.annotation.LogicStrategy;
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
-import site.mufen.domain.strategy.service.rule.ILogicFilter;
+import site.mufen.domain.strategy.service.rule.filter.ILogicFilter;
 
 import java.util.List;
 import java.util.Map;
