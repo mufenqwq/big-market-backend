@@ -169,3 +169,89 @@ VALUES (1, 101, 'user_credit_random', '1,100', '用户积分【优先透彻规�
        (9, 109, 'openai_model', 'gpt-4,dall-e-2,dall-e-3', 'OpenAI 增加模型', '2023-12-09 11:07:06',
         '2023-12-09 11:12:39');
 
+
+# 转储表 rule_tree
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `rule_tree`;
+
+CREATE TABLE `rule_tree` (
+                             `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+                             `tree_id` varchar(32) NOT NULL COMMENT '规则树ID',
+                             `tree_name` varchar(64) NOT NULL COMMENT '规则树名称',
+                             `tree_desc` varchar(128) DEFAULT NULL COMMENT '规则树描述',
+                             `tree_node_rule_key` varchar(32) NOT NULL COMMENT '规则树根入口规则',
+                             `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                             `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                             PRIMARY KEY (`id`),
+                             UNIQUE KEY `uq_tree_id` (`tree_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `rule_tree` WRITE;
+/*!40000 ALTER TABLE `rule_tree` DISABLE KEYS */;
+
+INSERT INTO `rule_tree` (`id`, `tree_id`, `tree_name`, `tree_desc`, `tree_node_rule_key`, `create_time`, `update_time`)
+VALUES
+    (1,'tree_lock','规则树','规则树','rule_lock','2024-01-27 10:01:59','2024-02-03 10:39:54');
+
+/*!40000 ALTER TABLE `rule_tree` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# 转储表 rule_tree_node
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `rule_tree_node`;
+
+CREATE TABLE `rule_tree_node` (
+                                  `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+                                  `tree_id` varchar(32) NOT NULL COMMENT '规则树ID',
+                                  `rule_key` varchar(32) NOT NULL COMMENT '规则Key',
+                                  `rule_desc` varchar(64) NOT NULL COMMENT '规则描述',
+                                  `rule_value` varchar(128) DEFAULT NULL COMMENT '规则比值',
+                                  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `rule_tree_node` WRITE;
+/*!40000 ALTER TABLE `rule_tree_node` DISABLE KEYS */;
+
+INSERT INTO `rule_tree_node` (`id`, `tree_id`, `rule_key`, `rule_desc`, `rule_value`, `create_time`, `update_time`)
+VALUES
+    (1,'tree_lock','rule_lock','限定用户已完成N次抽奖后解锁','1','2024-01-27 10:03:09','2024-02-03 10:40:18'),
+    (2,'tree_lock','rule_luck_award','兜底奖品随机积分','1,100','2024-01-27 10:03:09','2024-02-03 10:40:19'),
+    (3,'tree_lock','rule_stock','库存扣减规则',NULL,'2024-01-27 10:04:43','2024-02-03 10:40:21');
+
+/*!40000 ALTER TABLE `rule_tree_node` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# 转储表 rule_tree_node_line
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `rule_tree_node_line`;
+
+CREATE TABLE `rule_tree_node_line` (
+                                       `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+                                       `tree_id` varchar(32) NOT NULL COMMENT '规则树ID',
+                                       `rule_node_from` varchar(32) NOT NULL COMMENT '规则Key节点 From',
+                                       `rule_node_to` varchar(32) NOT NULL COMMENT '规则Key节点 To',
+                                       `rule_limit_type` varchar(8) NOT NULL COMMENT '限定类型；1:=;2:>;3:<;4:>=;5<=;6:enum[枚举范围];',
+                                       `rule_limit_value` varchar(32) NOT NULL COMMENT '限定值（到下个节点）',
+                                       `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                       `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                       PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `rule_tree_node_line` WRITE;
+/*!40000 ALTER TABLE `rule_tree_node_line` DISABLE KEYS */;
+
+INSERT INTO `rule_tree_node_line` (`id`, `tree_id`, `rule_node_from`, `rule_node_to`, `rule_limit_type`, `rule_limit_value`, `create_time`, `update_time`)
+VALUES
+    (1,'tree_lock','rule_lock','rule_stock','EQUAL','ALLOW','2024-02-03 10:40:25','2024-02-03 10:40:25'),
+    (2,'tree_lock','rule_lock','rule_luck_award','EQUAL','TAKE_OVER','2024-02-03 10:40:26','2024-02-03 10:40:26'),
+    (3,'tree_lock','rule_stock','rule_luck_award','EQUAL','TAKE_OVER','2024-02-03 10:40:27','2024-02-03 10:40:27');
+
+/*!40000 ALTER TABLE `rule_tree_node_line` ENABLE KEYS */;
+UNLOCK TABLES;
