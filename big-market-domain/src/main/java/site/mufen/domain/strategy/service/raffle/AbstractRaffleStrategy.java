@@ -1,11 +1,13 @@
 package site.mufen.domain.strategy.service.raffle;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import site.mufen.domain.strategy.model.entity.RaffleAwardEntity;
 import site.mufen.domain.strategy.model.entity.RaffleFactorEntity;
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.StrategyEntity;
 import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import site.mufen.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.IRaffleStrategy;
 import site.mufen.domain.strategy.service.armory.IStrategyDispatch;
@@ -18,6 +20,7 @@ import site.mufen.types.exception.AppException;
  * @Description 抽象策略抽象类
  * @create 2024/10/17 20:42
  */
+@Slf4j
 public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
 
     // 策略仓储服务 -> domain层像一个大厨，仓储层提供米面粮油
@@ -67,6 +70,24 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
         // 4. 默认抽奖流程
         Integer awardId = strategyDispatch.getRandomAwardId(strategyId);
 
+        // 5. 查询奖品规则「抽奖中（拿到奖品ID时，过滤规则）、抽奖后（扣减完奖品库存后过滤，抽奖中拦截和无库存则走兜底）」
+        StrategyAwardRuleModelVO strategyAwardRuleModelVO = repository.queryStrategyAwardRuleModel(strategyId, awardId);
+
+        // 6. 抽奖中 - 规则过滤
+        String[] logics = strategyAwardRuleModelVO.raffleCenterRuleModelList();
+        RuleActionEntity<RuleActionEntity.RaffleCenterEntity> ruleActionCenterEntity = this.doCheckRaffleCenterLogic(RaffleFactorEntity.builder()
+                .userId(userId).strategyId(strategyId).awardId(awardId).build(), logics);
+        if (RuleLogicCheckTypeVO.TAKE_OVER.getCode().equals(ruleActionCenterEntity.getCode())) {
+            log.info("【临时日志】中奖中规则拦截，通过抽奖后规则 rule_luck_award 走兜底奖励。");
+            return RaffleAwardEntity.builder()
+                    .awardDesc("中奖中规则拦截，通过抽奖后规则 rule_luck_award 走兜底奖励。")
+                    .build();
+        }
+        // 7. 抽奖后 - 规则过滤
+
+        // 对规则进行过滤
+
+
         return RaffleAwardEntity.builder()
                 .strategyId(strategyId)
                 .awardId(awardId)
@@ -76,4 +97,6 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
     }
 
     protected abstract RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> doCheckRaffleBeforeLogic(RaffleFactorEntity raffleFactorEntity, String... logics);
+
+    protected abstract RuleActionEntity<RuleActionEntity.RaffleCenterEntity> doCheckRaffleCenterLogic(RaffleFactorEntity raffleFactorEntity, String... logics);
 }

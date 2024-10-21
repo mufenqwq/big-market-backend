@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import site.mufen.domain.strategy.model.entity.StrategyAwardEntity;
 import site.mufen.domain.strategy.model.entity.StrategyEntity;
 import site.mufen.domain.strategy.model.entity.StrategyRuleEntity;
+import site.mufen.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.infrastructure.persistent.dao.IStrategyAwardDao;
 import site.mufen.infrastructure.persistent.dao.IStrategyDao;
@@ -131,6 +132,21 @@ public class StrategyRepository implements IStrategyRepository {
                 .ruleModel(ruleModel)
                 .build();
         return strategyRuleDao.queryStrategyRuleValue(strategyRule);
+    }
+
+    /**
+     * 查询策略奖品规则
+     * @param strategyId 策略Id
+     * @param awardId 奖品Id
+     * @return 策略奖品规则对象
+     */
+    @Override
+    public StrategyAwardRuleModelVO queryStrategyAwardRuleModel(Long strategyId, Integer awardId) {
+        StrategyAward strategyAward = new StrategyAward();
+        strategyAward.setStrategyId(strategyId);
+        strategyAward.setAwardId(awardId);
+        String ruleModels = strategyAwardDao.queryStrategyAwardRuleModels(strategyAward);
+        return StrategyAwardRuleModelVO.builder().ruleModels(ruleModels).build();
     }
 
 }

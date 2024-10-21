@@ -16,10 +16,7 @@ import site.mufen.types.exception.AppException;
 
 import javax.annotation.Resource;
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author mufen
@@ -65,7 +62,7 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
 
         // 2.转换key值 并默认排序
         ArrayList<Long> analyticalSortedKeys = new ArrayList<>(analyticalValueGroup.keySet());
-        Collections.sort(analyticalSortedKeys);
+        analyticalSortedKeys.sort(Comparator.reverseOrder());
 
         // 3.找出最小符合值
         Long nextValue = analyticalSortedKeys.stream()

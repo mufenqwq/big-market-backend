@@ -45,11 +45,33 @@ public class RuleActionEntity<T extends RuleActionEntity.RaffleEntity> {
     }
 
     public static class RaffleCenterEntity extends RaffleEntity {
-
+        /**
+         * 策略Id
+         */
+        private Long strategyId;
+        /**
+         * 权重值key, 用于抽奖时可以选择权重抽奖
+         */
+        private String ruleWeightValueKey;
+        /**
+         * 奖品Id -- 黑名单用户有自己特定的奖品Id
+         */
+        private Integer awardId;
     }
 
     public static class RaffleAfterEntity extends RaffleEntity {
-
+        /**
+         * 策略Id
+         */
+        private Long strategyId;
+        /**
+         * 权重值key, 用于抽奖时可以选择权重抽奖
+         */
+        private String ruleWeightValueKey;
+        /**
+         * 奖品Id -- 黑名单用户有自己特定的奖品Id
+         */
+        private Integer awardId;
     }
 
 

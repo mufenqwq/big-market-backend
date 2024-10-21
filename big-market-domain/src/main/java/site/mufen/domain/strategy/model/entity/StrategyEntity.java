@@ -38,6 +38,10 @@ public class StrategyEntity {
 
     public String getRuleWeight() {
         String[] ruleModels = this.ruleModels();
+        // todo 这个必须进行判空处理 不然会报NPE
+        if (null == ruleModels) {
+            return null;
+        }
         for (String ruleModel : ruleModels) {
             if ("rule_weight".equals(ruleModel)) return ruleModel;
         }

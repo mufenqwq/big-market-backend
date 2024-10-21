@@ -27,4 +27,9 @@
         select strategy_id, award_id, award_rate, award_count, award_count_surplus from strategy_award
         where strategy_id = #{strategyId}
     </select>
+
+    <select id="queryStrategyAwardRuleModels" resultType="java.lang.String">
+        select rule_models from strategy_award
+        where strategy_id = #{strategyId,jdbcType=BIGINT} and award_id = #{awardId}
+    </select>
 </mapper>

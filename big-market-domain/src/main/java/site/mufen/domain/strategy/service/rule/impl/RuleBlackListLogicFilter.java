@@ -44,6 +44,7 @@ public class RuleBlackListLogicFilter implements ILogicFilter<RuleActionEntity.R
                                 .strategyId(ruleMatterEntity.getStrategyId())
                                 .awardId(awardId)
                                 .build())
+                        // todo 这个很重要 ruleModel
                         .ruleModel(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode())
                         .code(RuleLogicCheckTypeVO.TAKE_OVER.getCode())
                         .info(RuleLogicCheckTypeVO.TAKE_OVER.getInfo())
