@@ -23,10 +23,12 @@ LOCK TABLES `strategy` WRITE;
 INSERT INTO `strategy` (`id`, `strategy_id`, `strategy_desc`, `rule_models`, `create_time`, `update_time`)
 VALUES (1, 100001, '抽奖策略', 'rule_weight,rule_blacklist', '2023-12-09 09:37:19', '2023-12-09 09:37:19');
 
-
 INSERT INTO `strategy` (`id`, `strategy_id`, `strategy_desc`, `rule_models`, `create_time`, `update_time`)
 VALUES (2,100003,'抽奖策略-验证lock',NULL,'2024-01-13 10:34:06','2024-01-13 10:34:06'),
        (3,100002,'抽奖策略-非完整1概率',NULL,'2023-12-09 09:37:19','2024-01-13 11:08:20');
+
+INSERT INTO `strategy` (`id`, `strategy_id`, `strategy_desc`, `rule_models`, `create_time`, `update_time`)
+VALUES (6,100006,'抽奖策略-规则树',NULL,'2024-02-03 09:53:40','2024-02-03 09:53:40');
 
 --
 CREATE TABLE `strategy_award`
@@ -85,6 +87,10 @@ VALUES (13,100003,107,'增加dall-e-3画图模型','抽奖1次后解锁',200,200
        (14,100003,108,'增加100次使用','抽奖2次后解锁',199,199,0.0099,'rule_lock,rule_luck_award',8,'2023-12-09 09:46:02','2024-01-13 10:26:29'),
        (15,100003,109,'解锁全部模型','抽奖6次后解锁',1,1,0.0001,'rule_lock,rule_luck_award',9,'2023-12-09 09:46:39','2023-12-09 12:20:50');
 
+INSERT INTO `strategy_award` (`id`, `strategy_id`, `award_id`, `award_title`, `award_subtitle`, `award_count`,
+                              `award_count_surplus`, `award_rate`, `rule_models`, `sort`, `create_time`, `update_time`)
+VALUES (22,100006,101,'随机积分',NULL,3,3,0.0300,'tree_lock',1,'2023-12-09 09:38:31','2024-02-03 11:17:05'),
+       (23,100006,102,'随机积分',NULL,97,97,0.9700,'tree_lock',1,'2023-12-09 09:38:31','2024-02-03 11:17:10');
 
 --
 CREATE TABLE `strategy_rule`

@@ -7,12 +7,17 @@ import site.mufen.domain.strategy.model.entity.RaffleFactorEntity;
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.RuleMatterEntity;
 import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import site.mufen.domain.strategy.model.vo.RuleTreeVO;
+import site.mufen.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.AbstractRaffleStrategy;
 import site.mufen.domain.strategy.service.armory.IStrategyDispatch;
+import site.mufen.domain.strategy.service.rule.chain.ILogicChain;
 import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import site.mufen.domain.strategy.service.rule.filter.ILogicFilter;
 import site.mufen.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
+import site.mufen.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
+import site.mufen.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
@@ -32,10 +37,32 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     @Resource
     private DefaultLogicFactory logicFactory;
 
-    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory) {
-        super(repository, strategyDispatch, defaultChainFactory);
+    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch,
+                                 DefaultChainFactory defaultChainFactory, DefaultTreeFactory defaultTreeFactory ) {
+        super(repository, strategyDispatch, defaultChainFactory, defaultTreeFactory);
     }
 
+    @Override
+    public DefaultChainFactory.StrategyAwardVO raffleLogicChain(String userId, Long strategyId) {
+        ILogicChain logicChain = defaultChainFactory.openLogicChain(strategyId);
+        return logicChain.logic(userId, strategyId);
+    }
+
+    @Override
+    public DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId) {
+        StrategyAwardRuleModelVO strategyAwardRuleModelVO = repository.queryStrategyAwardRuleModel(strategyId, awardId);
+        if (null == strategyAwardRuleModelVO) {
+            return DefaultTreeFactory.StrategyAwardVO.builder().awardId(awardId).build();
+        }
+        RuleTreeVO ruleTreeVO = repository.queryRuleTreeVOByTreeId(strategyAwardRuleModelVO.getRuleModels());
+        if (null == ruleTreeVO) {
+            throw new RuntimeException("存在抽奖策略配置的规则模型 Key，未在库表 rule_tree、rule_tree_node、rule_tree_line 配置对应的规则树信息 " + strategyAwardRuleModelVO.getRuleModels());
+        }
+        IDecisionTreeEngine treeEngine = defaultTreeFactory.openLogicTree(ruleTreeVO);
+        return treeEngine.process(userId, strategyId, awardId);
+    }
+
+    @Deprecated
     @Override
     protected RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> doCheckRaffleBeforeLogic(RaffleFactorEntity raffleFactorEntity, String... logics) {
         if (null == logics || 0 == logics.length) return RuleActionEntity.<RuleActionEntity.RaffleBeforeEntity>builder()
@@ -89,6 +116,7 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     }
 
     @Override
+    @Deprecated
     protected RuleActionEntity<RuleActionEntity.RaffleCenterEntity> doCheckRaffleCenterLogic(RaffleFactorEntity raffleFactorEntity, String... logics) {
         if (null == logics || 0 == logics.length) return RuleActionEntity.<RuleActionEntity.RaffleCenterEntity>builder()
                 .code(RuleLogicCheckTypeVO.ALLOW.getCode())

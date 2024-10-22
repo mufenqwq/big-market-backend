@@ -3,6 +3,7 @@ package site.mufen.domain.strategy.repository;
 import site.mufen.domain.strategy.model.entity.StrategyAwardEntity;
 import site.mufen.domain.strategy.model.entity.StrategyEntity;
 import site.mufen.domain.strategy.model.entity.StrategyRuleEntity;
+import site.mufen.domain.strategy.model.vo.RuleTreeVO;
 import site.mufen.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 
 import java.math.BigDecimal;
@@ -34,4 +35,6 @@ public interface IStrategyRepository {
     String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel);
 
     StrategyAwardRuleModelVO queryStrategyAwardRuleModel(Long strategyId, Integer awardId);
+
+    RuleTreeVO queryRuleTreeVOByTreeId(String treeId);
 }

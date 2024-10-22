@@ -1,5 +1,7 @@
 package site.mufen.domain.strategy.service.rule.chain;
 
+import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+
 /**
  * @author mufen
  * @Description 责任链接口
@@ -13,7 +15,7 @@ public interface ILogicChain extends ILogicChainArmory {
      * @param strategyId 策略Id
      * @return 奖品Id
      */
-    Integer logic(String userId, Long strategyId);
+    DefaultChainFactory.StrategyAwardVO logic(String userId, Long strategyId);
 
 
 }

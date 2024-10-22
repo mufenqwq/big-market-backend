@@ -22,6 +22,7 @@ public class StrategyAwardRuleModelVO {
 
     private String ruleModels;
 
+    @Deprecated
     public String[] raffleCenterRuleModelList() {
         if (null == ruleModels) {
             return null;
