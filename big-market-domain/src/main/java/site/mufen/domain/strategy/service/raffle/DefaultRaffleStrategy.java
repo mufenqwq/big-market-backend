@@ -6,9 +6,10 @@ import org.springframework.stereotype.Service;
 import site.mufen.domain.strategy.model.entity.RaffleFactorEntity;
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.RuleMatterEntity;
-import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
-import site.mufen.domain.strategy.model.vo.RuleTreeVO;
-import site.mufen.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import site.mufen.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
+import site.mufen.domain.strategy.model.valobj.RuleTreeVO;
+import site.mufen.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
+import site.mufen.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.AbstractRaffleStrategy;
 import site.mufen.domain.strategy.service.armory.IStrategyDispatch;
@@ -144,4 +145,13 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
         return ruleActionEntity;
     }
 
+    @Override
+    public StrategyAwardStockKeyVO takeQueueValue() throws InterruptedException {
+        return repository.takeQueueValue();
+    }
+
+    @Override
+    public void updateStrategyAwardStock(Long strategyId, Integer awardId) {
+        repository.updateStrategyAwardStock(strategyId, awardId);
+    }
 }

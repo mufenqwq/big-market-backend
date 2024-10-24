@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import site.mufen.domain.strategy.annotation.LogicStrategy;
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.RuleMatterEntity;
-import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import site.mufen.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.rule.filter.ILogicFilter;
 import site.mufen.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;

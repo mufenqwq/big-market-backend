@@ -1,7 +1,7 @@
 package site.mufen.domain.strategy.model.entity;
 
 import lombok.*;
-import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import site.mufen.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 
 /**
  * @author mufen

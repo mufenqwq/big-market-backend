@@ -3,8 +3,9 @@ package site.mufen.domain.strategy.repository;
 import site.mufen.domain.strategy.model.entity.StrategyAwardEntity;
 import site.mufen.domain.strategy.model.entity.StrategyEntity;
 import site.mufen.domain.strategy.model.entity.StrategyRuleEntity;
-import site.mufen.domain.strategy.model.vo.RuleTreeVO;
-import site.mufen.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import site.mufen.domain.strategy.model.valobj.RuleTreeVO;
+import site.mufen.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
+import site.mufen.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -37,4 +38,37 @@ public interface IStrategyRepository {
     StrategyAwardRuleModelVO queryStrategyAwardRuleModel(Long strategyId, Integer awardId);
 
     RuleTreeVO queryRuleTreeVOByTreeId(String treeId);
+
+    /**
+     *
+     * @param cacheKey 保存在redis的key
+     * @param awardCount 库存量
+     */
+    void cacheStrategyAwardCount(String cacheKey, Integer awardCount);
+
+    /**
+     * 缓存 key decr 方式扣减库存
+     * @param cacheKey 缓存key
+     * @return 扣减结果
+     */
+    Boolean subtractionAwardStock(String cacheKey);
+
+    /**
+     * 写入奖品库存消耗队列
+     * @param strategyAwardStockKeyVO 奖品库存值对象
+     */
+    void awardStockConsumeSendQueue(StrategyAwardStockKeyVO strategyAwardStockKeyVO);
+
+    /**
+     * 获取库存奖品消耗队列
+     * @return 库存奖品值对象
+     */
+    StrategyAwardStockKeyVO takeQueueValue() throws InterruptedException;
+
+    /**
+     * 更新数据库中的库存
+     * @param strategyId 策略Id
+     * @param awardId 奖品Id
+     */
+    void updateStrategyAwardStock(Long strategyId, Integer awardId);
 }

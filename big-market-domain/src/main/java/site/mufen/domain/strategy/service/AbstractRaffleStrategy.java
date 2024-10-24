@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import site.mufen.domain.strategy.model.entity.RaffleAwardEntity;
 import site.mufen.domain.strategy.model.entity.RaffleFactorEntity;
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
-import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
-import site.mufen.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.armory.IStrategyDispatch;
-import site.mufen.domain.strategy.service.rule.chain.ILogicChain;
 import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import site.mufen.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import site.mufen.types.enums.ResponseCode;
@@ -22,7 +19,7 @@ import site.mufen.types.exception.AppException;
  * @create 2024/10/17 20:42
  */
 @Slf4j
-public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
+public abstract class AbstractRaffleStrategy implements IRaffleStrategy, IRaffleStock {
 
     // 策略仓储服务 -> domain层像一个大厨，仓储层提供米面粮油
     protected IStrategyRepository repository;

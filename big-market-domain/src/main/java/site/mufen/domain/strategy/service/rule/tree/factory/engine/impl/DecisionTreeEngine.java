@@ -1,10 +1,10 @@
 package site.mufen.domain.strategy.service.rule.tree.factory.engine.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
-import site.mufen.domain.strategy.model.vo.RuleTreeNodeLineVO;
-import site.mufen.domain.strategy.model.vo.RuleTreeNodeVO;
-import site.mufen.domain.strategy.model.vo.RuleTreeVO;
+import site.mufen.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
+import site.mufen.domain.strategy.model.valobj.RuleTreeNodeLineVO;
+import site.mufen.domain.strategy.model.valobj.RuleTreeNodeVO;
+import site.mufen.domain.strategy.model.valobj.RuleTreeVO;
 import site.mufen.domain.strategy.service.rule.tree.ILogicTreeNode;
 import site.mufen.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import site.mufen.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
@@ -37,11 +37,14 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
         String nextNode = ruleTreeVO.getTreeRootRuleNode();
         Map<String, RuleTreeNodeVO> treeNodeMap = ruleTreeVO.getTreeNodeMap();
 
+        // 获取起始节点
         RuleTreeNodeVO ruleTreeNode = treeNodeMap.get(nextNode);
         while (null != nextNode) {
+            // 获取决策节点
             ILogicTreeNode logicTreeNode = logicTreeNodeGroup.get(ruleTreeNode.getRuleKey());
+            String ruleValue = ruleTreeNode.getRuleValue();
 
-            DefaultTreeFactory.TreeActionEntity logicEntity = logicTreeNode.logic(userId, strategyId, awardId);
+            DefaultTreeFactory.TreeActionEntity logicEntity = logicTreeNode.logic(userId, strategyId, awardId, ruleValue);
             RuleLogicCheckTypeVO ruleLogicCheckTypeVO = logicEntity.getRuleLogicCheckTypeVO();
             strategyAwardVO = logicEntity.getStrategyAwardVO();
 

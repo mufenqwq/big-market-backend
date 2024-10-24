@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import site.mufen.domain.strategy.model.vo.RuleTreeVO;
+import site.mufen.domain.strategy.model.valobj.RuleTreeVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 
 import javax.annotation.Resource;

@@ -2,9 +2,8 @@ package site.mufen.domain.strategy.service.rule.tree.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import site.mufen.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import site.mufen.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
-import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import site.mufen.domain.strategy.service.rule.tree.ILogicTreeNode;
 import site.mufen.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 
@@ -20,24 +19,29 @@ import javax.annotation.Resource;
 public class RuleLockLogicTreeNode implements ILogicTreeNode {
 
     //todo 后续需要从数据库中获取
-    private Long userRaffleCount = 0L;
+    private Long userRaffleCount = 10L;
 
     @Resource
     private IStrategyRepository repository;
 
     @Override
-    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId) {
+    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId, String ruleValue) {
         // todo 实现次数校验
         log.info("规则过滤-次数锁 userId:{} strategyId:{} awardId:{}", userId, strategyId, awardId);
-        String ruleValue = repository.queryStrategyRuleValue(strategyId, awardId, "rule_lock");
-        if (userRaffleCount >= Integer.parseInt(ruleValue)) {
+        long raffleCount = 0L;
+        try {
+            raffleCount = Long.parseLong(ruleValue);
+        } catch (Exception e) {
+            throw new RuntimeException("规则过滤-次数锁异常 ruleValue: " + ruleValue + "配置不正常");
+        }
+
+        // 用户抽奖次数大于规则限度 规则放行
+        if (userRaffleCount >= raffleCount) {
             return DefaultTreeFactory.TreeActionEntity.builder()
-                    .strategyAwardVO(DefaultTreeFactory.StrategyAwardVO.builder()
-                            .awardId(awardId)
-                            .build())
                     .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.ALLOW)
                     .build();
         }
+        // 用户抽奖次数小于规则限定值 规则拦截
         return DefaultTreeFactory.TreeActionEntity.builder()
                 .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.TAKE_OVER)
                 .build();

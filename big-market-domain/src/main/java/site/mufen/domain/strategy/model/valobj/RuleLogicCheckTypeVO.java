@@ -1,4 +1,4 @@
-package site.mufen.domain.strategy.model.vo;
+package site.mufen.domain.strategy.model.valobj;
 
 import lombok.*;
 
