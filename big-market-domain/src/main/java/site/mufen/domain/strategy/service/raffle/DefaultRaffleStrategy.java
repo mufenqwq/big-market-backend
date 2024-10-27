@@ -6,12 +6,15 @@ import org.springframework.stereotype.Service;
 import site.mufen.domain.strategy.model.entity.RaffleFactorEntity;
 import site.mufen.domain.strategy.model.entity.RuleActionEntity;
 import site.mufen.domain.strategy.model.entity.RuleMatterEntity;
+import site.mufen.domain.strategy.model.entity.StrategyAwardEntity;
 import site.mufen.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import site.mufen.domain.strategy.model.valobj.RuleTreeVO;
 import site.mufen.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import site.mufen.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.AbstractRaffleStrategy;
+import site.mufen.domain.strategy.service.IRaffleAward;
+import site.mufen.domain.strategy.service.IRaffleStock;
 import site.mufen.domain.strategy.service.armory.IStrategyDispatch;
 import site.mufen.domain.strategy.service.rule.chain.ILogicChain;
 import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
@@ -22,6 +25,7 @@ import site.mufen.domain.strategy.service.rule.tree.factory.engine.IDecisionTree
 
 import javax.annotation.Resource;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -33,7 +37,7 @@ import java.util.stream.Collectors;
  */
 @Service
 @Slf4j
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRaffleStock, IRaffleAward {
 
     @Resource
     private DefaultLogicFactory logicFactory;
@@ -153,5 +157,10 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     @Override
     public void updateStrategyAwardStock(Long strategyId, Integer awardId) {
         repository.updateStrategyAwardStock(strategyId, awardId);
+    }
+
+    @Override
+    public List<StrategyAwardEntity> queryRaffleStrategyAwardList(Long strategyId) {
+        return repository.queryStrategyAwardList(strategyId);
     }
 }

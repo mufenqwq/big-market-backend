@@ -25,4 +25,11 @@ public interface IStrategyAwardDao {
      * @param strategyAward 策略奖品对象
      */
     void updateStrategyAwardStock(StrategyAward strategyAward);
+
+    /**
+     * 查询 strategyAward
+     * @param strategyAwardReq 请求 strategyAward参数
+     * @return strategyAward对象
+     */
+    StrategyAward queryStrategyAward(StrategyAward strategyAwardReq);
 }

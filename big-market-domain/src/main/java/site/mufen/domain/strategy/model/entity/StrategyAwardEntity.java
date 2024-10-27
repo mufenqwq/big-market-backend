@@ -40,4 +40,16 @@ public class StrategyAwardEntity {
      * 奖品中奖概率
      */
     private BigDecimal awardRate;
+    /**
+     * 排序
+     */
+    private Integer sort;
+    /**
+     * 主标题
+     */
+    private String awardTitle;
+    /**
+     * 副标题
+     */
+    private String awardSubtitle;
 }
