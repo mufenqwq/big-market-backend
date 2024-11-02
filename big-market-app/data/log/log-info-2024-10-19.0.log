@@ -25,7 +25,7 @@ Action:
 
 Consider defining a bean of type 'site.mufen.domain.strategy.service.rule.filter.factory.DefaultLogicFactory' in your configuration.
 
-24-10-19.19:22:30.081 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@33c911a1] to prepare test instance [site.mufen.test.domain.RaffleStrategyTest@47044f7d]
+24-10-19.19:22:30.081 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@33c911a1] to prepare test instance [site.mufen.test.domain.strategy.RaffleStrategyTest@47044f7d]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
