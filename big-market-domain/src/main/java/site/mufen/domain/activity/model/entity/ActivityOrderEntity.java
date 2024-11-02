@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.mufen.domain.activity.model.valobj.OrderStateVO;
 
 import java.util.Date;
 
@@ -21,6 +22,10 @@ public class ActivityOrderEntity {
      * 用户ID
      */
     private String userId;
+    /**
+     *
+     */
+    private Long sku;
     /**
      * 活动ID
      */
@@ -56,5 +61,9 @@ public class ActivityOrderEntity {
     /**
      * 订单状态（not_used、used、expire）
      */
-    private String state;
+    private OrderStateVO state;
+    /**
+     * 业务仿重ID - 外部透传的，确保幂等
+     */
+    private String outBusinessNo;
 }
