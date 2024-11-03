@@ -57,7 +57,7 @@ public abstract class AbstractRaffleActivity extends RaffleActivitySupport imple
         ActivityCountEntity activityCountEntity = queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());
         // 3. 活动动作规则校验 todo 后续处理规则过滤流程 暂时不处理细节
         IActionChain actionChain =  defaultActivityChainFactory.openActionChain();
-        boolean success = actionChain.action(activitySkuEntity, activityEntity, activityCountEntity);
+        actionChain.action(activitySkuEntity, activityEntity, activityCountEntity);
         // 4. 构建订单聚合对象
         CreateOrderAggregate createOrderAggregate = buildOrderAggregate(skuRechargeEntity, activitySkuEntity, activityEntity, activityCountEntity);
         // 5. 保存订单

@@ -12,6 +12,17 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  
+  rabbitmq:
+    topic:
+      activity_sku_stock_zero: activity_sku_stock_zero
+    addresses: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      simple:
+        prefetch: 1 # 每次投递n个消息，消费完在投递n个
 
 # 线程池配置
 thread:
@@ -100,6 +111,8 @@ redis:
       retry-interval: 1000
       ping-interval: 60000
       keep-alive: true
+      
+  
 
 # 日志
 logging:

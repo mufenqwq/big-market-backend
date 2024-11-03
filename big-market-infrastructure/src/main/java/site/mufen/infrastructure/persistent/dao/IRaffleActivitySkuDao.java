@@ -12,4 +12,8 @@ import site.mufen.infrastructure.persistent.po.RaffleActivitySku;
 public interface IRaffleActivitySkuDao {
 
     RaffleActivitySku queryRaffleActivitySku(Long sku);
+
+    void updateActivitySKuStock(Long sku);
+
+    void clearActivitySkuStock(Long sku);
 }
