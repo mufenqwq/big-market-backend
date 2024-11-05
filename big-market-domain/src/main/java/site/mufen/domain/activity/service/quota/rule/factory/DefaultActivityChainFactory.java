@@ -1,9 +1,9 @@
-package site.mufen.domain.activity.service.rule.factory;
+package site.mufen.domain.activity.service.quota.rule.factory;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
-import site.mufen.domain.activity.service.rule.IActionChain;
+import site.mufen.domain.activity.service.quota.rule.IActionChain;
 
 import java.util.Map;
 

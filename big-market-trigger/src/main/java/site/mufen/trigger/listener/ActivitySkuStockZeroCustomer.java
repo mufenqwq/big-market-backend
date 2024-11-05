@@ -7,7 +7,7 @@ import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import site.mufen.domain.activity.service.ISkuStock;
+import site.mufen.domain.activity.service.IRaffleActivitySkuStockService;
 import site.mufen.types.event.BaseEvent;
 
 import javax.annotation.Resource;
@@ -25,7 +25,7 @@ public class ActivitySkuStockZeroCustomer {
     private String topic;
 
     @Resource
-    private ISkuStock skuStock;
+    private IRaffleActivitySkuStockService skuStock;
 
     @RabbitListener(queuesToDeclare = @Queue(value = "activity_sku_stock_zero"))
     public void listener(String message) {

@@ -5,16 +5,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author mufen
- * @Description 活动账单实体对象
- * @create 2024/11/1 18:59
+ * @Description 活动账户 - 日参与记录表
+ * @create 2024/11/4 10:34
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ActivityAccountEntity {
+public class ActivityAccountDayEntity {
 
     /**
      * 用户Id
@@ -25,13 +27,9 @@ public class ActivityAccountEntity {
      */
     private Long activityId;
     /**
-     * 总次数
+     * 日期(yyyy-MM-dd)
      */
-    private Integer totalCount;
-    /**
-     * 总次数剩余
-     */
-    private Integer totalCountSurplus;
+    private String day;
     /**
      * 日次数
      */
@@ -40,12 +38,5 @@ public class ActivityAccountEntity {
      * 日次数剩余
      */
     private Integer dayCountSurplus;
-    /**
-     * 月次数
-     */
-    private Integer monthCount;
-    /**
-     * 月次数剩余
-     */
-    private Integer monthCountSurplus;
+
 }

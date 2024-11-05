@@ -4,19 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import site.mufen.domain.activity.model.entity.ActivityAccountEntity;
 import site.mufen.domain.activity.model.entity.ActivityOrderEntity;
 
 /**
  * @author mufen
- * @Description 下单聚合对象
+ * @Description 账户额度下单聚合对象(充值 赠送 增加抽奖额度
  * @create 2024/11/1 19:17
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateOrderAggregate {
+public class CreateQuotaOrderAggregate {
     /**
      * 用户ID
      */

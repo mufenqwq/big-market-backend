@@ -1,4 +1,4 @@
-package site.mufen.domain.activity.service.rule;
+package site.mufen.domain.activity.service.quota.rule;
 
 import site.mufen.domain.activity.model.entity.ActivityCountEntity;
 import site.mufen.domain.activity.model.entity.ActivityEntity;

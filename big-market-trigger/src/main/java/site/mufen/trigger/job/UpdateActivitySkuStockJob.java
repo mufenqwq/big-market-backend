@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import site.mufen.domain.activity.model.valobj.ActivitySkuStockKeyVO;
-import site.mufen.domain.activity.service.ISkuStock;
+import site.mufen.domain.activity.service.IRaffleActivitySkuStockService;
 
 import javax.annotation.Resource;
 
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class UpdateActivitySkuStockJob {
 
     @Resource
-    private ISkuStock skuStock;
+    private IRaffleActivitySkuStockService skuStock;
 
     @Scheduled(cron = "0/5 * * * * ?")
     public void exec() {

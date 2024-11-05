@@ -1,6 +1,9 @@
 package site.mufen.test.domain.activity;
 
-import com.alibaba.fastjson.JSON;
+import site.mufen.domain.activity.model.entity.SkuRechargeEntity;
+import site.mufen.domain.activity.service.IRaffleActivityAccountQuotaService;
+import site.mufen.domain.activity.service.armory.IActivityArmory;
+import site.mufen.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
@@ -8,29 +11,23 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import site.mufen.domain.activity.model.entity.ActivityOrderEntity;
-import site.mufen.domain.activity.model.entity.ActivityShopCartEntity;
-import site.mufen.domain.activity.model.entity.SkuRechargeEntity;
-import site.mufen.domain.activity.service.IRaffleOrder;
-import site.mufen.domain.activity.service.armory.IActivityArmory;
-import site.mufen.types.exception.AppException;
 
 import javax.annotation.Resource;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author mufen
- * @Description 抽奖活动订单单测
- * @create 2024/11/1 20:50
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 抽奖活动参与服务测试
+ * @create 2024-04-05 12:28
  */
-@SpringBootTest
 @Slf4j
 @RunWith(SpringRunner.class)
-public class RaffleOrderTest {
+@SpringBootTest
+public class RaffleActivityAccountQuotaServiceTest {
+
 
     @Resource
-    private IRaffleOrder raffleOrder;
-
+    private IRaffleActivityAccountQuotaService raffleActivityAccountQuotaService;
     @Resource
     private IActivityArmory activityArmory;
 
@@ -40,14 +37,15 @@ public class RaffleOrderTest {
     }
 
     @Test
-    public void test_createRaffleActivityOrder() {
-        ActivityShopCartEntity activityShopCartEntity = new ActivityShopCartEntity();
-        activityShopCartEntity.setUserId("xiaofuge");
-        activityShopCartEntity.setSku(9011L);
-        ActivityOrderEntity raffleActivityOrder = raffleOrder.createRaffleActivityOrder(activityShopCartEntity);
-        log.info("测试结果：{}", JSON.toJSONString(raffleActivityOrder));
+    public void test_createSkuRechargeOrder_duplicate() {
+        SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
+        skuRechargeEntity.setUserId("xiaofuge");
+        skuRechargeEntity.setSku(9011L);
+        // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
+        skuRechargeEntity.setOutBusinessNo("700091009119");
+        String orderId = raffleActivityAccountQuotaService.createSkuRechargeOrder(skuRechargeEntity);
+        log.info("测试结果：{}", orderId);
     }
-
 
     /**
      * 测试库存消耗和最终一致更新
@@ -64,7 +62,7 @@ public class RaffleOrderTest {
                 skuRechargeEntity.setSku(9011L);
                 // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
                 skuRechargeEntity.setOutBusinessNo(RandomStringUtils.randomNumeric(12));
-                String orderId = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
+                String orderId = raffleActivityAccountQuotaService.createSkuRechargeOrder(skuRechargeEntity);
                 log.info("测试结果：{}", orderId);
             } catch (AppException e) {
                 log.warn(e.getInfo());

@@ -7,7 +7,7 @@ import site.mufen.domain.activity.model.valobj.ActivitySkuStockKeyVO;
  * @Description 活动sku库存处理接口
  * @create 2024/11/3 23:17
  */
-public interface ISkuStock {
+public interface IRaffleActivitySkuStockService {
 
     /**
      * 获取活动sku库存消耗队列

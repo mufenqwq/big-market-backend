@@ -1,4 +1,4 @@
-package site.mufen.domain.activity.service.rule.impl;
+package site.mufen.domain.activity.service.quota.rule.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -8,7 +8,7 @@ import site.mufen.domain.activity.model.entity.ActivitySkuEntity;
 import site.mufen.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import site.mufen.domain.activity.repository.IActivityRepository;
 import site.mufen.domain.activity.service.armory.IActivityDispatch;
-import site.mufen.domain.activity.service.rule.AbstractActionChain;
+import site.mufen.domain.activity.service.quota.rule.AbstractActionChain;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
 
