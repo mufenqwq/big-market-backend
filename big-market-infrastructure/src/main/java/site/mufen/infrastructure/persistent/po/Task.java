@@ -16,9 +16,17 @@ public class Task {
      */
     private String id;
     /**
+     * 用户Id
+     */
+    private String userId;
+    /**
      * 消息主题
      */
     private String topic;
+    /**
+     * 消息Id
+     */
+    private String messageId;
     /**
      * 消息主体
      */

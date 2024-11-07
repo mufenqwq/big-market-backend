@@ -24,7 +24,10 @@ import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -417,5 +420,31 @@ public class ActivityRepository implements IActivityRepository {
                 .dayCount(raffleActivityAccountDayRes.getDayCount())
                 .dayCountSurplus(raffleActivityAccountDayRes.getDayCountSurplus())
                 .build();
+    }
+
+    @Override
+    public List<ActivitySkuEntity> queryActivitySkuListByActivityId(Long activityId) {
+        List<RaffleActivitySku> raffleActivitySkus = raffleActivitySkuDao.queryActivitySkuListByActivityId(activityId);
+        ArrayList<ActivitySkuEntity> activitySkuEntities = new ArrayList<>(raffleActivitySkus.size());
+        for (RaffleActivitySku raffleActivitySku : raffleActivitySkus) {
+            Long sku = raffleActivitySku.getSku();
+            ActivitySkuEntity activitySkuEntity = getActivitySkuEntity(raffleActivitySku, sku);
+            activitySkuEntities.add(activitySkuEntity);
+        }
+        return activitySkuEntities;
+    }
+
+    private static ActivitySkuEntity getActivitySkuEntity(RaffleActivitySku raffleActivitySku, Long sku) {
+        Long activityId = raffleActivitySku.getActivityId();
+        Long activityCountId = raffleActivitySku.getActivityCountId();
+        Integer stockCount = raffleActivitySku.getStockCount();
+        Integer stockCountSurplus = raffleActivitySku.getStockCountSurplus();
+        ActivitySkuEntity activitySkuEntity = new ActivitySkuEntity();
+        activitySkuEntity.setSku(sku);
+        activitySkuEntity.setActivityId(activityId);
+        activitySkuEntity.setActivityCountId(activityCountId);
+        activitySkuEntity.setStockCount(stockCount);
+        activitySkuEntity.setStockCountSurplus(stockCountSurplus);
+        return activitySkuEntity;
     }
 }

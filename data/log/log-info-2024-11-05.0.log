@@ -1,0 +1,32 @@
+24-11-05.23:35:49.309 [main            ] INFO  Application            - Starting Application using Java 1.8.0_432 on myarch with PID 232260 (/home/mufen/Downloads/big-market/big-market-app/target/classes started by mufen in /home/mufen/Downloads/big-market)
+24-11-05.23:35:49.311 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-11-05.23:35:50.072 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-05.23:35:50.074 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-05.23:35:50.099 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+24-11-05.23:35:50.681 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8092 (http)
+24-11-05.23:35:50.687 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8092"]
+24-11-05.23:35:50.688 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-11-05.23:35:50.688 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-11-05.23:35:50.748 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-11-05.23:35:50.748 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1400 ms
+24-11-05.23:35:51.298 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-05.23:35:51.453 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-05.23:35:51.463 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-05.23:35:52.718 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-05.23:35:52.804 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8092"]
+24-11-05.23:35:52.812 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8092 (http) with context path ''
+24-11-05.23:35:52.814 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+24-11-05.23:35:52.857 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1118d539:0/SimpleConnection@3bf5911d [delegate=amqp://admin@127.0.0.1:5672/, localPort= 38094]
+24-11-05.23:35:52.924 [main            ] INFO  Application            - Started Application in 4.019 seconds (JVM running for 4.415)
+24-11-05.23:35:53.070 [RMI TCP Connection(2)-127.0.0.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-11-05.23:35:53.070 [RMI TCP Connection(2)-127.0.0.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-11-05.23:35:53.071 [RMI TCP Connection(3)-127.0.0.1] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-05.23:35:53.072 [RMI TCP Connection(2)-127.0.0.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+24-11-05.23:35:53.482 [RMI TCP Connection(3)-127.0.0.1] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-05.23:35:53.496 [RMI TCP Connection(3)-127.0.0.1] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-05.23:35:53.514 [RMI TCP Connection(3)-127.0.0.1] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-05.23:35:55.043 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
+24-11-05.23:36:00.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
+24-11-05.23:36:03.532 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-11-05.23:36:03.917 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-11-05.23:36:03.931 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped

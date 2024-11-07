@@ -7,16 +7,20 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author mufen
- * @Description 抽奖应答对象
- * @create 2024/10/25 01:05
+ * @Description 活动抽奖请求参数
+ * @create 2024/11/6 11:27
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RaffleResponseDTO {
-    // 奖品Id
-    private Integer awardId;
-    // 排序编号
-    private Integer awardIndex;
+public class ActivityDrawRequestDTO {
+    /**
+     * 用户Id
+     */
+    private String userId;
+    /**
+     * 活动Id
+     */
+    private Long activityId;
 }

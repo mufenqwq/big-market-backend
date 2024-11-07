@@ -3,8 +3,8 @@ package site.mufen.trigger.api;
 
 import site.mufen.trigger.api.dto.RaffleAwardListRequestDTO;
 import site.mufen.trigger.api.dto.RaffleAwardListResponseDTO;
-import site.mufen.trigger.api.dto.RaffleRequestDTO;
-import site.mufen.trigger.api.dto.RaffleResponseDTO;
+import site.mufen.trigger.api.dto.RaffleStrategyRequestDTO;
+import site.mufen.trigger.api.dto.RaffleStrategyResponseDTO;
 import site.mufen.types.model.Response;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  * @Description 抽奖服务接口
  * @create 2024/10/24 23:58
  */
-public interface IRaffleService {
+public interface IRaffleStrategyService {
     /**
      * 策略装配接口
      * @param strategyId 策略Id
@@ -34,5 +34,5 @@ public interface IRaffleService {
      * @param requestDTO 请求参数
      * @return 抽奖结果
      */
-    Response<RaffleResponseDTO> randomRaffle(RaffleRequestDTO requestDTO);
+    Response<RaffleStrategyResponseDTO> randomRaffle(RaffleStrategyRequestDTO requestDTO);
 }

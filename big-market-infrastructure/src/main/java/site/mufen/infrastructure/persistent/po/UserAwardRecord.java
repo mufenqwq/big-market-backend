@@ -32,6 +32,10 @@ public class UserAwardRecord {
      */
     private String orderId;
     /**
+     * 奖品Id
+     */
+    private Integer awardId;
+    /**
      * 奖品标题
      */
     private String awardTitle;

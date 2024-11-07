@@ -3,6 +3,8 @@ package site.mufen.infrastructure.persistent.dao;
 import org.apache.ibatis.annotations.Mapper;
 import site.mufen.infrastructure.persistent.po.RaffleActivitySku;
 
+import java.util.List;
+
 /**
  * @author mufen
  * @Description 商品sku Dao
@@ -16,4 +18,6 @@ public interface IRaffleActivitySkuDao {
     void updateActivitySKuStock(Long sku);
 
     void clearActivitySkuStock(Long sku);
+
+    List<RaffleActivitySku> queryActivitySkuListByActivityId(Long activityId);
 }

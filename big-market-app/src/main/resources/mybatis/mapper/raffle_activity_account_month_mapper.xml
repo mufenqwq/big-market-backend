@@ -19,7 +19,7 @@
     </insert>
     <update id="updateActivityAccountMonthSubtractionQuota">
         update raffle_activity_account_month
-        set month_count_surplus = month_count_surplus - 1 and update_time = now()
+        set month_count_surplus = month_count_surplus - 1 , update_time = now()
         where user_id = #{userId} and activity_id = #{activityId} and month = #{month}
     </update>
     <select id="queryActivityAccountMonthByUserId" resultMap="dataMap" parameterType="site.mufen.infrastructure.persistent.po.RaffleActivityAccountMonth">

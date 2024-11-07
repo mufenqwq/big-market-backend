@@ -8,6 +8,7 @@ import site.mufen.types.common.Constants;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author mufen
@@ -23,9 +24,29 @@ public class ActivityArmory implements IActivityArmory, IActivityDispatch{
 
     @Override
     public boolean assembleActivitySku(Long sku) {
+        // 预热sku活动库存
         ActivitySkuEntity activitySkuEntity = activityRepository.queryActivitySku(sku);
-        cacheActivitySkuStockCount(sku, activitySkuEntity.getStockCount());
-        return false;
+        cacheActivitySkuStockCount(sku, activitySkuEntity.getStockCountSurplus());
+
+        // 预热活动 【查询时预热到缓存中】
+        activityRepository.queryRaffleActivityByActivityId(activitySkuEntity.getActivityId());
+        // 预热活动次数
+        activityRepository.queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());
+        return true;
+    }
+
+    @Override
+    public boolean assembleActivitySkuByActivityId(Long activityId) {
+        List<ActivitySkuEntity> activitySkuEntities = activityRepository.queryActivitySkuListByActivityId(activityId);
+        for (ActivitySkuEntity activitySkuEntity : activitySkuEntities) {
+            cacheActivitySkuStockCount(activitySkuEntity.getSku(), activitySkuEntity.getStockCountSurplus());
+
+            // 预热活动次数
+            activityRepository.queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());
+        }
+        // 预热活动
+        activityRepository.queryRaffleActivityByActivityId(activityId);
+        return true;
     }
 
     private void cacheActivitySkuStockCount(Long sku, Integer stockCount) {

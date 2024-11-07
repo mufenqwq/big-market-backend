@@ -16,6 +16,7 @@ spring:
   rabbitmq:
     topic:
       activity_sku_stock_zero: activity_sku_stock_zero
+      send_award: send_award
     addresses: 127.0.0.1
     port: 5672
     username: admin
@@ -94,7 +95,8 @@ mini-db-router:
 
 mybatis:
   mapper-locations: classpath:/mybatis/mapper/*.xml
-  config-location:  classpath:/mybatis/config/mybatis-config.xml
+  configuration:
+    map-underscore-to-camel-case: true
   
   
   # Redis

@@ -1,0 +1,25 @@
+24-11-05.01:24:52.618 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=49s38ms542µs228ns).
+24-11-05.01:24:52.618 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=49s38ms534µs834ns).
+24-11-05.01:30:05.444 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m31s886ms448µs154ns).
+24-11-05.01:30:05.447 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m31s888ms87µs501ns).
+24-11-05.01:31:29.593 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m22s456ms571µs327ns).
+24-11-05.01:31:29.593 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m22s456ms484µs559ns).
+24-11-05.01:33:00.612 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m32s711ms241µs976ns).
+24-11-05.01:33:00.612 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m32s711ms244µs580ns).
+24-11-05.01:57:25.367 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m34s682ms537µs909ns).
+24-11-05.08:33:34.505 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=4m33s272ms873µs381ns).
+24-11-05.08:39:44.701 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m27s981ms322µs228ns).
+24-11-05.10:20:13.705 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.10:26:00.265 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=46s180ms461µs66ns).
+24-11-05.10:35:47.226 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=9m48s247ms206µs884ns).
+24-11-05.10:36:46.121 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.10:37:28.023 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.10:39:47.485 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m898ms593ns).
+24-11-05.10:39:47.678 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.10:41:52.290 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m43s776ms90µs574ns).
+24-11-05.10:41:52.432 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.10:44:35.588 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m21s155ms551µs318ns).
+24-11-05.10:44:35.729 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.10:47:58.297 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.10:49:12.366 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301
+24-11-05.11:03:19.539 [main            ] ERROR ActivityRepository     - 写入创建参与活动记录，唯一索引冲突 userId:xiaofuge activityId:100301

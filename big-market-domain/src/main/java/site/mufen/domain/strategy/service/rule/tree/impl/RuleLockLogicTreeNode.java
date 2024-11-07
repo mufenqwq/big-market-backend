@@ -18,9 +18,6 @@ import javax.annotation.Resource;
 @Component("rule_lock")
 public class RuleLockLogicTreeNode implements ILogicTreeNode {
 
-    //todo 后续需要从数据库中获取
-    private Long userRaffleCount = 10L;
-
     @Resource
     private IStrategyRepository repository;
 
@@ -34,14 +31,18 @@ public class RuleLockLogicTreeNode implements ILogicTreeNode {
         } catch (Exception e) {
             throw new RuntimeException("规则过滤-次数锁异常 ruleValue: " + ruleValue + "配置不正常");
         }
+        // 查询用户抽奖次数
+        Integer userRaffleCount = repository.queryTodayUserRaffleCount(userId, strategyId);
 
         // 用户抽奖次数大于规则限度 规则放行
         if (userRaffleCount >= raffleCount) {
+            log.info("规则过滤-次数锁【放行】 userId:{} strategyId:{} awardId:{} raffleCount:{} userRaffleCount:{}", userId, strategyId, awardId, userRaffleCount, userRaffleCount);
             return DefaultTreeFactory.TreeActionEntity.builder()
                     .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.ALLOW)
                     .build();
         }
         // 用户抽奖次数小于规则限定值 规则拦截
+        log.info("规则过滤-次数锁【拦截】 userId:{} strategyId:{} awardId:{} raffleCount:{} userRaffleCount:{}", userId, strategyId, awardId, userRaffleCount, userRaffleCount);
         return DefaultTreeFactory.TreeActionEntity.builder()
                 .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.TAKE_OVER)
                 .build();

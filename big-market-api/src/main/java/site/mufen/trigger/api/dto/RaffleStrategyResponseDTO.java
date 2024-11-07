@@ -7,14 +7,16 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author mufen
- * @Description 抽奖请求参数
- * @create 2024/10/25 01:04
+ * @Description 抽奖应答对象
+ * @create 2024/10/25 01:05
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RaffleRequestDTO {
-    // 抽奖策略Id
-    private Long strategyId;
+public class RaffleStrategyResponseDTO {
+    // 奖品Id
+    private Integer awardId;
+    // 排序编号
+    private Integer awardIndex;
 }
