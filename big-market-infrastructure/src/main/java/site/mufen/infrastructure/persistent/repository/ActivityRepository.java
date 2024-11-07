@@ -434,6 +434,16 @@ public class ActivityRepository implements IActivityRepository {
         return activitySkuEntities;
     }
 
+    @Override
+    public Integer queryRaffleActivityAccountDayPartakeCount(Long activityId, String userId) {
+        RaffleActivityAccountDay raffleActivityAccountDay = new RaffleActivityAccountDay();
+        raffleActivityAccountDay.setActivityId(activityId);
+        raffleActivityAccountDay.setUserId(userId);
+        raffleActivityAccountDay.setDay(raffleActivityAccountDay.currentDay());
+        Integer dayRaffleCount = raffleActivityAccountDayDao.queryRaffleActivityAccountDayPartakeCount(raffleActivityAccountDay);
+        return null == dayRaffleCount ? 0 : dayRaffleCount;
+    }
+
     private static ActivitySkuEntity getActivitySkuEntity(RaffleActivitySku raffleActivitySku, Long sku) {
         Long activityId = raffleActivitySku.getActivityId();
         Long activityCountId = raffleActivitySku.getActivityCountId();

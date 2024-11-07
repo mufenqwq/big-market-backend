@@ -14,6 +14,7 @@ import site.mufen.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.AbstractRaffleStrategy;
 import site.mufen.domain.strategy.service.IRaffleAward;
+import site.mufen.domain.strategy.service.IRaffleRule;
 import site.mufen.domain.strategy.service.IRaffleStock;
 import site.mufen.domain.strategy.service.armory.IStrategyDispatch;
 import site.mufen.domain.strategy.service.rule.chain.ILogicChain;
@@ -37,7 +38,7 @@ import java.util.stream.Collectors;
  */
 @Service
 @Slf4j
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRaffleStock, IRaffleAward {
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRaffleStock, IRaffleAward, IRaffleRule {
 
     @Resource
     private DefaultLogicFactory logicFactory;
@@ -162,5 +163,16 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
     @Override
     public List<StrategyAwardEntity> queryRaffleStrategyAwardList(Long strategyId) {
         return repository.queryStrategyAwardList(strategyId);
+    }
+
+    @Override
+    public List<StrategyAwardEntity> queryRaffleStrategyAwardListByActivityId(Long activityId) {
+        Long strategyId = repository.queryStrategyIdByActivityId(activityId);
+        return repository.queryStrategyAwardList(strategyId);
+    }
+
+    @Override
+    public Map<String, Integer> queryAwardRuleLockCount(String[] treeIds) {
+        return repository.queryAwardRuleLockCount(treeIds);
     }
 }

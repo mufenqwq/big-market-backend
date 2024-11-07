@@ -1,392 +1,80 @@
-24-11-06.00:00:00.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:05.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:10.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:15.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:20.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:25.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:30.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:35.003 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:40.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:45.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:50.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:00:55.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:00.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:05.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:10.003 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:15.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:20.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:25.002 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:30.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:35.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:40.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:45.008 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:50.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:01:55.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:00.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:05.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:10.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:15.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:20.002 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:25.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:30.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:35.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:40.003 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:45.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:50.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:02:55.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:03:00.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:03:05.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:03:05.852 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-11-06.00:03:06.517 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-11-06.00:03:06.524 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-11-06.00:03:15.382 [main            ] INFO  AwardServiceTest       - Starting AwardServiceTest using Java 1.8.0_432 on myarch with PID 248853 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
-24-11-06.00:03:15.384 [main            ] INFO  AwardServiceTest       - The following 1 profile is active: "dev"
-24-11-06.00:03:16.570 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-06.00:03:16.574 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-06.00:03:16.621 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
-24-11-06.00:03:18.178 [main            ] INFO  Version                - Redisson 3.23.4
-24-11-06.00:03:18.342 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-06.00:03:18.357 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-06.00:03:20.828 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-06.00:03:20.956 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-11-06.00:03:21.024 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#43588265:0/SimpleConnection@4cf01c41 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 50570]
-24-11-06.00:03:21.114 [main            ] INFO  AwardServiceTest       - Started AwardServiceTest in 6.286 seconds (JVM running for 7.176)
-24-11-06.00:03:21.490 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-11-06.00:03:21.711 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-11-06.00:03:21.763 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"37709646657","timestamp":1730822601326}
-24-11-06.00:03:21.763 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:22.291 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"73088968525","timestamp":1730822602279}
-24-11-06.00:03:22.291 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:22.810 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"53099599388","timestamp":1730822602797}
-24-11-06.00:03:22.811 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:23.333 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"80751517920","timestamp":1730822603317}
-24-11-06.00:03:23.334 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:23.858 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"02961983946","timestamp":1730822603840}
-24-11-06.00:03:23.858 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:24.385 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"27950309909","timestamp":1730822604366}
-24-11-06.00:03:24.385 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:24.911 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"55524458390","timestamp":1730822604894}
-24-11-06.00:03:24.912 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:25.025 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:03:25.435 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"82739212811","timestamp":1730822605418}
-24-11-06.00:03:25.435 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:25.956 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"38686570045","timestamp":1730822605943}
-24-11-06.00:03:25.956 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:26.483 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"90186677274","timestamp":1730822606463}
-24-11-06.00:03:26.484 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:27.004 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"07683927431","timestamp":1730822606991}
-24-11-06.00:03:27.005 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:27.525 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"56880780053","timestamp":1730822607510}
-24-11-06.00:03:27.526 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:28.066 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"74684559314","timestamp":1730822608032}
-24-11-06.00:03:28.066 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:28.593 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"44507146551","timestamp":1730822608575}
-24-11-06.00:03:28.594 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:29.167 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"38508755785","timestamp":1730822609100}
-24-11-06.00:03:29.167 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:29.699 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"00237682769","timestamp":1730822609673}
-24-11-06.00:03:29.700 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:30.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:03:30.268 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"31006543327","timestamp":1730822610207}
-24-11-06.00:03:30.268 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:30.792 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"65721259606","timestamp":1730822610774}
-24-11-06.00:03:30.792 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:31.312 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"57449746762","timestamp":1730822611298}
-24-11-06.00:03:31.313 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:31.835 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"16148249350","timestamp":1730822611819}
-24-11-06.00:03:31.835 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:32.358 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"23050756803","timestamp":1730822612342}
-24-11-06.00:03:32.358 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:32.878 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"04826955921","timestamp":1730822612865}
-24-11-06.00:03:32.878 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:33.400 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"42272597582","timestamp":1730822613384}
-24-11-06.00:03:33.400 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:33.922 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"11733316451","timestamp":1730822613906}
-24-11-06.00:03:33.922 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:34.444 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"70229061542","timestamp":1730822614429}
-24-11-06.00:03:34.444 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:34.963 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"80124440224","timestamp":1730822614950}
-24-11-06.00:03:34.963 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:35.002 [scheduling-1    ] INFO  SendMessageTaskJob     - 测试结果: 2
-24-11-06.00:03:35.480 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"21247968273","timestamp":1730822615468}
-24-11-06.00:03:35.480 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:36.001 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"04721793981","timestamp":1730822615987}
-24-11-06.00:03:36.001 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:36.257 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-11-06.00:03:36.519 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"16238648048","timestamp":1730822616506}
-24-11-06.00:03:36.520 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:37.039 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"37176594733","timestamp":1730822617026}
-24-11-06.00:03:37.039 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:03:37.102 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-11-06.00:03:37.107 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-11-06.00:25:14.423 [main            ] INFO  AwardServiceTest       - Starting AwardServiceTest using Java 1.8.0_432 on myarch with PID 259897 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
-24-11-06.00:25:14.424 [main            ] INFO  AwardServiceTest       - The following 1 profile is active: "dev"
-24-11-06.00:25:15.327 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-06.00:25:15.330 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-06.00:25:15.364 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-24-11-06.00:25:17.073 [main            ] INFO  Version                - Redisson 3.23.4
-24-11-06.00:25:17.263 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-06.00:25:17.276 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-06.00:25:19.922 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-06.00:25:20.009 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-11-06.00:25:20.061 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#99c4993:0/SimpleConnection@58a8ea6f [delegate=amqp://admin@127.0.0.1:5672/, localPort= 46298]
-24-11-06.00:25:20.159 [main            ] INFO  AwardServiceTest       - Started AwardServiceTest in 6.129 seconds (JVM running for 6.838)
-24-11-06.00:25:20.540 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-11-06.00:25:20.804 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-11-06.00:25:20.864 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"42477685737","timestamp":1730823920347}
-24-11-06.00:25:20.864 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:20.879 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"42477685737","timestamp":1730823920347}
-24-11-06.00:25:21.393 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"38741503528","timestamp":1730823921381}
-24-11-06.00:25:21.393 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:21.394 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"38741503528","timestamp":1730823921381}
-24-11-06.00:25:21.912 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"25943345211","timestamp":1730823921899}
-24-11-06.00:25:21.912 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:21.913 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"25943345211","timestamp":1730823921899}
-24-11-06.00:25:22.428 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"11927523786","timestamp":1730823922417}
-24-11-06.00:25:22.428 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:22.429 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"11927523786","timestamp":1730823922417}
-24-11-06.00:25:22.946 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"11986787999","timestamp":1730823922933}
-24-11-06.00:25:22.946 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:22.948 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"11986787999","timestamp":1730823922933}
-24-11-06.00:25:23.471 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"45617506506","timestamp":1730823923453}
-24-11-06.00:25:23.472 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:23.474 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"45617506506","timestamp":1730823923453}
-24-11-06.00:25:23.996 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"92270490129","timestamp":1730823923979}
-24-11-06.00:25:23.997 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:23.999 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"92270490129","timestamp":1730823923979}
-24-11-06.00:25:24.523 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"64272095892","timestamp":1730823924505}
-24-11-06.00:25:24.524 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:24.526 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"64272095892","timestamp":1730823924505}
-24-11-06.00:25:25.049 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"53893843067","timestamp":1730823925033}
-24-11-06.00:25:25.049 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:25.050 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"53893843067","timestamp":1730823925033}
-24-11-06.00:25:25.058 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-11-06.00:25:25.078 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-11-06.00:25:25.083 [pool-3-thread-3 ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"26021447219","timestamp":1712391046477}
-24-11-06.00:25:25.086 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"26021447219","timestamp":1712391046477}
-24-11-06.00:25:25.086 [pool-3-thread-4 ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"29510804265","timestamp":1712391047005}
-24-11-06.00:25:25.087 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"29510804265","timestamp":1712391047005}
-24-11-06.00:25:25.574 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"86214877961","timestamp":1730823925556}
-24-11-06.00:25:25.575 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:25.576 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"86214877961","timestamp":1730823925556}
-24-11-06.00:25:26.099 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"69367495375","timestamp":1730823926083}
-24-11-06.00:25:26.100 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:26.101 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"69367495375","timestamp":1730823926083}
-24-11-06.00:25:26.620 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"06797350071","timestamp":1730823926605}
-24-11-06.00:25:26.620 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:26.621 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"06797350071","timestamp":1730823926605}
-24-11-06.00:25:27.144 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"35748373737","timestamp":1730823927127}
-24-11-06.00:25:27.144 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:27.145 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"35748373737","timestamp":1730823927127}
-24-11-06.00:25:27.668 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"67446804987","timestamp":1730823927651}
-24-11-06.00:25:27.668 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:27.671 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"67446804987","timestamp":1730823927651}
-24-11-06.00:25:28.194 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"85491424247","timestamp":1730823928181}
-24-11-06.00:25:28.195 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:28.196 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"85491424247","timestamp":1730823928181}
-24-11-06.00:25:28.714 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"22157753661","timestamp":1730823928701}
-24-11-06.00:25:28.714 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:28.715 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"22157753661","timestamp":1730823928701}
-24-11-06.00:25:29.233 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"67354175364","timestamp":1730823929220}
-24-11-06.00:25:29.233 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:29.234 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"67354175364","timestamp":1730823929220}
-24-11-06.00:25:29.763 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"42631111548","timestamp":1730823929739}
-24-11-06.00:25:29.763 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:29.764 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"42631111548","timestamp":1730823929739}
-24-11-06.00:25:30.007 [pool-3-thread-8 ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"29510804265","timestamp":1712391047005}
-24-11-06.00:25:30.007 [pool-3-thread-7 ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"26021447219","timestamp":1712391046477}
-24-11-06.00:25:30.008 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"26021447219","timestamp":1712391046477}
-24-11-06.00:25:30.009 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"29510804265","timestamp":1712391047005}
-24-11-06.00:25:30.277 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"73127761656","timestamp":1730823930269}
-24-11-06.00:25:30.277 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:30.279 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"73127761656","timestamp":1730823930269}
-24-11-06.00:25:30.800 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"55470088286","timestamp":1730823930783}
-24-11-06.00:25:30.800 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:30.802 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"55470088286","timestamp":1730823930783}
-24-11-06.00:25:31.324 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"18556747651","timestamp":1730823931307}
-24-11-06.00:25:31.324 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:31.326 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"18556747651","timestamp":1730823931307}
-24-11-06.00:25:31.844 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"71548810910","timestamp":1730823931831}
-24-11-06.00:25:31.845 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:31.846 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"71548810910","timestamp":1730823931831}
-24-11-06.00:25:32.363 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"67815296086","timestamp":1730823932350}
-24-11-06.00:25:32.363 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:32.365 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"67815296086","timestamp":1730823932350}
-24-11-06.00:25:32.881 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"86702203064","timestamp":1730823932869}
-24-11-06.00:25:32.881 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:32.883 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"86702203064","timestamp":1730823932869}
-24-11-06.00:25:33.403 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"50118470092","timestamp":1730823933389}
-24-11-06.00:25:33.403 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:33.406 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"50118470092","timestamp":1730823933389}
-24-11-06.00:25:33.926 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"59879737748","timestamp":1730823933912}
-24-11-06.00:25:33.926 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:33.927 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"59879737748","timestamp":1730823933912}
-24-11-06.00:25:34.440 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"21887709802","timestamp":1730823934431}
-24-11-06.00:25:34.440 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:34.442 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"21887709802","timestamp":1730823934431}
-24-11-06.00:25:34.959 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"27465074476","timestamp":1730823934946}
-24-11-06.00:25:34.959 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:34.960 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"27465074476","timestamp":1730823934946}
-24-11-06.00:25:35.006 [pool-3-thread-11] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"26021447219","timestamp":1712391046477}
-24-11-06.00:25:35.006 [pool-3-thread-12] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"29510804265","timestamp":1712391047005}
-24-11-06.00:25:35.006 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"29510804265","timestamp":1712391047005}
-24-11-06.00:25:35.007 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"26021447219","timestamp":1712391046477}
-24-11-06.00:25:35.477 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"87526611370","timestamp":1730823935465}
-24-11-06.00:25:35.478 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:35.479 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"87526611370","timestamp":1730823935465}
-24-11-06.00:25:35.998 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"84825278126","timestamp":1730823935985}
-24-11-06.00:25:35.999 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:36.000 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"84825278126","timestamp":1730823935985}
-24-11-06.00:25:36.123 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-11-06.00:25:36.124 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-11-06.00:25:36.137 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-11-06.00:25:36.514 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"15745530136","timestamp":1730823936505}
-24-11-06.00:25:36.515 [main            ] INFO  AwardRepository        - 更新task表 任务消息发送完成
-24-11-06.00:25:37.002 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-11-06.00:25:37.009 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-11-06.00:25:37.010 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-11-06.00:25:37.034 [main            ] ERROR EventPublisher         - 发送MQ消息失败 topic: send_award, message: {"data":{"awardId":101,"awardTitle":"OpenAI 增加使用次数","userId":"xiaofuge"},"id":"64958856493","timestamp":1730823937020}
-org.springframework.amqp.AmqpApplicationContextClosedException: The ApplicationContext is closed and the ConnectionFactory can no longer create connections.
-	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:719)
-	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:252)
-	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2210)
-	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2183)
-	at org.springframework.amqp.rabbit.core.RabbitTemplate.send(RabbitTemplate.java:1102)
-	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertAndSend(RabbitTemplate.java:1167)
-	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertAndSend(RabbitTemplate.java:1149)
-	at site.mufen.infrastructure.event.EventPublisher.publish(EventPublisher.java:36)
-	at site.mufen.infrastructure.persistent.repository.AwardRepository.saveUserAwardRecord(AwardRepository.java:96)
-	at site.mufen.infrastructure.persistent.repository.AwardRepository$$FastClassBySpringCGLIB$$8053021d.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at site.mufen.infrastructure.persistent.repository.AwardRepository$$EnhancerBySpringCGLIB$$b6e6a35f.saveUserAwardRecord(<generated>)
-	at site.mufen.domain.award.service.AwardService.saveUserAwardRecord(AwardService.java:54)
-	at site.mufen.test.domain.award.AwardServiceTest.test_saveUserAwardRecord(AwardServiceTest.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-24-11-06.00:25:37.034 [main            ] ERROR AwardRepository        - 写入中奖记录，发送MQ消息失败: userId:xiaofuge, topic:send_award
-24-11-06.14:15:00.903 [main            ] INFO  AwardServiceTest       - Starting AwardServiceTest using Java 1.8.0_432 on myarch with PID 128354 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
-24-11-06.14:15:00.904 [main            ] INFO  AwardServiceTest       - The following 1 profile is active: "dev"
-24-11-06.14:15:01.832 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-06.14:15:01.835 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-06.14:15:01.867 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
-24-11-06.14:15:03.183 [main            ] INFO  Version                - Redisson 3.23.4
-24-11-06.14:15:03.357 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-06.14:15:03.368 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-06.14:15:04.628 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'raffleActivityController': Unsatisfied dependency expressed through field 'buildProperties'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.boot.info.BuildProperties' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-24-11-06.14:15:04.662 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-24-11-06.14:15:04.684 [main            ] ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field buildProperties in site.mufen.trigger.http.RaffleActivityController required a bean of type 'org.springframework.boot.info.BuildProperties' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'org.springframework.boot.info.BuildProperties' in your configuration.
-
-24-11-06.14:15:04.687 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@77f80c04] to prepare test instance [site.mufen.test.domain.award.AwardServiceTest@4fe2dd02]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'raffleActivityController': Unsatisfied dependency expressed through field 'buildProperties'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.boot.info.BuildProperties' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
-	... 27 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.boot.info.BuildProperties' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 46 common frames omitted
+24-11-07.23:02:28.520 [main            ] INFO  RaffleStrategyControllerTest - Starting RaffleStrategyControllerTest using Java 1.8.0_432 on myarch with PID 58617 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-11-07.23:02:28.521 [main            ] INFO  RaffleStrategyControllerTest - The following 1 profile is active: "dev"
+24-11-07.23:02:29.834 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-07.23:02:29.841 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-07.23:02:29.890 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+24-11-07.23:02:31.593 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-07.23:02:31.913 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-07.23:02:31.943 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-07.23:02:36.546 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-07.23:02:36.654 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+24-11-07.23:02:36.727 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2774dcf4:0/SimpleConnection@2fa47368 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 44690]
+24-11-07.23:02:36.835 [main            ] INFO  RaffleStrategyControllerTest - Started RaffleStrategyControllerTest in 8.818 seconds (JVM running for 9.751)
+24-11-07.23:02:37.168 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配开始 userId：xiaofuge activityId:100301
+24-11-07.23:02:37.211 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-07.23:02:37.495 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-07.23:02:37.613 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-07.23:02:37.636 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-07.23:02:37.821 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配置完成 userId：xiaofuge activityId:100301 response: {"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnlockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnlockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnlockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnlockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnlockCount":0},{"awardId":106,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":true,"sort":6,"waitUnlockCount":0},{"awardId":107,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":true,"sort":7,"waitUnlockCount":0},{"awardId":108,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":true,"sort":8,"waitUnlockCount":0}],"info":"成功"}
+24-11-07.23:02:37.824 [main            ] INFO  RaffleStrategyControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+24-11-07.23:02:37.825 [main            ] INFO  RaffleStrategyControllerTest - 测试结果：{"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnlockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnlockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnlockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnlockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnlockCount":0},{"awardId":106,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":true,"sort":6,"waitUnlockCount":0},{"awardId":107,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":true,"sort":7,"waitUnlockCount":0},{"awardId":108,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":true,"sort":8,"waitUnlockCount":0}],"info":"成功"}
+24-11-07.23:02:37.848 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-11-07.23:02:37.849 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-11-07.23:02:38.802 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-11-07.23:02:38.807 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-11-07.23:02:38.810 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-11-07.23:02:38.811 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-11-07.23:04:12.620 [main            ] INFO  RaffleStrategyControllerTest - Starting RaffleStrategyControllerTest using Java 1.8.0_432 on myarch with PID 60256 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-11-07.23:04:12.623 [main            ] INFO  RaffleStrategyControllerTest - The following 1 profile is active: "dev"
+24-11-07.23:04:14.122 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-07.23:04:14.129 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-07.23:04:14.197 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 0 Redis repository interfaces.
+24-11-07.23:04:16.515 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-07.23:04:16.864 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-07.23:04:16.880 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-07.23:04:21.244 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-07.23:04:21.344 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+24-11-07.23:04:21.406 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4c5da4f9:0/SimpleConnection@1d0dad12 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 54508]
+24-11-07.23:04:21.496 [main            ] INFO  RaffleStrategyControllerTest - Started RaffleStrategyControllerTest in 9.57 seconds (JVM running for 10.628)
+24-11-07.23:04:21.706 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配开始 userId：xiaofuge activityId:100301
+24-11-07.23:04:21.751 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-07.23:04:22.020 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-07.23:04:22.135 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-07.23:04:22.155 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-07.23:04:22.359 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配置完成 userId：xiaofuge activityId:100301 response: {"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnlockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnlockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnlockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnlockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnlockCount":0},{"awardId":106,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":true,"sort":6,"waitUnlockCount":0},{"awardId":107,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":true,"sort":7,"waitUnlockCount":0},{"awardId":108,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":true,"sort":8,"waitUnlockCount":0}],"info":"成功"}
+24-11-07.23:04:22.362 [main            ] INFO  RaffleStrategyControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+24-11-07.23:04:22.363 [main            ] INFO  RaffleStrategyControllerTest - 测试结果：{"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnlockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnlockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnlockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnlockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnlockCount":0},{"awardId":106,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":true,"sort":6,"waitUnlockCount":0},{"awardId":107,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":true,"sort":7,"waitUnlockCount":0},{"awardId":108,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":true,"sort":8,"waitUnlockCount":0}],"info":"成功"}
+24-11-07.23:04:22.381 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-11-07.23:04:22.382 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-11-07.23:04:22.472 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-11-07.23:04:22.474 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-11-07.23:04:22.477 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-11-07.23:04:22.477 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-11-07.23:07:01.250 [main            ] INFO  RaffleStrategyControllerTest - Starting RaffleStrategyControllerTest using Java 1.8.0_432 on myarch with PID 61920 (started by mufen in /home/mufen/Downloads/big-market/big-market-app)
+24-11-07.23:07:01.252 [main            ] INFO  RaffleStrategyControllerTest - The following 1 profile is active: "dev"
+24-11-07.23:07:02.677 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-07.23:07:02.683 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-07.23:07:02.746 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
+24-11-07.23:07:04.642 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-07.23:07:04.879 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-07.23:07:04.897 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-07.23:07:08.720 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-07.23:07:08.806 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+24-11-07.23:07:08.891 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4c5da4f9:0/SimpleConnection@58a8ea6f [delegate=amqp://admin@127.0.0.1:5672/, localPort= 35138]
+24-11-07.23:07:09.019 [main            ] INFO  RaffleStrategyControllerTest - Started RaffleStrategyControllerTest in 8.432 seconds (JVM running for 9.389)
+24-11-07.23:07:09.293 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配开始 userId：xiaofuge activityId:100301
+24-11-07.23:07:09.348 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-07.23:07:09.641 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-07.23:07:09.774 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-07.23:07:09.791 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-07.23:07:09.988 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配置完成 userId：xiaofuge activityId:100301 response: {"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnlockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnlockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnlockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnlockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnlockCount":0},{"awardId":106,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":true,"sort":6,"waitUnlockCount":0},{"awardId":107,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":true,"sort":7,"waitUnlockCount":0},{"awardId":108,"awardRuleLockCount":2,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":true,"sort":8,"waitUnlockCount":0}],"info":"成功"}
+24-11-07.23:07:09.992 [main            ] INFO  RaffleStrategyControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+24-11-07.23:07:09.992 [main            ] INFO  RaffleStrategyControllerTest - 测试结果：{"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnlockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnlockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnlockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnlockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnlockCount":0},{"awardId":106,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":true,"sort":6,"waitUnlockCount":0},{"awardId":107,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":true,"sort":7,"waitUnlockCount":0},{"awardId":108,"awardRuleLockCount":2,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":true,"sort":8,"waitUnlockCount":0}],"info":"成功"}
+24-11-07.23:07:10.007 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-11-07.23:07:10.013 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-11-07.23:07:10.014 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-11-07.23:07:10.021 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-11-07.23:07:10.989 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-11-07.23:07:10.994 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-11-07.23:07:10.997 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-11-07.23:07:10.998 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
