@@ -30,7 +30,7 @@ import java.util.List;
  */
 @Slf4j
 @RestController()
-@CrossOrigin("/${app.config.cross-origin}/")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/${app.config.api-version}/raffle/activity")
 public class RaffleActivityController implements IRaffleActivityService {
 
