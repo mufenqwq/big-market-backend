@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author mufen
  * @Description 抽奖奖品实体
@@ -32,4 +34,8 @@ public class RaffleAwardEntity {
      * 奖品顺序号
      */
     private Integer sort;
+    /**
+     * 结束时间
+     */
+    private Date endDateTime;
 }

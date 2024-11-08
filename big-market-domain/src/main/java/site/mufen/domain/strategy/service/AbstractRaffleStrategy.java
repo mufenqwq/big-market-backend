@@ -14,13 +14,15 @@ import site.mufen.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
 
+import java.util.Date;
+
 /**
  * @author mufen
  * @Description 抽象策略抽象类
  * @create 2024/10/17 20:42
  */
 @Slf4j
-public abstract class AbstractRaffleStrategy implements IRaffleStrategy{
+public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
 
     // 策略仓储服务 -> domain层像一个大厨，仓储层提供米面粮油
     protected IStrategyRepository repository;
@@ -60,7 +62,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy{
         }
 
         // 3.规则树抽奖过滤 [奖品ID 会根据抽奖次数判断 库存判断 兜底树节点返回最终最终可用的奖品信息]
-        DefaultTreeFactory.StrategyAwardVO treeStrategyAwardVO = raffleLogicTree(userId, strategyId, chainStrategyAwardVO.getAwardId());
+        DefaultTreeFactory.StrategyAwardVO treeStrategyAwardVO = raffleLogicTree(userId, strategyId, chainStrategyAwardVO.getAwardId(), raffleFactorEntity.getEndDateTime());
         log.info("抽奖策略计算-规则树 {} {} {} {}", userId, strategyId, treeStrategyAwardVO.getAwardId(), treeStrategyAwardVO.getAwardRuleValue());
 
         // 4. 返回抽奖结果
@@ -117,7 +119,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy{
     }
 
     private RaffleAwardEntity buildRaffleAwardEntity(Long strategyId, Integer awardId, String awardConfig) {
-        StrategyAwardEntity strategyAward =  repository.queryStrategyAwardEntity(strategyId, awardId);
+        StrategyAwardEntity strategyAward = repository.queryStrategyAwardEntity(strategyId, awardId);
         return RaffleAwardEntity.builder()
                 .awardId(awardId)
                 .awardConfig(awardConfig)
@@ -128,7 +130,8 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy{
 
     /**
      * 抽奖计算 责任链抽象方法
-     * @param userId 用户 Id
+     *
+     * @param userId     用户 Id
      * @param strategyId 策略Id
      * @return 奖品对象
      */
@@ -136,16 +139,24 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy{
 
     /**
      * 抽奖决策树过滤， 决策树抽象方法
-     * @param userId 用户Id
+     *
+     * @param userId     用户Id
      * @param strategyId 决策Id
-     * @param awardId 奖品Id
+     * @param awardId    奖品Id
      * @return 奖品对象
      */
     public abstract DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId);
 
-    @Deprecated
-    protected abstract RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> doCheckRaffleBeforeLogic(RaffleFactorEntity raffleFactorEntity, String... logics);
+    /**
+     * 抽奖决策树过滤， 决策树抽象方法
+     *
+     * @param userId     用户Id
+     * @param strategyId 决策Id
+     * @param awardId    奖品Id
+     * @param endDateTime 活动结束时间
+     * @return 奖品对象
+     */
+    public abstract DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId, Date endDateTime);
 
-    @Deprecated
-    protected abstract RuleActionEntity<RuleActionEntity.RaffleCenterEntity> doCheckRaffleCenterLogic(RaffleFactorEntity raffleFactorEntity, String... logics);
+
 }

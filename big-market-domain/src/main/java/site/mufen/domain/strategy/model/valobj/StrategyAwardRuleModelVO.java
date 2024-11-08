@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import site.mufen.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
-import site.mufen.types.common.Constants;
 
-import java.util.ArrayList;
 
 /**
  * @author mufen
@@ -22,18 +19,4 @@ public class StrategyAwardRuleModelVO {
 
     private String ruleModels;
 
-    @Deprecated
-    public String[] raffleCenterRuleModelList() {
-        if (null == ruleModels) {
-            return null;
-        }
-        String[] ruleModelValues = ruleModels.split(Constants.SPLIT);
-        ArrayList<String> ruleModelList = new ArrayList<>();
-        for (String ruleModelValue : ruleModelValues) {
-            if (DefaultLogicFactory.isCenter(ruleModelValue)) {
-                ruleModelList.add(ruleModelValue);
-            }
-        }
-        return ruleModelList.toArray(new String[0]);
-    }
 }

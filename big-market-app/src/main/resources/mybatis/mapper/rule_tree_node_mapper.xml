@@ -13,7 +13,7 @@
     </resultMap>
 
     <select id="queryRuleTreeNodeListByTreeId" resultMap="dataMap">
-        select tree_id, rule_key, rule_desc, rule_value,
+        select tree_id, rule_key, rule_desc, rule_value
         from rule_tree_node where tree_id = #{treeId}
     </select>
     <select id="queryRuleLocks" resultType="site.mufen.infrastructure.persistent.po.RuleTreeNode">

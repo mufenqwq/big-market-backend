@@ -1,5 +1,7 @@
 package site.mufen.domain.strategy.service.armory;
 
+import java.util.Date;
+
 /**
  * @author mufen
  * @Description 策略抽奖的调度
@@ -22,6 +24,6 @@ public interface IStrategyDispatch {
      * @param awardId 奖品 Id
      * @return 扣减结果
      */
-    Boolean subtractionAwardStock(Long strategyId, Integer awardId);
+    Boolean subtractionAwardStock(Long strategyId, Integer awardId, Date endDateTime);
 
 }

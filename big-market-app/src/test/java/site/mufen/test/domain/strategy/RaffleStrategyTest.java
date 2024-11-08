@@ -7,13 +7,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.util.ReflectionTestUtils;
 import site.mufen.domain.strategy.model.entity.RaffleAwardEntity;
 import site.mufen.domain.strategy.model.entity.RaffleFactorEntity;
 import site.mufen.domain.strategy.service.IRaffleStrategy;
 import site.mufen.domain.strategy.service.armory.IStrategyArmory;
-import site.mufen.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
-import site.mufen.domain.strategy.service.rule.filter.impl.RuleWeightLogicFilter;
+
+
 
 import javax.annotation.Resource;
 import java.util.concurrent.CountDownLatch;
@@ -34,11 +33,6 @@ public class RaffleStrategyTest {
     @Resource
     private IRaffleStrategy raffleStrategy;
 
-    @Resource
-    private RuleWeightLogicFilter ruleWeightLogicFilter;
-
-    @Resource
-    private RuleLockLogicFilter ruleLockLogicFilter;
 
     @Before
     public void setUp() {
@@ -47,8 +41,6 @@ public class RaffleStrategyTest {
 //        log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100003L));
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100006L));
 
-        ReflectionTestUtils.setField(ruleWeightLogicFilter, "userScore", 40500L);
-        ReflectionTestUtils.setField(ruleLockLogicFilter, "userRaffleCount", 10L);
     }
 
     @Test
