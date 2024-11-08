@@ -32,8 +32,8 @@ import java.util.Map;
  * @create 2024/10/25 01:07
  */
 @Slf4j
-@RestController()
-@CrossOrigin(origins = "*")
+@RestController
+@CrossOrigin(originPatterns = "*")
 @RequestMapping("/api/${app.config.api-version}/raffle/strategy")
 public class RaffleStrategyController implements IRaffleStrategyService {
 

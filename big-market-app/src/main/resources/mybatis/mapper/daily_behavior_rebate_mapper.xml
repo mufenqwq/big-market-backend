@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.mufen.infrastructure.persistent.dao.IDailyBehaviorRebateDao">
+
+
+    <select id="queryDailyBehaviorRebateConfig" resultType="site.mufen.infrastructure.persistent.po.DailyBehaviorRebate">
+        select id, behavior_type, rebate_desc, rebate_type, rebate_config, state, create_time, update_time
+            from daily_behavior_rebate
+        where behavior_type = #{behaviorType}
+    </select>
+</mapper>

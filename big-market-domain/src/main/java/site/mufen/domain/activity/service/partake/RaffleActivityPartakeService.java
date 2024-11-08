@@ -48,7 +48,7 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityService{
     protected CreatePartakeOrderAggregate doFilterAccount(String userId, Long activityId, Date currentDate) {
         // 查询账户额度
         ActivityAccountEntity activityAccountEntity = activityRepository.queryActivityAccountByUserId(userId, activityId);
-        if (null != activityAccountEntity && activityAccountEntity.getTotalCountSurplus() <= 0) {
+        if (null == activityAccountEntity || activityAccountEntity.getTotalCountSurplus() <= 0) {
             throw new AppException(ResponseCode.ACCOUNT_QUOTA_ERROR.getCode(), ResponseCode.ACCOUNT_QUOTA_ERROR.getInfo());
         }
         String month = dateFormatMonth.format(currentDate);
