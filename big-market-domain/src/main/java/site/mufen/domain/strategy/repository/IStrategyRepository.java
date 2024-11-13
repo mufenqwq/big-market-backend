@@ -4,6 +4,7 @@ import site.mufen.domain.strategy.model.entity.StrategyAwardEntity;
 import site.mufen.domain.strategy.model.entity.StrategyEntity;
 import site.mufen.domain.strategy.model.entity.StrategyRuleEntity;
 import site.mufen.domain.strategy.model.valobj.RuleTreeVO;
+import site.mufen.domain.strategy.model.valobj.RuleWeightVO;
 import site.mufen.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import site.mufen.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 
@@ -89,4 +90,8 @@ public interface IStrategyRepository {
     Integer queryTodayUserRaffleCount(String userId, Long strategyId);
 
     Map<String, Integer> queryAwardRuleLockCount(String[] treeIds);
+
+    Integer queryActivityAccountTotalUseCount(String userId, Long strategyId);
+
+    List<RuleWeightVO> queryAwardRuleWeight(Long strategyId);
 }

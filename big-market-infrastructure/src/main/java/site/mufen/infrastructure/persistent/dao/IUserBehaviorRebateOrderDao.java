@@ -1,9 +1,12 @@
 package site.mufen.infrastructure.persistent.dao;
 
 
+import cn.bugstack.middleware.db.router.annotation.DBRouter;
 import cn.bugstack.middleware.db.router.annotation.DBRouterStrategy;
 import org.apache.ibatis.annotations.Mapper;
 import site.mufen.infrastructure.persistent.po.UserBehaviorRebateOrder;
+
+import java.util.List;
 
 /**
  * @author mufen
@@ -15,4 +18,8 @@ import site.mufen.infrastructure.persistent.po.UserBehaviorRebateOrder;
 public interface IUserBehaviorRebateOrderDao {
 
     void insert(UserBehaviorRebateOrder userBehaviorRebateOrder);
+
+    @DBRouter
+    List<UserBehaviorRebateOrder> queryOrderByOutBusinessNo(UserBehaviorRebateOrder userBehaviorRebateOrder);
+
 }

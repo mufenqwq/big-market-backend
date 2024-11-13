@@ -2,6 +2,8 @@ package site.mufen.trigger.api;
 
 import site.mufen.trigger.api.dto.ActivityDrawRequestDTO;
 import site.mufen.trigger.api.dto.ActivityDrawResponseDTO;
+import site.mufen.trigger.api.dto.UserActivityAccountRequestDTO;
+import site.mufen.trigger.api.dto.UserActivityAccountResponseDTO;
 import site.mufen.types.model.Response;
 /**
  * @author mufen
@@ -23,4 +25,25 @@ public interface IRaffleActivityService {
      * @return 返回抽奖结果
      */
     Response<ActivityDrawResponseDTO> draw(ActivityDrawRequestDTO request);
+
+    /**
+     * 日历签到返利接口
+     * @param userId 用户ID
+     * @return 签到结果
+     */
+    Response<Boolean> calendarSignRebate(String userId);
+
+    /**
+     * 判断是否完成日历签到返利接口
+     * @param userId 用户id
+     * @return 查询结果
+     */
+    Response<Boolean> isCalendarSignRebate(String userId);
+
+    /**
+     * 查询用户活动接口
+     * @param request 请求参数 [活动Id, 用户Id]
+     * @return 返回结果 总额度 月额度 日额度
+     */
+    Response<UserActivityAccountResponseDTO> queryUserActivityAccount(UserActivityAccountRequestDTO request);
 }

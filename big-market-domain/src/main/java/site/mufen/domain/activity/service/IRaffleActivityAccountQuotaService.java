@@ -1,7 +1,6 @@
 package site.mufen.domain.activity.service;
 
-import site.mufen.domain.activity.model.entity.ActivityOrderEntity;
-import site.mufen.domain.activity.model.entity.ActivityShopCartEntity;
+import site.mufen.domain.activity.model.entity.ActivityAccountEntity;
 import site.mufen.domain.activity.model.entity.SkuRechargeEntity;
 
 /**
@@ -24,4 +23,8 @@ public interface IRaffleActivityAccountQuotaService {
     String createSkuRechargeOrder(SkuRechargeEntity skuRechargeEntity);
 
     Integer queryRaffleActivityAccountDayPartakeCount(Long activityId, String userId);
+
+    ActivityAccountEntity queryUserActivityAccount(Long activityId, String userId);
+
+    Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId);
 }

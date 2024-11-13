@@ -9,10 +9,7 @@ import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory
 import site.mufen.types.common.Constants;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author mufen
@@ -51,6 +48,9 @@ public class RuleWeightLogicChain extends AbstractLogicChain {
 
         // 2.转换key值 并默认排序
         ArrayList<Long> analyticalSortedKeys = new ArrayList<>(analyticalValueGroup.keySet());
+        Collections.sort(analyticalSortedKeys);
+        Integer userScore =  repository.queryActivityAccountTotalUseCount(userId, strategyId);
+
         Long nextValue = analyticalSortedKeys.stream().sorted(Comparator.reverseOrder())
                 .filter(analyticalSortedKeysValue -> userScore >= analyticalSortedKeysValue)
                 .findFirst()

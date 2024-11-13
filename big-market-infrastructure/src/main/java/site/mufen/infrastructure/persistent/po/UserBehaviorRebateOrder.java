@@ -41,6 +41,10 @@ public class UserBehaviorRebateOrder {
      */
     private String rebateConfig;
     /**
+     * 业务防重复Id - 外部透穿 方便查询使用
+     */
+    private String outBusinessNo;
+    /**
      * 业务id - 拼接的唯一值
      */
     private String bizId;

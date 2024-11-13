@@ -49,7 +49,7 @@ public class LogicChainTest {
     @Test
     public void test_LogicChain_rule_weight() {
         // 通过反射 mock 规则中的值
-        ReflectionTestUtils.setField(ruleWeightLogicChain, "userScore", 4900L);
+        //ReflectionTestUtils.setField(ruleWeightLogicChain, "userScore", 4900L);
 
         ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
         DefaultChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("xiaofuge", 100001L);

@@ -34,6 +34,7 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
     protected CreateQuotaOrderAggregate buildOrderAggregate(SkuRechargeEntity skuRechargeEntity, ActivitySkuEntity activitySkuEntity, ActivityEntity activityEntity, ActivityCountEntity activityCountEntity) {
         // 订单实体对象
         ActivityOrderEntity activityOrderEntity = new ActivityOrderEntity();
+
         activityOrderEntity.setUserId(skuRechargeEntity.getUserId());
         activityOrderEntity.setSku(skuRechargeEntity.getSku());
         activityOrderEntity.setActivityId(activityEntity.getActivityId());
@@ -82,5 +83,15 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
     @Override
     public Integer queryRaffleActivityAccountDayPartakeCount(Long activityId, String userId) {
         return activityRepository.queryRaffleActivityAccountDayPartakeCount(activityId, userId);
+    }
+
+    @Override
+    public ActivityAccountEntity queryUserActivityAccount(Long activityId, String userId) {
+        return activityRepository.queryUserActivityAccount(activityId, userId);
+    }
+
+    @Override
+    public Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId) {
+        return activityRepository.queryRaffleActivityAccountPartakeCount(activityId, userId);
     }
 }

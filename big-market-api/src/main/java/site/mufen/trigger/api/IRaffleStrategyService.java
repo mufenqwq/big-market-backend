@@ -1,10 +1,7 @@
 package site.mufen.trigger.api;
 
 
-import site.mufen.trigger.api.dto.RaffleAwardListRequestDTO;
-import site.mufen.trigger.api.dto.RaffleAwardListResponseDTO;
-import site.mufen.trigger.api.dto.RaffleStrategyRequestDTO;
-import site.mufen.trigger.api.dto.RaffleStrategyResponseDTO;
+import site.mufen.trigger.api.dto.*;
 import site.mufen.types.model.Response;
 
 import java.util.List;
@@ -35,4 +32,6 @@ public interface IRaffleStrategyService {
      * @return 抽奖结果
      */
     Response<RaffleStrategyResponseDTO> randomRaffle(RaffleStrategyRequestDTO requestDTO);
+
+    Response<List<RaffleStrategyRuleWeightResponseDTO>> queryRaffleStrategyRuleWeight(RaffleStrategyRuleWeightRequestDTO request);
 }

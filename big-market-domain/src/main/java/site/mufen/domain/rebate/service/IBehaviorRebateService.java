@@ -1,6 +1,7 @@
 package site.mufen.domain.rebate.service;
 
 import site.mufen.domain.rebate.model.entity.BehaviorEntity;
+import site.mufen.domain.rebate.model.entity.BehaviorRebateOrderEntity;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface IBehaviorRebateService {
      * @return 订单Id集合
      */
     List<String> createOrder(BehaviorEntity behaviorEntity);
+
+    List<BehaviorRebateOrderEntity> queryOrderByOutBusinessNo(String userId, String outBusinessNo);
 }

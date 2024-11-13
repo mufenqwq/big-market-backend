@@ -3,6 +3,7 @@ package site.mufen.infrastructure.persistent.repository;
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import com.alibaba.fastjson.JSON;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -66,6 +67,32 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
     }
 
     @Override
+    public List<BehaviorRebateOrderEntity> queryOrderByOutBusinessNo(String userId, String outBusinessNo) {
+        // 1. 构建数据库请求对象
+        UserBehaviorRebateOrder userBehaviorRebateOrder = new UserBehaviorRebateOrder();
+        userBehaviorRebateOrder.setUserId(userId);
+        userBehaviorRebateOrder.setOutBusinessNo(outBusinessNo);
+
+        // 2. 查询结果
+        List<UserBehaviorRebateOrder> userBehaviorRebateOrders = userBehaviorRebateOrderDao.queryOrderByOutBusinessNo(userBehaviorRebateOrder);
+        ArrayList<BehaviorRebateOrderEntity> behaviorRebateOrderEntities = new ArrayList<>(userBehaviorRebateOrders.size());
+        for (UserBehaviorRebateOrder behaviorRebateOrder : userBehaviorRebateOrders) {
+            BehaviorRebateOrderEntity behaviorRebateOrderEntity = BehaviorRebateOrderEntity.builder()
+                    .userId(behaviorRebateOrder.getUserId())
+                    .orderId(behaviorRebateOrder.getOrderId())
+                    .behaviorType(behaviorRebateOrder.getBehaviorType())
+                    .rebateDesc(behaviorRebateOrder.getRebateDesc())
+                    .rebateConfig(behaviorRebateOrder.getRebateConfig())
+                    .outBusinessNo(behaviorRebateOrder.getOutBusinessNo())
+                    .bizId(behaviorRebateOrder.getBizId())
+                    .build();
+            behaviorRebateOrderEntities.add(behaviorRebateOrderEntity);
+        }
+
+        return behaviorRebateOrderEntities;
+    }
+
+    @Override
     public void saveUserRebateRecord(String userId, ArrayList<BehaviorRebateAggregate> behaviorRebateAggregates) {
         try {
             dbRouter.doRouter(userId);
@@ -81,6 +108,7 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
                         userBehaviorRebateOrder.setRebateDesc(behaviorRebateOrderEntity.getRebateDesc());
                         userBehaviorRebateOrder.setRebateType(behaviorRebateOrderEntity.getRebateType());
                         userBehaviorRebateOrder.setRebateConfig(behaviorRebateOrderEntity.getRebateConfig());
+                        userBehaviorRebateOrder.setOutBusinessNo(behaviorRebateOrderEntity.getOutBusinessNo());
                         userBehaviorRebateOrder.setBizId(behaviorRebateOrderEntity.getBizId());
                         userBehaviorRebateOrderDao.insert(userBehaviorRebateOrder);
                         //任务对象

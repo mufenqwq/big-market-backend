@@ -1,5 +1,8 @@
 package site.mufen.domain.strategy.service;
 
+import site.mufen.domain.strategy.model.valobj.RuleWeightVO;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,4 +14,8 @@ public interface IRaffleRule {
 
     Map<String, Integer> queryAwardRuleLockCount(String[] treeIds);
 
+
+    List<RuleWeightVO> queryAwardRuleWeight(Long strategyId);
+
+    List<RuleWeightVO> queryAwardRuleWeightByActivityId(Long activityId);
 }

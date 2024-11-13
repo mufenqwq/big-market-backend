@@ -1,6 +1,7 @@
 package site.mufen.domain.rebate.repository;
 
 import site.mufen.domain.rebate.model.aggregate.BehaviorRebateAggregate;
+import site.mufen.domain.rebate.model.entity.BehaviorRebateOrderEntity;
 import site.mufen.domain.rebate.model.valobj.BehaviorTypeVO;
 import site.mufen.domain.rebate.model.valobj.DailyBehaviorRebateVO;
 
@@ -17,4 +18,5 @@ public interface IBehaviorRebateRepository {
 
     List<DailyBehaviorRebateVO> queryDailyBehaviorRebateConfig(BehaviorTypeVO behaviorTypeVO);
 
+    List<BehaviorRebateOrderEntity> queryOrderByOutBusinessNo(String userId, String outBusinessNo);
 }
