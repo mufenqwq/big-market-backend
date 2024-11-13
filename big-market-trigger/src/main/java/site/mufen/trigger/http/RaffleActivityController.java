@@ -80,16 +80,16 @@ public class RaffleActivityController implements IRaffleActivityService {
             // 2. 策略装配
             strategyArmory.assembleLotteryStrategyByActivityId(activityId);
             return Response.<Boolean>builder()
-                    .code(ResponseCode.SUCCESS.getCode())
-                    .info(ResponseCode.SUCCESS.getInfo())
-                    .data(true)
-                    .build();
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
+                .data(true)
+                .build();
         } catch (Exception e) {
             log.error("活动装配，数据预热，失败 activityId:{}", activityId, e);
             return Response.<Boolean>builder()
-                    .code(ResponseCode.UN_ERROR.getCode())
-                    .info(ResponseCode.UN_ERROR.getInfo())
-                    .build();
+                .code(ResponseCode.UN_ERROR.getCode())
+                .info(ResponseCode.UN_ERROR.getInfo())
+                .build();
         }
     }
 
@@ -124,44 +124,45 @@ public class RaffleActivityController implements IRaffleActivityService {
             UserRaffleOrderEntity userRaffleOrder = raffleActivityPartakeService.createOrder(request.getUserId(), request.getActivityId());
             //3.抽奖策略 - 执行抽奖
             RaffleAwardEntity raffleAwardEntity = raffleStrategy.performRaffle(RaffleFactorEntity.builder()
-                    .userId(userRaffleOrder.getUserId())
-                    .strategyId(userRaffleOrder.getStrategyId())
-                    .endDateTime(userRaffleOrder.getEndDateTime())
-                    .build());
+                .userId(userRaffleOrder.getUserId())
+                .strategyId(userRaffleOrder.getStrategyId())
+                .endDateTime(userRaffleOrder.getEndDateTime())
+                .build());
             //4. 存放结果 - 写入抽奖结果
             UserAwardRecordEntity userAwardRecord = UserAwardRecordEntity.builder()
-                    .userId(userRaffleOrder.getUserId())
-                    .activityId(userRaffleOrder.getActivityId())
-                    .strategyId(userRaffleOrder.getStrategyId())
-                    .orderId(userRaffleOrder.getOrderId())
-                    .awardId(raffleAwardEntity.getAwardId())
-                    .awardTitle(raffleAwardEntity.getAwardTitle())
-                    .awardTime(new Date())
-                    .awardState(AwardStateVO.create)
-                    .build();
+                .userId(userRaffleOrder.getUserId())
+                .activityId(userRaffleOrder.getActivityId())
+                .strategyId(userRaffleOrder.getStrategyId())
+                .orderId(userRaffleOrder.getOrderId())
+                .awardId(raffleAwardEntity.getAwardId())
+                .awardTitle(raffleAwardEntity.getAwardTitle())
+                .awardTime(new Date())
+                .awardState(AwardStateVO.create)
+                .awardConfig(raffleAwardEntity.getAwardConfig())
+                .build();
             awardService.saveUserAwardRecord(userAwardRecord);
 
             //5. 返回结果
             return Response.<ActivityDrawResponseDTO>builder()
-                    .code(ResponseCode.SUCCESS.getCode())
-                    .info(ResponseCode.SUCCESS.getInfo())
-                    .data(ActivityDrawResponseDTO.builder()
-                            .awardId(userAwardRecord.getAwardId())
-                            .awardTitle(userAwardRecord.getAwardTitle())
-                            .awardIndex(raffleAwardEntity.getSort()).build()
-                    ).build();
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
+                .data(ActivityDrawResponseDTO.builder()
+                    .awardId(userAwardRecord.getAwardId())
+                    .awardTitle(userAwardRecord.getAwardTitle())
+                    .awardIndex(raffleAwardEntity.getSort()).build()
+                ).build();
         } catch (AppException e) {
             log.error("活动抽奖失败 userId:{}, activityId:{}", request.getUserId(), request.getActivityId(), e);
             return Response.<ActivityDrawResponseDTO>builder()
-                    .code(e.getCode())
-                    .info(e.getInfo())
-                    .build();
+                .code(e.getCode())
+                .info(e.getInfo())
+                .build();
         } catch (Exception e) {
             log.error("活动抽奖失败 userId:{} activityId:{}", request.getUserId(), request.getActivityId(), e);
             return Response.<ActivityDrawResponseDTO>builder()
-                    .code(ResponseCode.UN_ERROR.getCode())
-                    .info(ResponseCode.UN_ERROR.getInfo())
-                    .build();
+                .code(ResponseCode.UN_ERROR.getCode())
+                .info(ResponseCode.UN_ERROR.getInfo())
+                .build();
         }
     }
 
@@ -182,30 +183,30 @@ public class RaffleActivityController implements IRaffleActivityService {
         try {
             log.info("日历签到返利开始 userId:{}", userId);
             BehaviorEntity behaviorEntity = BehaviorEntity.builder()
-                    .userId(userId)
-                    .behaviorTypeVO(BehaviorTypeVO.SIGN)
-                    .outBusinessNo(simpleDateFormat.format(new Date())).build();
+                .userId(userId)
+                .behaviorTypeVO(BehaviorTypeVO.SIGN)
+                .outBusinessNo(simpleDateFormat.format(new Date())).build();
             List<String> orderIds = behaviorRebateService.createOrder(behaviorEntity);
             log.info("日历签到返利完成 userId:{} orderIds:{}", userId, orderIds);
             return Response.<Boolean>builder()
-                    .code(ResponseCode.SUCCESS.getCode())
-                    .info(ResponseCode.SUCCESS.getInfo())
-                    .data(true)
-                    .build();
-        }catch (AppException e) {
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
+                .data(true)
+                .build();
+        } catch (AppException e) {
             log.error("日历签到返利异常 userId:{}", userId);
             return Response.<Boolean>builder()
-                    .code(e.getCode())
-                    .info(e.getInfo())
-                    .data(false)
-                    .build();
+                .code(e.getCode())
+                .info(e.getInfo())
+                .data(false)
+                .build();
         } catch (Exception e) {
             log.error("日历签到返利失败 userId:{}", userId);
             return Response.<Boolean>builder()
-                    .code(ResponseCode.UN_ERROR.getCode())
-                    .info(ResponseCode.UN_ERROR.getInfo())
-                    .data(false)
-                    .build();
+                .code(ResponseCode.UN_ERROR.getCode())
+                .info(ResponseCode.UN_ERROR.getInfo())
+                .data(false)
+                .build();
         }
     }
 
@@ -218,17 +219,17 @@ public class RaffleActivityController implements IRaffleActivityService {
             List<BehaviorRebateOrderEntity> behaviorRebateOrderEntities = behaviorRebateService.queryOrderByOutBusinessNo(userId, outBusinessNo);
             log.info("查询用户是否完成日历签到返利 【completed】 userId:{} orders.size:{}", userId, behaviorRebateOrderEntities.size());
             return Response.<Boolean>builder()
-                    .code(ResponseCode.SUCCESS.getCode())
-                    .info(ResponseCode.SUCCESS.getInfo())
-                    .data(!behaviorRebateOrderEntities.isEmpty())
-                    .build();
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
+                .data(!behaviorRebateOrderEntities.isEmpty())
+                .build();
         } catch (Exception e) {
             log.error("查询用户是否完成日历签到返利 failed 【userId】:{}", userId);
             return Response.<Boolean>builder()
-                    .code(ResponseCode.UN_ERROR.getCode())
-                    .info(ResponseCode.UN_ERROR.getInfo())
-                    .data(false)
-                    .build();
+                .code(ResponseCode.UN_ERROR.getCode())
+                .info(ResponseCode.UN_ERROR.getInfo())
+                .data(false)
+                .build();
         }
     }
 
@@ -241,7 +242,7 @@ public class RaffleActivityController implements IRaffleActivityService {
             if (StringUtils.isBlank(request.getUserId()) || null == request.getActivityId()) {
                 throw new AppException(ResponseCode.ILLEGAL_PARAMETER.getCode(), ResponseCode.ILLEGAL_PARAMETER.getInfo());
             }
-            ActivityAccountEntity activityAccountEntity =  raffleActivityAccountQuotaService.queryUserActivityAccount(request.getActivityId(), request.getUserId());
+            ActivityAccountEntity activityAccountEntity = raffleActivityAccountQuotaService.queryUserActivityAccount(request.getActivityId(), request.getUserId());
             UserActivityAccountResponseDTO userActivityAccountResponseDTO = new UserActivityAccountResponseDTO();
             userActivityAccountResponseDTO.setTotalCount(activityAccountEntity.getTotalCount());
             userActivityAccountResponseDTO.setTotalCountSurplus(activityAccountEntity.getTotalCountSurplus());
@@ -252,15 +253,15 @@ public class RaffleActivityController implements IRaffleActivityService {
 
             log.info("查询用户活动账户开始 [completed] userId:{} activityId:{} dto:{}", request.getUserId(), request.getActivityId(), userActivityAccountResponseDTO);
             return Response.<UserActivityAccountResponseDTO>builder()
-                    .code(ResponseCode.SUCCESS.getCode())
-                    .info(ResponseCode.SUCCESS.getInfo())
-                    .data(userActivityAccountResponseDTO).build();
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
+                .data(userActivityAccountResponseDTO).build();
         } catch (Exception e) {
             log.info("查询用户活动账户 [failed] userId:{} activityId:{}", request.getUserId(), request.getActivityId());
-            return  Response.<UserActivityAccountResponseDTO>builder()
-                    .code(ResponseCode.UN_ERROR.getCode())
-                    .info(ResponseCode.UN_ERROR.getInfo())
-                    .build();
+            return Response.<UserActivityAccountResponseDTO>builder()
+                .code(ResponseCode.UN_ERROR.getCode())
+                .info(ResponseCode.UN_ERROR.getInfo())
+                .build();
         }
     }
 }

@@ -20,6 +20,11 @@
         insert into user_award_record(user_id, activity_id, strategy_id, order_id, award_id, award_title, award_time, award_state, create_time, update_time)
         VALUES (#{userId}, #{activityId}, #{strategyId}, #{orderId}, #{awardId}, #{awardTitle}, #{awardTime}, #{awardState}, now(), now())
     </insert>
+    <update id="updateUserAwardRecordCompleted">
+        update  user_award_record
+        set award_state = #{awardState}, update_time = now()
+            where user_id = #{userId} and order_id = #{orderId} and award_state = 'create'
+    </update>
 
 
 </mapper>

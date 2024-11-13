@@ -34,9 +34,10 @@ public class BlackListLogicChain extends AbstractLogicChain {
             if (userId.equals(userBlackId)) {
                 log.info("抽奖责任链-黑名单接管 userId {} strategyId {} ruleModel {} awardId {}", userId, strategyId, ruleModel(), awardId);
                 return DefaultChainFactory.StrategyAwardVO.builder()
-                        .awardId(awardId)
-                        .logicModel(ruleModel())
-                        .build();
+                    .awardId(awardId)
+                    .logicModel(ruleModel())
+                    .awardRuleValue("0.01,1")
+                    .build();
             }
         }
         // 过滤其他责任链

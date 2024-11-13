@@ -6,17 +6,19 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
+import site.mufen.domain.award.model.aggregate.GiveOutPrizesAggregate;
 import site.mufen.domain.award.model.aggregate.UserAwardRecordAggregate;
 import site.mufen.domain.award.model.entity.TaskEntity;
 import site.mufen.domain.award.model.entity.UserAwardRecordEntity;
+import site.mufen.domain.award.model.entity.UserCreditAwardEntity;
+import site.mufen.domain.award.model.valobj.AccountStatusVO;
 import site.mufen.domain.award.model.valobj.AwardStateVO;
 import site.mufen.domain.award.repository.IAwardRepository;
 import site.mufen.infrastructure.event.EventPublisher;
-import site.mufen.infrastructure.persistent.dao.ITaskDao;
-import site.mufen.infrastructure.persistent.dao.IUserAwardRecordDao;
-import site.mufen.infrastructure.persistent.dao.IUserRaffleOrderDao;
+import site.mufen.infrastructure.persistent.dao.*;
 import site.mufen.infrastructure.persistent.po.Task;
 import site.mufen.infrastructure.persistent.po.UserAwardRecord;
+import site.mufen.infrastructure.persistent.po.UserCreditAccount;
 import site.mufen.infrastructure.persistent.po.UserRaffleOrder;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
@@ -39,6 +41,10 @@ public class AwardRepository implements IAwardRepository {
     private IUserAwardRecordDao userAwardRecordDao;
     @Resource
     private IUserRaffleOrderDao userRaffleOrderDao;
+    @Resource
+    private IAwardDao awardDao;
+    @Resource
+    private IUserCreditAccountDao userCreditAccountDao;
     @Resource
     private IDBRouterStrategy dbRouter;
     @Resource
@@ -116,5 +122,74 @@ public class AwardRepository implements IAwardRepository {
             log.error("写入中奖记录，发送MQ消息失败: userId:{}, topic:{}", userId, task.getTopic());
         }
 
+    }
+
+    /**
+     * 根据awardId查询awardConfig
+     *
+     * @param awardId 奖品Id
+     * @return awardConfig
+     */
+    @Override
+    public String queryAwardConfig(Integer awardId) {
+        return awardDao.queryAwardConfigByAwardId(awardId);
+    }
+
+    /**
+     * 存储发奖对象
+     *
+     * @param giveOutPrizesAggregate 发奖聚合对象
+     */
+    @Override
+    public void saveGiveOutPrizesAggregate(GiveOutPrizesAggregate giveOutPrizesAggregate) {
+        String userId = giveOutPrizesAggregate.getUserId();
+        UserAwardRecordEntity userAwardRecordEntity = giveOutPrizesAggregate.getUserAwardRecordEntity();
+        UserCreditAwardEntity userCreditAwardEntity = giveOutPrizesAggregate.getUserCreditAwardEntity();
+
+
+        // 更新订单状态
+        UserAwardRecord userAwardRecordReq = new UserAwardRecord();
+        userAwardRecordReq.setUserId(userId);
+        userAwardRecordReq.setOrderId(userAwardRecordEntity.getOrderId());
+        userAwardRecordReq.setAwardState(userAwardRecordEntity.getAwardState().getCode());
+
+        //更新用户积分 首次插入
+        UserCreditAccount userCreditAccountReq = new UserCreditAccount();
+        userCreditAccountReq.setUserId(userId);
+        userCreditAccountReq.setTotalAmount(userCreditAwardEntity.getCreditAmount());
+        userCreditAccountReq.setAvailableAmount(userCreditAwardEntity.getCreditAmount());
+        userCreditAccountReq.setAccountStatus(AccountStatusVO.open.getCode());
+
+
+        try {
+            dbRouter.doRouter(userId);
+            transactionTemplate.execute(status -> {
+                try {
+                    // 更新奖品记录
+                    int updateAwardCount = userAwardRecordDao.updateUserAwardRecordCompleted(userAwardRecordReq);
+                    if (0 == updateAwardCount) {
+                        log.warn("更新中奖记录，重复更新拦截 userId:{} giveOutPrizesAggregate:{}", userId, JSON.toJSONString(giveOutPrizesAggregate));
+                        status.setRollbackOnly();
+                    }
+                    int updateAccountCount = userCreditAccountDao.updateAddAccount(userCreditAccountReq);
+                    if (0 == updateAccountCount) {
+                        userCreditAccountDao.insert(userCreditAccountReq);
+                    }
+                    return 1;
+                } catch (DuplicateKeyException e) {
+                    status.setRollbackOnly();
+                    log.error("更新中奖记录，唯一索引冲突 userId: {}", userId, e);
+                    throw new AppException(ResponseCode.INDEX_DUP.getCode(), ResponseCode.INDEX_DUP.getInfo());
+                }
+            });
+        } finally {
+            dbRouter.clear();
+        }
+
+    }
+
+    @Override
+    public String queryAwardKey(Integer awardId) {
+        return awardDao.queryAwardKeyByAwardId(awardId);
     }
 }

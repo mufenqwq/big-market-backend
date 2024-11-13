@@ -15,4 +15,5 @@ public interface IUserAwardRecordDao {
 
     void insert(UserAwardRecord userAwardRecord);
 
+    int updateUserAwardRecordCompleted(UserAwardRecord userAwardRecordReq);
 }

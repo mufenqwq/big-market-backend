@@ -1,19 +1,19 @@
 package site.mufen.domain.award.model.valobj;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 
 /**
  * @author mufen
- * @Description 奖品状态枚举类
- * @create 2024/11/5 16:59
+ * @Description 用户状态枚举
+ * @create 2024/11/13 15:42
  */
 @Getter
 @AllArgsConstructor
-public enum AwardStateVO {
-    create("create", "创建"),
-    completed("completed", "发奖完成"),
-    fail("fail", "发奖失败"),
+public enum AccountStatusVO {
+    open("open", "开启"),
+    close("close", "冻结"),
     ;
     private final String code;
     private final String desc;
