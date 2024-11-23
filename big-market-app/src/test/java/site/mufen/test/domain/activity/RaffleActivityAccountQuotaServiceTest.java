@@ -1,6 +1,9 @@
 package site.mufen.test.domain.activity;
 
+import com.alibaba.fastjson2.JSON;
 import site.mufen.domain.activity.model.entity.SkuRechargeEntity;
+import site.mufen.domain.activity.model.entity.UnpaidActivityOrderEntity;
+import site.mufen.domain.activity.model.valobj.OrderTradeTypeVO;
 import site.mufen.domain.activity.service.IRaffleActivityAccountQuotaService;
 import site.mufen.domain.activity.service.armory.IActivityArmory;
 import site.mufen.types.exception.AppException;
@@ -43,8 +46,9 @@ public class RaffleActivityAccountQuotaServiceTest {
         skuRechargeEntity.setSku(9011L);
         // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
         skuRechargeEntity.setOutBusinessNo("700091009119");
-        String orderId = raffleActivityAccountQuotaService.createSkuRechargeOrder(skuRechargeEntity);
-        log.info("测试结果：{}", orderId);
+        skuRechargeEntity.setOrderTradeTypeVO(OrderTradeTypeVO.rebate_no_pay_trade);
+        UnpaidActivityOrderEntity skuRechargeOrder = raffleActivityAccountQuotaService.createSkuRechargeOrder(skuRechargeEntity);
+        log.info("测试结果：{}", JSON.toJSONString(skuRechargeOrder));
     }
 
     /**
@@ -62,14 +66,27 @@ public class RaffleActivityAccountQuotaServiceTest {
                 skuRechargeEntity.setSku(9011L);
                 // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
                 skuRechargeEntity.setOutBusinessNo(RandomStringUtils.randomNumeric(12));
-                String orderId = raffleActivityAccountQuotaService.createSkuRechargeOrder(skuRechargeEntity);
-                log.info("测试结果：{}", orderId);
+                skuRechargeEntity.setOrderTradeTypeVO(OrderTradeTypeVO.rebate_no_pay_trade);
+                UnpaidActivityOrderEntity skuRechargeOrder = raffleActivityAccountQuotaService.createSkuRechargeOrder(skuRechargeEntity);
+                log.info("测试结果：{}", JSON.toJSONString(skuRechargeOrder));
             } catch (AppException e) {
                 log.warn(e.getInfo());
             }
         }
 
         new CountDownLatch(1).await();
+    }
+
+    @Test
+    public void test_credit_pay_trade() {
+        SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
+        skuRechargeEntity.setUserId("xiaofuge");
+        skuRechargeEntity.setSku(9011L);
+        // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
+        skuRechargeEntity.setOutBusinessNo("70009240609005");
+        skuRechargeEntity.setOrderTradeTypeVO(OrderTradeTypeVO.credit_pay_trade);
+        UnpaidActivityOrderEntity skuRechargeOrder = raffleActivityAccountQuotaService.createSkuRechargeOrder(skuRechargeEntity);
+        log.info("测试结果：{}", JSON.toJSONString(skuRechargeOrder));
     }
 
 }

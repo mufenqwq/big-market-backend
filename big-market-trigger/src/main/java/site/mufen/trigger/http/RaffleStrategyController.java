@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import jdk.nashorn.internal.ir.CallNode;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.web.bind.annotation.*;
 import site.mufen.domain.activity.service.IRaffleActivityAccountQuotaService;
 import site.mufen.domain.strategy.model.valobj.RuleWeightVO;
@@ -34,6 +35,7 @@ import java.util.Map;
 @RestController
 @CrossOrigin(originPatterns = "*")
 @RequestMapping("/api/${app.config.api-version}/raffle/strategy")
+@DubboService(version = "1.0")
 public class RaffleStrategyController implements IRaffleStrategyService {
 
     @Resource

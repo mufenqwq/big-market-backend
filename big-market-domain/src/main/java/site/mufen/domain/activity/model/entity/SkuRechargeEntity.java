@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.mufen.domain.activity.model.valobj.OrderTradeTypeVO;
 
 /**
  * @author mufen
@@ -22,4 +23,8 @@ public class SkuRechargeEntity {
      * 业务仿重ID - 外部透传的，确保幂等
      */
     private String outBusinessNo;
+    /**
+     * 订单交易类型 - 需不需要支付
+     */
+    private OrderTradeTypeVO orderTradeTypeVO = OrderTradeTypeVO.rebate_no_pay_trade;
 }

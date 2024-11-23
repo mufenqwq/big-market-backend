@@ -1,6 +1,9 @@
 package site.mufen.domain.credit.service;
 
+import site.mufen.domain.credit.model.entity.CreditAccountEntity;
 import site.mufen.domain.credit.model.entity.TradeEntity;
+
+import java.math.BigDecimal;
 
 /**
  * @author mufen
@@ -9,4 +12,6 @@ import site.mufen.domain.credit.model.entity.TradeEntity;
  */
 public interface ICreditAdjustService {
     String createOrder(TradeEntity tradeEntity);
+
+    CreditAccountEntity queryUserCreditAccount(String userId);
 }

@@ -18,9 +18,15 @@
     <update id="updateAddAccount">
         update user_credit_account
         set available_amount = available_amount + #{availableAmount},
-            total_amount = total_amount + #{availableAmount},
+            total_amount = total_amount + #{totalAmount},
             update_time = now()
         where user_id = #{userId}
+    </update>
+    <update id="updateSubtractionAccount">
+        update user_credit_account
+            set available_amount = available_amount + #{availableAmount},
+                update_time = now()
+        where user_id = #{userId} and available_amount + #{availableAmount} >= 0
     </update>
     <select id="queryUserCreditAccount" resultType="site.mufen.infrastructure.persistent.po.UserCreditAccount">
         select user_id, total_amount, available_amount, account_status

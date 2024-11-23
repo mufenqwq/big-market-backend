@@ -18,6 +18,7 @@ spring:
       activity_sku_stock_zero: activity_sku_stock_zero
       send_award: send_award
       send_rebate: send_rebate
+      credit_adjust_success: credit_adjust_success
     
     addresses: 127.0.0.1
     port: 5672
@@ -116,7 +117,18 @@ redis:
       ping-interval: 60000
       keep-alive: true
 
-
+dubbo:
+  application:
+    name: big-market
+    version: 1.0
+  registry:
+    id: nacos-registry
+    address: nacos://127.0.0.1:8848
+  protocol:
+    name: dubbo
+    port: -1
+  scan:
+    base-packages: site.mufen.trigger.api
 
 # 日志
 logging:

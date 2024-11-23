@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import site.mufen.domain.activity.model.entity.ActivityOrderEntity;
+import site.mufen.domain.activity.model.valobj.OrderStateVO;
 
 /**
  * @author mufen
@@ -45,4 +46,8 @@ public class CreateQuotaOrderAggregate {
      * 活动订单实体
      */
     private ActivityOrderEntity activityOrderEntity;
+
+    public void setOrderState(OrderStateVO orderState) {
+        this.activityOrderEntity.setState(orderState);
+    }
 }

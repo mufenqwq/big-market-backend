@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import site.mufen.domain.activity.model.valobj.OrderStateVO;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -58,6 +59,10 @@ public class ActivityOrderEntity {
      * 月次数
      */
     private Integer monthCount;
+    /**
+     * 订单金额
+     */
+    private BigDecimal payAmount;
     /**
      * 订单状态（not_used、used、expire）
      */

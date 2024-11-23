@@ -8,9 +8,11 @@ import site.mufen.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import site.mufen.domain.activity.model.valobj.OrderStateVO;
 import site.mufen.domain.activity.repository.IActivityRepository;
 import site.mufen.domain.activity.service.IRaffleActivitySkuStockService;
+import site.mufen.domain.activity.service.quota.policy.ITradePolicy;
 import site.mufen.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 
 import java.util.Date;
+import java.util.Map;
 
 /**
  * @author mufen
@@ -21,8 +23,8 @@ import java.util.Date;
 public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAccountQuota implements IRaffleActivitySkuStockService {
 
 
-    public RaffleActivityAccountQuotaService(IActivityRepository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory) {
-        super(activityRepository, defaultActivityChainFactory);
+    public RaffleActivityAccountQuotaService(IActivityRepository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory, Map<String, ITradePolicy> tradePolicyGroup) {
+        super(activityRepository, defaultActivityChainFactory, tradePolicyGroup);
     }
 
     @Override
@@ -46,7 +48,7 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
         activityOrderEntity.setTotalCount(activityCountEntity.getTotalCount());
         activityOrderEntity.setDayCount(activityCountEntity.getDayCount());
         activityOrderEntity.setMonthCount(activityCountEntity.getMonthCount());
-        activityOrderEntity.setState(OrderStateVO.completed);
+        activityOrderEntity.setPayAmount(activitySkuEntity.getProductAmount());
         activityOrderEntity.setOutBusinessNo(skuRechargeEntity.getOutBusinessNo());
 
         // 构建聚合对象
@@ -78,6 +80,11 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
     @Override
     public void clearActivitySkuStock(Long sku) {
         activityRepository.clearActivitySkuStock(sku);
+    }
+
+    @Override
+    public void updateOrder(DeliveryOrderEntity deliveryOrderEntity) {
+        activityRepository.updateOrder(deliveryOrderEntity);
     }
 
     @Override

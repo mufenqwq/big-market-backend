@@ -1,6 +1,7 @@
 package site.mufen.domain.credit.repository;
 
 import site.mufen.domain.credit.model.aggregate.TradeAggregate;
+import site.mufen.domain.credit.model.entity.CreditAccountEntity;
 
 /**
  * @author mufen
@@ -9,4 +10,6 @@ import site.mufen.domain.credit.model.aggregate.TradeAggregate;
  */
 public interface ICreditRepository {
     void saveUserCreditTradeOrder(TradeAggregate tradeAggregate);
+
+    CreditAccountEntity queryUserCreditAccount(String userId);
 }

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @author mufen
  * @Description 抽奖应答对象
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RaffleStrategyResponseDTO {
+public class RaffleStrategyResponseDTO implements Serializable {
     // 奖品Id
     private Integer awardId;
     // 排序编号

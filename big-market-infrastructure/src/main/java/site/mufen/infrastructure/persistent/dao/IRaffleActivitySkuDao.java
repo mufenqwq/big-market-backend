@@ -1,6 +1,7 @@
 package site.mufen.infrastructure.persistent.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import site.mufen.domain.activity.model.entity.SkuProductEntity;
 import site.mufen.infrastructure.persistent.po.RaffleActivitySku;
 
 import java.util.List;
@@ -20,4 +21,5 @@ public interface IRaffleActivitySkuDao {
     void clearActivitySkuStock(Long sku);
 
     List<RaffleActivitySku> queryActivitySkuListByActivityId(Long activityId);
+
 }

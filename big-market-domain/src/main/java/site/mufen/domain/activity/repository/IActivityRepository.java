@@ -5,6 +5,7 @@ import site.mufen.domain.activity.model.aggregate.CreateQuotaOrderAggregate;
 import site.mufen.domain.activity.model.entity.*;
 import site.mufen.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,8 @@ public interface IActivityRepository {
     ActivityCountEntity queryRaffleActivityCountByActivityCountId(Long activityCountId);
 
     void doSaveOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate);
+
+    void doSaveCreditPayOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate);
 
     void cacheActivitySkuStockCount(String cacheKey, Integer stockCount);
 
@@ -53,4 +56,14 @@ public interface IActivityRepository {
     ActivityAccountEntity queryUserActivityAccount(Long activityId, String userId);
 
     Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId);
+
+    void doSaveCreditNoPayOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate);
+
+    void updateOrder(DeliveryOrderEntity deliveryOrderEntity);
+
+    UnpaidActivityOrderEntity queryUnpaidActivityOrderWithinOneMonth(SkuRechargeEntity skuRechargeEntity);
+
+    List<SkuProductEntity> querySkuProductEntityListByActivityId(Long activityId);
+
+    BigDecimal queryUserCreditAccountAmount(String userId);
 }
