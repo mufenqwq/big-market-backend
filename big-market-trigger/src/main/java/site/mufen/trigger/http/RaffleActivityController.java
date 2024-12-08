@@ -30,6 +30,7 @@ import site.mufen.domain.strategy.service.IRaffleStrategy;
 import site.mufen.domain.strategy.service.armory.IStrategyArmory;
 import site.mufen.trigger.api.IRaffleActivityService;
 import site.mufen.trigger.api.dto.*;
+import site.mufen.types.annotations.DCCValue;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
 import site.mufen.types.model.Response;
@@ -74,6 +75,9 @@ public class RaffleActivityController implements IRaffleActivityService {
     @Resource
     private ICreditAdjustService creditAdjustService;
 
+    @DCCValue("degradeSwitch:open")
+    private String degradeSwitch;
+
     /**
      * 活动装配 - 数据预热 | 把活动配置的对应的 sku 一起装配
      *
@@ -91,6 +95,13 @@ public class RaffleActivityController implements IRaffleActivityService {
     public Response<Boolean> armory(@RequestParam Long activityId) {
         try {
             log.info("活动装配，数据预热，开始: activityId:{}", activityId);
+            if ("open".equals(degradeSwitch)) {
+                return Response.<Boolean>builder()
+                    .code(ResponseCode.DEGRADE_SWITCH.getCode())
+                    .info(ResponseCode.DEGRADE_SWITCH.getInfo())
+                    .data(true)
+                    .build();
+            }
             // 1.活动装配
             activityArmory.assembleActivitySkuByActivityId(activityId);
             // 2. 策略装配
@@ -132,6 +143,14 @@ public class RaffleActivityController implements IRaffleActivityService {
     public Response<ActivityDrawResponseDTO> draw(@RequestBody ActivityDrawRequestDTO request) {
         try {
             log.info("活动抽奖 开始 userId:{}, activityId:{}", request.getUserId(), request.getActivityId());
+            // 如果活动已经降级了，直接返回结果
+            // 降级开关 open 开启  close 关闭
+            if (StringUtils.isNotBlank(degradeSwitch) && "open".equals(degradeSwitch)) {
+                return Response.<ActivityDrawResponseDTO>builder()
+                    .code(ResponseCode.DEGRADE_SWITCH.getCode())
+                    .info(ResponseCode.DEGRADE_SWITCH.getInfo())
+                    .build();
+            }
             // 1.参数校验
             if (StringUtils.isBlank(request.getUserId()) || null == request.getActivityId()) {
                 throw new AppException(ResponseCode.ILLEGAL_PARAMETER.getCode(), ResponseCode.ILLEGAL_PARAMETER.getInfo());

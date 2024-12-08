@@ -6,7 +6,7 @@ app:
     # 版本
     api-version: v1
     # 跨域 开发阶段设置为 * 不限制
-    cross-origin: ‘*’
+    cross-origin: '*'
 
 spring:
   jackson:
@@ -121,14 +121,24 @@ dubbo:
   application:
     name: big-market
     version: 1.0
+    qos-enable: false
   registry:
     id: nacos-registry
-    address: nacos://127.0.0.1:8848
+    address: nacos://localhost:8848
   protocol:
     name: dubbo
     port: -1
   scan:
     base-packages: site.mufen.trigger.api
+
+zookeeper:
+  sdk:
+    config:
+      connect-string: 127.0.0.1:2181
+      base-sleep-time-ms: 1000
+      max-retries: 3
+      session-timeout-ms: 18000
+      connection-timeout-ms: 30000
 
 # 日志
 logging:
