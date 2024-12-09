@@ -1,4 +1,4 @@
-package site.mufen.infrastructure.persistent.repository;
+package site.mufen.infrastructure.adapter.repository;
 
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import com.alibaba.fastjson.JSON;
@@ -16,13 +16,13 @@ import site.mufen.domain.credit.model.valobj.TradeTypeVO;
 import site.mufen.domain.credit.repository.ICreditRepository;
 import site.mufen.domain.rebate.model.valobj.TaskStateVO;
 import site.mufen.infrastructure.event.EventPublisher;
-import site.mufen.infrastructure.persistent.dao.ITaskDao;
-import site.mufen.infrastructure.persistent.dao.IUserCreditAccountDao;
-import site.mufen.infrastructure.persistent.dao.IUserCreditOrderDao;
-import site.mufen.infrastructure.persistent.dao.po.Task;
-import site.mufen.infrastructure.persistent.dao.po.UserCreditAccount;
-import site.mufen.infrastructure.persistent.dao.po.UserCreditOrder;
-import site.mufen.infrastructure.persistent.redis.IRedisService;
+import site.mufen.infrastructure.dao.ITaskDao;
+import site.mufen.infrastructure.dao.IUserCreditAccountDao;
+import site.mufen.infrastructure.dao.IUserCreditOrderDao;
+import site.mufen.infrastructure.dao.po.Task;
+import site.mufen.infrastructure.dao.po.UserCreditAccount;
+import site.mufen.infrastructure.dao.po.UserCreditOrder;
+import site.mufen.infrastructure.redis.IRedisService;
 import site.mufen.types.common.Constants;
 
 import javax.annotation.Resource;

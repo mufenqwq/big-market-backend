@@ -1,9 +1,9 @@
-package site.mufen.infrastructure.persistent.dao;
+package site.mufen.infrastructure.dao;
 
 import cn.bugstack.middleware.db.router.annotation.DBRouter;
 import cn.bugstack.middleware.db.router.annotation.DBRouterStrategy;
 import org.apache.ibatis.annotations.Mapper;
-import site.mufen.infrastructure.persistent.dao.po.RaffleActivityOrder;
+import site.mufen.infrastructure.dao.po.RaffleActivityOrder;
 
 import java.util.List;
 

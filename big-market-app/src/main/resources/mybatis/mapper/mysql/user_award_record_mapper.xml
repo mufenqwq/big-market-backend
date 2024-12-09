@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.mufen.infrastructure.persistent.dao.IUserAwardRecordDao">
+<mapper namespace="site.mufen.infrastructure.dao.IUserAwardRecordDao">
 
-    <resultMap id="dataMap" type="site.mufen.infrastructure.persistent.po.UserAwardRecord">
+    <resultMap id="dataMap" type="site.mufen.infrastructure.dao.po.UserAwardRecord">
         <id column="id" property="id"/>
         <result column="award_id" property="awardId"/>
         <result column="user_id" property="userId"/>
@@ -16,7 +16,7 @@
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
     </resultMap>
-    <insert id="insert" parameterType="site.mufen.infrastructure.persistent.po.UserAwardRecord">
+    <insert id="insert" parameterType="site.mufen.infrastructure.dao.po.UserAwardRecord">
         insert into user_award_record(user_id, activity_id, strategy_id, order_id, award_id, award_title, award_time, award_state, create_time, update_time)
         VALUES (#{userId}, #{activityId}, #{strategyId}, #{orderId}, #{awardId}, #{awardTitle}, #{awardTime}, #{awardState}, now(), now())
     </insert>

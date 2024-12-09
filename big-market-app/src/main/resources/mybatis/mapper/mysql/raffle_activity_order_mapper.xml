@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.mufen.infrastructure.persistent.dao.IRaffleActivityOrderDao">
+<mapper namespace="site.mufen.infrastructure.dao.IRaffleActivityOrderDao">
 
-    <resultMap id="dataMap" type="site.mufen.infrastructure.persistent.po.RaffleActivityOrder">
+    <resultMap id="dataMap" type="site.mufen.infrastructure.dao.po.RaffleActivityOrder">
         <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
         <result column="sku" property="sku"/>
@@ -21,7 +21,7 @@
         <result column="update_time" property="updateTime"/>
     </resultMap>
 
-    <insert id="insert" parameterType="site.mufen.infrastructure.persistent.po.RaffleActivityOrder">
+    <insert id="insert" parameterType="site.mufen.infrastructure.dao.po.RaffleActivityOrder">
         insert into raffle_activity_order
         (user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, state, out_business_no, total_count, day_count, month_count,
          pay_amount ,create_time, update_time)
@@ -41,13 +41,13 @@
         where user_id = #{userId}
     </select>
     <select id="queryRaffleActivityOrderByUserIdAndOBN"
-            resultType="site.mufen.infrastructure.persistent.po.RaffleActivityOrder">
+            resultType="site.mufen.infrastructure.dao.po.RaffleActivityOrder">
         select user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, pay_amount, state, out_business_no
             from raffle_activity_order
         where user_id = #{userId} and out_business_no = #{outBusinessNo}
     </select>
     <select id="queryUnpaidActivityOrder"
-            resultType="site.mufen.infrastructure.persistent.po.RaffleActivityOrder">
+            resultType="site.mufen.infrastructure.dao.po.RaffleActivityOrder">
         select user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, pay_amount, state, out_business_no
             from raffle_activity_order
         where user_id = #{userId} and sku = #{sku} and state = 'wait_pay' and order_time >= now() - INTERVAL 1 MONTH

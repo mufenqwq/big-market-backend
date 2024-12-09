@@ -1,7 +1,7 @@
-package site.mufen.infrastructure.persistent.dao;
+package site.mufen.infrastructure.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import site.mufen.infrastructure.persistent.dao.po.RaffleActivityCount;
+import site.mufen.infrastructure.dao.po.RaffleActivityCount;
 
 /**
  * @author mufen

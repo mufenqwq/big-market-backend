@@ -1,10 +1,7 @@
-package site.mufen.infrastructure.persistent.repository;
+package site.mufen.infrastructure.adapter.repository;
 
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import com.alibaba.fastjson.JSON;
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
@@ -16,14 +13,18 @@ import site.mufen.domain.rebate.model.valobj.BehaviorTypeVO;
 import site.mufen.domain.rebate.model.valobj.DailyBehaviorRebateVO;
 import site.mufen.domain.rebate.repository.IBehaviorRebateRepository;
 import site.mufen.infrastructure.event.EventPublisher;
-import site.mufen.infrastructure.persistent.dao.IDailyBehaviorRebateDao;
-import site.mufen.infrastructure.persistent.dao.ITaskDao;
-import site.mufen.infrastructure.persistent.dao.IUserBehaviorRebateOrderDao;
-import site.mufen.infrastructure.persistent.dao.po.DailyBehaviorRebate;
-import site.mufen.infrastructure.persistent.dao.po.Task;
-import site.mufen.infrastructure.persistent.dao.po.UserBehaviorRebateOrder;
+import site.mufen.infrastructure.dao.IDailyBehaviorRebateDao;
+import site.mufen.infrastructure.dao.ITaskDao;
+import site.mufen.infrastructure.dao.IUserBehaviorRebateOrderDao;
+import site.mufen.infrastructure.dao.po.DailyBehaviorRebate;
+import site.mufen.infrastructure.dao.po.Task;
+import site.mufen.infrastructure.dao.po.UserBehaviorRebateOrder;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**

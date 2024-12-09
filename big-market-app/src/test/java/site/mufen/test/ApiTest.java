@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.redisson.api.RMap;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import site.mufen.infrastructure.persistent.redis.IRedisService;
+import site.mufen.infrastructure.redis.IRedisService;
 import site.mufen.trigger.api.IRaffleActivityService;
 import site.mufen.trigger.api.dto.ActivityDrawRequestDTO;
 import site.mufen.trigger.api.dto.ActivityDrawResponseDTO;

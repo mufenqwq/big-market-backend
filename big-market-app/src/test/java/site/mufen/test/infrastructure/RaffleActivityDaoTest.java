@@ -6,8 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import site.mufen.infrastructure.persistent.dao.IRaffleActivityDao;
-import site.mufen.infrastructure.persistent.po.RaffleActivity;
+import site.mufen.infrastructure.dao.IRaffleActivityDao;
+import site.mufen.infrastructure.dao.po.RaffleActivity;
 
 import javax.annotation.Resource;
 

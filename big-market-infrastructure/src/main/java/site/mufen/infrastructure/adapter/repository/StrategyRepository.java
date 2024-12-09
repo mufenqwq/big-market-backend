@@ -1,4 +1,4 @@
-package site.mufen.infrastructure.persistent.repository;
+package site.mufen.infrastructure.adapter.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBlockingQueue;
@@ -11,9 +11,9 @@ import site.mufen.domain.strategy.model.entity.StrategyRuleEntity;
 import site.mufen.domain.strategy.model.valobj.*;
 import site.mufen.domain.strategy.repository.IStrategyRepository;
 import site.mufen.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
-import site.mufen.infrastructure.persistent.dao.*;
-import site.mufen.infrastructure.persistent.dao.po.*;
-import site.mufen.infrastructure.persistent.redis.IRedisService;
+import site.mufen.infrastructure.dao.*;
+import site.mufen.infrastructure.dao.po.*;
+import site.mufen.infrastructure.redis.IRedisService;
 import site.mufen.types.common.Constants;
 import site.mufen.types.exception.AppException;
 

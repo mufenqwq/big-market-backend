@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.mufen.infrastructure.persistent.dao.IRaffleActivitySkuDao">
+<mapper namespace="site.mufen.infrastructure.dao.IRaffleActivitySkuDao">
 
-    <resultMap id="dataMap" type="site.mufen.infrastructure.persistent.po.RaffleActivitySku">
+    <resultMap id="dataMap" type="site.mufen.infrastructure.dao.po.RaffleActivitySku">
         <id column="id" property="id"/>
         <result column="sku" property="sku"/>
         <result column="activity_id" property="activityId"/>

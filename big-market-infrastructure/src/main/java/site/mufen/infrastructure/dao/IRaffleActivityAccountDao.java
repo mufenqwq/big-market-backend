@@ -1,8 +1,8 @@
-package site.mufen.infrastructure.persistent.dao;
+package site.mufen.infrastructure.dao;
 
 import cn.bugstack.middleware.db.router.annotation.DBRouter;
 import org.apache.ibatis.annotations.Mapper;
-import site.mufen.infrastructure.persistent.dao.po.RaffleActivityAccount;
+import site.mufen.infrastructure.dao.po.RaffleActivityAccount;
 
 /**
  * @author mufen

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.mufen.infrastructure.persistent.dao.IRaffleActivityCountDao">
+<mapper namespace="site.mufen.infrastructure.dao.IRaffleActivityCountDao">
 
-    <resultMap id="dataMap" type="site.mufen.infrastructure.persistent.po.RaffleActivityCount">
+    <resultMap id="dataMap" type="site.mufen.infrastructure.dao.po.RaffleActivityCount">
         <id column="id" property="id"/>
         <result column="activity_count_id" property="activityCountId"/>
         <result column="total_count" property="totalCount"/>

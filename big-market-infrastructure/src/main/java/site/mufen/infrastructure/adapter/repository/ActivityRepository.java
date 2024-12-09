@@ -1,4 +1,4 @@
-package site.mufen.infrastructure.persistent.repository;
+package site.mufen.infrastructure.adapter.repository;
 
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import lombok.extern.slf4j.Slf4j;
@@ -17,10 +17,10 @@ import site.mufen.domain.activity.model.valobj.ActivityStateVO;
 import site.mufen.domain.activity.model.valobj.UserRaffleOrderStateVO;
 import site.mufen.domain.activity.repository.IActivityRepository;
 import site.mufen.domain.award.service.distribute.impl.UserCreditRandomAward;
+import site.mufen.infrastructure.dao.*;
+import site.mufen.infrastructure.dao.po.*;
 import site.mufen.infrastructure.event.EventPublisher;
-import site.mufen.infrastructure.persistent.dao.*;
-import site.mufen.infrastructure.persistent.dao.po.*;
-import site.mufen.infrastructure.persistent.redis.IRedisService;
+import site.mufen.infrastructure.redis.IRedisService;
 import site.mufen.types.common.Constants;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;

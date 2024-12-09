@@ -1,7 +1,7 @@
-package cn.bugstack.test.infrastructure.elasticsearch;
+package site.mufen.test.infrastructure.elasticsearch;
 
-import cn.bugstack.infrastructure.elasticsearch.IElasticSearchUserRaffleOrderDao;
-import cn.bugstack.infrastructure.elasticsearch.po.UserRaffleOrder;
+import site.mufen.infrastructure.elasticsearch.IElasticSearchUserRaffleOrderDao;
+import site.mufen.infrastructure.elasticsearch.po.UserRaffleOrder;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

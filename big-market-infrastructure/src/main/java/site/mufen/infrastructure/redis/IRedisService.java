@@ -1,4 +1,4 @@
-package site.mufen.infrastructure.persistent.redis;
+package site.mufen.infrastructure.redis;
 
 import org.redisson.api.*;
 

@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import site.mufen.infrastructure.persistent.dao.IRaffleActivityOrderDao;
-import site.mufen.infrastructure.persistent.po.RaffleActivityOrder;
+import site.mufen.infrastructure.dao.IRaffleActivityOrderDao;
+import site.mufen.infrastructure.dao.po.RaffleActivityOrder;
 
 import javax.annotation.Resource;
 import java.util.List;

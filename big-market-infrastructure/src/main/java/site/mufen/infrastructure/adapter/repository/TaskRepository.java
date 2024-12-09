@@ -1,12 +1,12 @@
-package site.mufen.infrastructure.persistent.repository;
+package site.mufen.infrastructure.adapter.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import site.mufen.domain.task.model.entity.TaskEntity;
 import site.mufen.domain.task.repository.ITaskRepository;
 import site.mufen.infrastructure.event.EventPublisher;
-import site.mufen.infrastructure.persistent.dao.ITaskDao;
-import site.mufen.infrastructure.persistent.dao.po.Task;
+import site.mufen.infrastructure.dao.ITaskDao;
+import site.mufen.infrastructure.dao.po.Task;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;

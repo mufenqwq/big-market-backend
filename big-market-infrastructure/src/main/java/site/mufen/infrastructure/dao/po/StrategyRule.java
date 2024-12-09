@@ -1,4 +1,4 @@
-package site.mufen.infrastructure.persistent.dao.po;
+package site.mufen.infrastructure.dao.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

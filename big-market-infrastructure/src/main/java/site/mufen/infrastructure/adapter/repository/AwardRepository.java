@@ -1,4 +1,4 @@
-package site.mufen.infrastructure.persistent.repository;
+package site.mufen.infrastructure.adapter.repository;
 
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import com.alibaba.fastjson.JSON;
@@ -14,12 +14,12 @@ import site.mufen.domain.award.model.entity.UserCreditAwardEntity;
 import site.mufen.domain.award.model.valobj.AccountStatusVO;
 import site.mufen.domain.award.model.valobj.AwardStateVO;
 import site.mufen.domain.award.repository.IAwardRepository;
+import site.mufen.infrastructure.dao.*;
 import site.mufen.infrastructure.event.EventPublisher;
-import site.mufen.infrastructure.persistent.dao.*;
-import site.mufen.infrastructure.persistent.dao.po.Task;
-import site.mufen.infrastructure.persistent.dao.po.UserAwardRecord;
-import site.mufen.infrastructure.persistent.dao.po.UserCreditAccount;
-import site.mufen.infrastructure.persistent.dao.po.UserRaffleOrder;
+import site.mufen.infrastructure.dao.po.Task;
+import site.mufen.infrastructure.dao.po.UserAwardRecord;
+import site.mufen.infrastructure.dao.po.UserCreditAccount;
+import site.mufen.infrastructure.dao.po.UserRaffleOrder;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
 
