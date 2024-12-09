@@ -1,6 +1,8 @@
 package site.mufen.trigger.http;
 
 import com.alibaba.fastjson.JSON;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -31,6 +33,7 @@ import site.mufen.domain.strategy.service.armory.IStrategyArmory;
 import site.mufen.trigger.api.IRaffleActivityService;
 import site.mufen.trigger.api.dto.*;
 import site.mufen.types.annotations.DCCValue;
+import site.mufen.types.annotations.RateLimiterAccessInterceptor;
 import site.mufen.types.enums.ResponseCode;
 import site.mufen.types.exception.AppException;
 import site.mufen.types.model.Response;
@@ -75,7 +78,7 @@ public class RaffleActivityController implements IRaffleActivityService {
     @Resource
     private ICreditAdjustService creditAdjustService;
 
-    @DCCValue("degradeSwitch:open")
+    @DCCValue("degradeSwitch:close")
     private String degradeSwitch;
 
     /**
@@ -138,6 +141,11 @@ public class RaffleActivityController implements IRaffleActivityService {
      * "activityId": 100301
      * }'
      */
+    @RateLimiterAccessInterceptor(key = "userId", fallbackMethod = "drawRateLimiterError", permitsPerSecond = 1.0d, blacklistCount = 1)
+    @HystrixCommand(commandProperties = {
+        @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "150")
+    }, fallbackMethod = "drawHystrixError"
+    )
     @Override
     @PostMapping("draw")
     public Response<ActivityDrawResponseDTO> draw(@RequestBody ActivityDrawRequestDTO request) {
@@ -200,6 +208,24 @@ public class RaffleActivityController implements IRaffleActivityService {
                 .build();
         }
     }
+
+    public Response<ActivityDrawResponseDTO> drawRateLimiterError(@RequestBody ActivityDrawRequestDTO request) {
+        log.info("活动抽奖限流: userId:{}, activityId:{}", request.getUserId(), request.getActivityId());
+        return Response.<ActivityDrawResponseDTO>builder()
+            .code(ResponseCode.RATE_LIMITER.getCode())
+            .info(ResponseCode.RATE_LIMITER.getInfo())
+            .build();
+    }
+
+    public Response<ActivityDrawResponseDTO> drawHystrixError(@RequestBody ActivityDrawRequestDTO request) {
+        log.info("活动抽奖熔断: userId:{}, activityId:{}", request.getUserId(), request.getActivityId());
+        return Response.<ActivityDrawResponseDTO>builder()
+            .code(ResponseCode.HYSTRIX.getCode())
+            .info(ResponseCode.HYSTRIX.getInfo())
+            .build();
+    }
+
+
 
     /**
      * 日历签到返利接口
@@ -299,6 +325,7 @@ public class RaffleActivityController implements IRaffleActivityService {
                 .build();
         }
     }
+
     @PostMapping("query_sku_product_list_by_activity_id")
     @Override
     public Response<List<SkuProductResponseDTO>> querySkuProductListByActivityId(Long activityId) {
@@ -343,12 +370,13 @@ public class RaffleActivityController implements IRaffleActivityService {
                 .build();
         }
     }
+
     @PostMapping("query_user_credit_account")
     @Override
     public Response<BigDecimal> queryUserCreditAccount(String userId) {
         try {
             log.info("查询用户积分值开始 userId:{}", userId);
-            CreditAccountEntity creditAccountEntity= creditAdjustService.queryUserCreditAccount(userId);
+            CreditAccountEntity creditAccountEntity = creditAdjustService.queryUserCreditAccount(userId);
 
             return Response.<BigDecimal>builder()
                 .code(ResponseCode.SUCCESS.getCode())
@@ -363,6 +391,7 @@ public class RaffleActivityController implements IRaffleActivityService {
                 .build();
         }
     }
+
     @PostMapping("credit_pay_exchange_sku")
     @Override
     public Response<Boolean> creditPayExchangeSku(@RequestBody SkuProductShopCartRequestDTO request) {
