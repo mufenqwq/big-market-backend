@@ -22,7 +22,9 @@ import java.util.Map;
 public interface IStrategyRepository {
     List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId);
 
-    void storeStrategyAwardSearchRateTables(String key, BigDecimal rateRange, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables);
+    <K, V> void storeStrategyAwardSearchRateTables(String key, Integer rateRange, Map<K ,V> shuffleStrategyAwardSearchRateTables);
+
+    <K, V> void storeStrategyAwardSearchRateTables(String key, BigDecimal rateRange, Map<K, V> shuffleStrategyAwardSearchRateTables);
 
     int getRateRange(Long strategyId);
 
@@ -94,4 +96,25 @@ public interface IStrategyRepository {
     Integer queryActivityAccountTotalUseCount(String userId, Long strategyId);
 
     List<RuleWeightVO> queryAwardRuleWeight(Long strategyId);
+
+    /**
+     * 查询有效的活动奖品配置
+     * @return 奖品配置列表
+     */
+    List<StrategyAwardStockKeyVO> queryOpenActivityStrategyAwardList();
+
+    /**
+     * 获取奖品库存消耗队列
+     * @param strategyId 策略Id
+     * @param awardId 奖品Id
+     * @return 奖品库存key信息
+     */
+    StrategyAwardStockKeyVO takeQueueValue(Long strategyId, Integer awardId);
+
+
+    <K, V> Map<K, V> getMap(String key);
+
+    void cacheStrategyArmoryAlgorithm(String key, String beanName);
+
+    String queryStrategyArmoryAlgorithmFromCache(String key);
 }

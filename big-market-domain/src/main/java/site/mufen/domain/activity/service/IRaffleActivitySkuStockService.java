@@ -2,6 +2,8 @@ package site.mufen.domain.activity.service;
 
 import site.mufen.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 
+import java.util.List;
+
 /**
  * @author mufen
  * @Description 活动sku库存处理接口
@@ -14,6 +16,13 @@ public interface IRaffleActivitySkuStockService {
      * @return 奖品库存key信息
      */
     ActivitySkuStockKeyVO takeQueueValue();
+
+    /**
+     * 获取活动sku库存消耗队列
+     * @param sku sku
+     * @return 奖品库存key信息
+     */
+    ActivitySkuStockKeyVO takeQueueValue(Long sku);
 
     /**
      * 清空队列
@@ -32,4 +41,5 @@ public interface IRaffleActivitySkuStockService {
      */
     void clearActivitySkuStock(Long sku);
 
+    List<Long> querySkuList();
 }

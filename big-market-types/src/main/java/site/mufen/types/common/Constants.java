@@ -9,6 +9,7 @@ public class Constants {
 
     public static class RedisKey {
         public static final String RULE_TREE_VO_KEY = "rule_tree_vo_key_";
+        public static final String STRATEGY_AWARD_COUNT_QUERY_KEY = "strategy_award_count_query_key_";
         public static String STRATEGY_KEY = "big_market_strategy_key_";
         public static String STRATEGY_AWARD_KEY = "big_market_strategy_award_key_";
         public static String STRATEGY_AWARD_LIST_KEY = "big_market_strategy_award_list_key_";
@@ -24,6 +25,10 @@ public class Constants {
         public static String ACTIVITY_SKU_COUNT_QUEUE_KEY = "activity_sku_count_queue_key_";
         public static String ACTIVITY_ACCOUNT_LOCK = "activity_account_lock_";
         public static String USER_CREDIT_ACCOUNT_LOCK = "user_credit_account_lock_";
-        public static  String ACTIVITY_ACCOUNT_UPDATE_LOCK = "activity_account_update_lock_";
+        public static String ACTIVITY_ACCOUNT_UPDATE_LOCK = "activity_account_update_lock_";
+        /**
+         * 策略装配算法key
+         */
+        public static String STRATEGY_ARMORY_ALGORITHM_KEY = "strategy_armory_algorithm_key_";
     }
 }

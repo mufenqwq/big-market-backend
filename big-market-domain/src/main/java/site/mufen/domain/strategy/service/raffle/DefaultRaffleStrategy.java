@@ -78,6 +78,11 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
     }
 
     @Override
+    public StrategyAwardStockKeyVO takeQueueValue(Long strategyId, Integer awardId) {
+        return repository.takeQueueValue(strategyId, awardId);
+    }
+
+    @Override
     public List<StrategyAwardEntity> queryRaffleStrategyAwardList(Long strategyId) {
         return repository.queryStrategyAwardList(strategyId);
     }
@@ -86,6 +91,11 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
     public List<StrategyAwardEntity> queryRaffleStrategyAwardListByActivityId(Long activityId) {
         Long strategyId = repository.queryStrategyIdByActivityId(activityId);
         return repository.queryStrategyAwardList(strategyId);
+    }
+
+    @Override
+    public List<StrategyAwardStockKeyVO> queryOpenActivityStrategyAwardList() {
+        return repository.queryOpenActivityStrategyAwardList();
     }
 
     @Override

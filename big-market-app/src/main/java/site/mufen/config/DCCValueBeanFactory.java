@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Configuration;
 import site.mufen.types.annotations.DCCValue;
@@ -27,13 +28,15 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
     private static final String BASE_CONFIG_PATH = "/big-market-dcc";
     private static final String BASE_CONFIG_PATH_CONFIG = BASE_CONFIG_PATH + "/config";
 
-    private final CuratorFramework client;
+    @Autowired(required = false)
+    private CuratorFramework client;
 
     private final Map<String, Object> dccObjGroup = new HashMap<>();
 
     public DCCValueBeanFactory(CuratorFramework client) throws Exception {
-        this.client = client;
+        if (null == client) return;
 
+        // 节点判断
         if (null == client.checkExists().forPath(BASE_CONFIG_PATH_CONFIG)) {
             client.create().creatingParentsIfNeeded().forPath(BASE_CONFIG_PATH_CONFIG);
             log.info("DCC 节点监听 base node {} not absent create new done!", BASE_CONFIG_PATH_CONFIG);

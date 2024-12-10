@@ -11,7 +11,9 @@ import site.mufen.domain.activity.service.IRaffleActivitySkuStockService;
 import site.mufen.domain.activity.service.quota.policy.ITradePolicy;
 import site.mufen.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -68,6 +70,11 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
     }
 
     @Override
+    public ActivitySkuStockKeyVO takeQueueValue(Long sku) {
+        return activityRepository.takeQueueValue(sku);
+    }
+
+    @Override
     public void clearQueueValue() {
         activityRepository.clearQueueValue();
     }
@@ -80,6 +87,11 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
     @Override
     public void clearActivitySkuStock(Long sku) {
         activityRepository.clearActivitySkuStock(sku);
+    }
+
+    @Override
+    public List<Long> querySkuList() {
+        return activityRepository.querySkuList();
     }
 
     @Override

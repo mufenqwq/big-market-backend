@@ -3,7 +3,6 @@ package site.mufen.infrastructure.adapter.repository;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBlockingQueue;
 import org.redisson.api.RDelayedQueue;
-import org.redisson.api.RMap;
 import org.springframework.stereotype.Repository;
 import site.mufen.domain.strategy.model.entity.StrategyAwardEntity;
 import site.mufen.domain.strategy.model.entity.StrategyEntity;
@@ -82,12 +81,27 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public void storeStrategyAwardSearchRateTables(String key, BigDecimal rateRange, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables) {
+    public <K, V> void storeStrategyAwardSearchRateTables(String key, Integer rateRange, Map<K, V> shuffleStrategyAwardSearchRateTables) {
+        // 1.存储抽奖策略范围值 如10000 用于生成10000以内的随机数
+        redisService.setValue(Constants.RedisKey.STRATEGY_RATE_RANGE_KEY + key, rateRange);
+
+        // 2. 存储概率查找表
+        // 2. 存储概率查找表 - 存在则删除重新装配
+        String tableCacheKey = Constants.RedisKey.STRATEGY_RATE_TABLE_KEY + key;
+        if (redisService.isExists(tableCacheKey)) {
+            redisService.remove(tableCacheKey);
+        }
+        Map<K, V> cacheRateTable = redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY + key);
+        cacheRateTable.putAll(shuffleStrategyAwardSearchRateTables);
+    }
+
+    @Override
+    public <K, V> void storeStrategyAwardSearchRateTables(String key, BigDecimal rateRange, Map<K, V> shuffleStrategyAwardSearchRateTables) {
         // 1.存储抽奖策略范围值 如10000 用于生成10000以内的随机数
         redisService.setValue(Constants.RedisKey.STRATEGY_RATE_RANGE_KEY + key, rateRange.intValue());
 
         // 2. 存储概率查找表
-        RMap<Integer, Integer> cacheRateTable = redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY + key);
+        Map<K, V> cacheRateTable = redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY + key);
         cacheRateTable.putAll(shuffleStrategyAwardSearchRateTables);
     }
 
@@ -396,6 +410,48 @@ public class StrategyRepository implements IStrategyRepository {
         // 设置缓存
         redisService.setValue(cacheKey, ruleWeightVOS);
         return ruleWeightVOS;
+    }
+
+    @Override
+    public List<StrategyAwardStockKeyVO> queryOpenActivityStrategyAwardList() {
+        List<StrategyAward> strategyAwards = strategyAwardDao.queryOpenActivityStrategyAwardList();
+        if (null == strategyAwards || strategyAwards.isEmpty()) return null;
+
+        List<StrategyAwardStockKeyVO> strategyAwardStockKeyVOS = new ArrayList<>();
+        for (StrategyAward strategyAward: strategyAwards){
+            StrategyAwardStockKeyVO strategyAwardStockKeyVO = StrategyAwardStockKeyVO.builder()
+                .strategyId(strategyAward.getStrategyId())
+                .awardId(strategyAward.getAwardId())
+                .build();
+            strategyAwardStockKeyVOS.add(strategyAwardStockKeyVO);
+        }
+
+        return strategyAwardStockKeyVOS;
+    }
+
+    @Override
+    public StrategyAwardStockKeyVO takeQueueValue(Long strategyId, Integer awardId) {
+        String cacheKey = Constants.RedisKey.STRATEGY_AWARD_COUNT_QUEUE_KEY + Constants.UNDERLINE + strategyId + Constants.UNDERLINE + awardId;
+        RBlockingQueue<StrategyAwardStockKeyVO> destinationQueue = redisService.getBlockingQueue(cacheKey);
+        return destinationQueue.poll();
+    }
+
+    @Override
+    public <K, V> Map<K, V> getMap(String key) {
+        return redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY + key);
+    }
+
+    @Override
+    public void cacheStrategyArmoryAlgorithm(String key, String beanName) {
+        String cacheKey = Constants.RedisKey.STRATEGY_ARMORY_ALGORITHM_KEY + key;
+        redisService.setValue(cacheKey, beanName);
+    }
+
+    @Override
+    public String queryStrategyArmoryAlgorithmFromCache(String key) {
+        String cacheKey = Constants.RedisKey.STRATEGY_ARMORY_ALGORITHM_KEY + key;
+        if (!redisService.isExists(cacheKey)) return null;
+        return redisService.getValue(cacheKey);
     }
 
 }

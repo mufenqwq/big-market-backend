@@ -31,4 +31,10 @@ public interface IStrategyAwardDao {
      * @return strategyAward对象
      */
     StrategyAward queryStrategyAward(StrategyAward strategyAwardReq);
+
+    /**
+     *
+     * @return
+     */
+    List<StrategyAward> queryOpenActivityStrategyAwardList();
 }
