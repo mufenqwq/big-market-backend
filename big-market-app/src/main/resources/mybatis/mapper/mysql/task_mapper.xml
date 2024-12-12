@@ -26,7 +26,7 @@
         set state = 'fail', update_time=now()
         where user_id=#{userId} and message_id=#{messageId}
     </update>
-    <select id="queryNoSendMessageTaskList" resultType="site.mufen.infrastructure.dao.po.Task">
+    <select id="queryNoSendMessageTaskList" resultMap="dataMap">
         select user_id, topic, message_id, message
             from task
         where state = 'fail' or (state = 'create' and now() - update_time > 6) limit 10

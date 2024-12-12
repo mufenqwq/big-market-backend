@@ -1,233 +1,503 @@
-24-12-10.17:02:49.628 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:02:58.966 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:02:59.668 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:02:59.878 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:02:59.914 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:03:08.740 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 12341ms for session id 0x10000003cb30003
-24-12-10.17:03:08.743 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb30003 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 12341ms for session id 0x10000003cb30003
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:03:10.316 [main-EventThread] ERROR CuratorCacheImpl       - CuratorCache error
-java.lang.IllegalStateException: Expected state [STARTED] was [STOPPED]
-	at org.apache.curator.shaded.com.google.common.base.Preconditions.checkState(Preconditions.java:823)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkState(CuratorFrameworkImpl.java:423)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getData(CuratorFrameworkImpl.java:457)
-	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.nodeChanged(CuratorCacheImpl.java:258)
-	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.rebuild(CuratorCacheImpl.java:149)
-	at org.apache.curator.framework.listen.MappingListenerManager.lambda$forEach$0(MappingListenerManager.java:92)
-	at org.apache.curator.framework.listen.MappingListenerManager.forEach(MappingListenerManager.java:89)
-	at org.apache.curator.framework.listen.StandardListenerManager.forEach(StandardListenerManager.java:89)
-	at org.apache.curator.framework.recipes.watch.PersistentWatcher.lambda$reset$3(PersistentWatcher.java:160)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.sendToBackgroundCallback(CuratorFrameworkImpl.java:892)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:649)
-	at org.apache.curator.framework.imps.AddWatchBuilderImpl.lambda$performBackgroundOperation$1(AddWatchBuilderImpl.java:166)
-	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:722)
-	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:551)
-24-12-10.17:03:10.317 [main-EventThread] ERROR CuratorCacheImpl       - CuratorCache error
-java.lang.IllegalStateException: Expected state [STARTED] was [STOPPED]
-	at org.apache.curator.shaded.com.google.common.base.Preconditions.checkState(Preconditions.java:823)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkState(CuratorFrameworkImpl.java:423)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getData(CuratorFrameworkImpl.java:457)
-	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.nodeChanged(CuratorCacheImpl.java:258)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.concurrent.ConcurrentHashMap$ValueSpliterator.forEachRemaining(ConcurrentHashMap.java:3564)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
-	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
-	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.rebuild(CuratorCacheImpl.java:157)
-	at org.apache.curator.framework.listen.MappingListenerManager.lambda$forEach$0(MappingListenerManager.java:92)
-	at org.apache.curator.framework.listen.MappingListenerManager.forEach(MappingListenerManager.java:89)
-	at org.apache.curator.framework.listen.StandardListenerManager.forEach(StandardListenerManager.java:89)
-	at org.apache.curator.framework.recipes.watch.PersistentWatcher.lambda$reset$3(PersistentWatcher.java:160)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.sendToBackgroundCallback(CuratorFrameworkImpl.java:892)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:649)
-	at org.apache.curator.framework.imps.AddWatchBuilderImpl.lambda$performBackgroundOperation$1(AddWatchBuilderImpl.java:166)
-	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:722)
-	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:551)
-24-12-10.17:03:10.317 [main-EventThread] ERROR CuratorCacheImpl       - CuratorCache error
-java.lang.IllegalStateException: Expected state [STARTED] was [STOPPED]
-	at org.apache.curator.shaded.com.google.common.base.Preconditions.checkState(Preconditions.java:823)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkState(CuratorFrameworkImpl.java:423)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getData(CuratorFrameworkImpl.java:457)
-	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.nodeChanged(CuratorCacheImpl.java:258)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.concurrent.ConcurrentHashMap$ValueSpliterator.forEachRemaining(ConcurrentHashMap.java:3564)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
-	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
-	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.rebuild(CuratorCacheImpl.java:157)
-	at org.apache.curator.framework.listen.MappingListenerManager.lambda$forEach$0(MappingListenerManager.java:92)
-	at org.apache.curator.framework.listen.MappingListenerManager.forEach(MappingListenerManager.java:89)
-	at org.apache.curator.framework.listen.StandardListenerManager.forEach(StandardListenerManager.java:89)
-	at org.apache.curator.framework.recipes.watch.PersistentWatcher.lambda$reset$3(PersistentWatcher.java:160)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.sendToBackgroundCallback(CuratorFrameworkImpl.java:892)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:649)
-	at org.apache.curator.framework.imps.AddWatchBuilderImpl.lambda$performBackgroundOperation$1(AddWatchBuilderImpl.java:166)
-	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:722)
-	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:551)
-24-12-10.17:07:47.231 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:07:54.813 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:07:55.359 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:07:55.499 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:07:55.520 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:08:15.083 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 15647ms for session id 0x10000003cb30004
-24-12-10.17:08:16.155 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb30004 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 15647ms for session id 0x10000003cb30004
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:13:41.775 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:13:49.989 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:13:50.500 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:13:50.670 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:13:50.693 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:14:33.831 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:14:40.521 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:14:41.024 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:14:41.175 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:14:41.196 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:15:29.579 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:15:33.811 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:15:34.353 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:15:34.526 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:15:34.548 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:15:43.741 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 12059ms for session id 0x10000003cb30007
-24-12-10.17:15:43.744 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb30007 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 12059ms for session id 0x10000003cb30007
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:16:02.996 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:16:07.233 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:16:07.895 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:16:08.059 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:16:08.083 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:16:23.998 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 18903ms for session id 0x10000003cb30008
-24-12-10.17:16:23.998 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=45s223ms655µs283ns).
-24-12-10.17:16:24.002 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb30008 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 18903ms for session id 0x10000003cb30008
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:16:54.656 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 29521. Adjusted session timeout ms: 18000
-24-12-10.17:16:55.796 [main-EventThread] WARN  ConnectionState        - Session expired event received
-24-12-10.17:17:38.827 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 40834ms for session id 0x0
-24-12-10.17:17:38.827 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x0 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 40834ms for session id 0x0
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:18:10.592 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 16525ms for session id 0x10000003cb3000a
-24-12-10.17:18:10.594 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb3000a for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 16525ms for session id 0x10000003cb3000a
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:18:37.981 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 25283. Adjusted session timeout ms: 18000
-24-12-10.17:18:39.062 [main-EventThread] WARN  ConnectionState        - Session expired event received
-24-12-10.17:19:08.970 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 19379ms for session id 0x10000003cb3000b
-24-12-10.17:19:08.970 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb3000b for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 19379ms for session id 0x10000003cb3000b
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:19:09.049 [xxl-job, JobThread-3-1733822348999] ERROR SendMessageTaskJob     - 定时任务，扫描MQ任务表发送消息失败。
-java.lang.InterruptedException: null
-	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
-	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1928)
-	at org.redisson.RedissonLock.tryLock(RedissonLock.java:237)
-	at site.mufen.trigger.job.SendMessageTaskJob.exec_db02(SendMessageTaskJob.java:85)
+24-12-11.11:00:17.632 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.11:00:28.685 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.11:00:30.445 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:00:30.798 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:00:30.827 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:06:55.092 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.11:07:01.161 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.11:07:03.465 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:07:03.709 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:07:03.748 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:07:04.428 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:07:08.357 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:mufen activityId:100301
+java.lang.NullPointerException: null
+	at site.mufen.domain.strategy.service.armory.StrategyArmoryDispatch.dispatchAlgorithm(StrategyArmoryDispatch.java:60)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:96)
+	at site.mufen.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain.logic(RuleWeightLogicChain.java:62)
+	at site.mufen.domain.strategy.service.rule.chain.impl.BlackListLogicChain.logic(BlackListLogicChain.java:45)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:47)
+	at site.mufen.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:57)
+	at site.mufen.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:169)
+	at site.mufen.trigger.http.RaffleActivityController$$FastClassBySpringCGLIB$$a7d3835.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at site.mufen.aop.RateLimiterAOP.doRouter(RateLimiterAOP.java:89)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
-	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
-24-12-10.17:19:09.063 [xxl-job, JobThread-2-1733822348999] ERROR SendMessageTaskJob     - 定时任务，扫描MQ任务表发送消息失败。
-java.lang.InterruptedException: null
-	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
-	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1928)
-	at org.redisson.RedissonLock.tryLock(RedissonLock.java:237)
-	at site.mufen.trigger.job.SendMessageTaskJob.exec_db01(SendMessageTaskJob.java:46)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.trigger.http.RaffleActivityController$$EnhancerBySpringCGLIB$$e2d5fc32.draw(<generated>)
+	at site.mufen.trigger.api.IRaffleActivityServiceDubboWrap0.invokeMethod(IRaffleActivityServiceDubboWrap0.java)
+	at org.apache.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:71)
+	at org.apache.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:99)
+	at org.apache.dubbo.rpc.filter.ClassLoaderCallbackFilter.invoke(ClassLoaderCallbackFilter.java:38)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:77)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:46)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:99)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:52)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.auth.filter.ProviderAuthFilter.invoke(ProviderAuthFilter.java:53)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ContextFilter.invoke(ContextFilter.java:131)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.GenericFilter.invoke(GenericFilter.java:191)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ClassLoaderFilter.invoke(ClassLoaderFilter.java:54)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.EchoFilter.invoke(EchoFilter.java:41)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ProfilerServerFilter.invoke(ProfilerServerFilter.java:56)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CallbackRegistrationInvoker.invoke(FilterChainBuilder.java:193)
+	at org.apache.dubbo.rpc.protocol.injvm.InjvmInvoker.doInvoke(InjvmInvoker.java:142)
+	at org.apache.dubbo.rpc.protocol.AbstractInvoker.doInvokeAndReturn(AbstractInvoker.java:221)
+	at org.apache.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:182)
+	at org.apache.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:78)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invokeWithContext(AbstractClusterInvoker.java:378)
+	at org.apache.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:80)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:340)
+	at org.apache.dubbo.rpc.cluster.router.RouterSnapshotFilter.invoke(RouterSnapshotFilter.java:46)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:99)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:51)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.cluster.filter.support.ConsumerContextFilter.invoke(ConsumerContextFilter.java:110)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CallbackRegistrationInvoker.invoke(FilterChainBuilder.java:193)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.AbstractCluster$ClusterFilterInvoker.invoke(AbstractCluster.java:92)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:97)
+	at org.apache.dubbo.rpc.proxy.InvocationUtil.invoke(InvocationUtil.java:55)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:73)
+	at site.mufen.trigger.api.IRaffleActivityServiceDubboProxy0.draw(IRaffleActivityServiceDubboProxy0.java)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
-	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
-24-12-10.17:19:10.684 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003cb3000b has expired
-24-12-10.17:19:10.684 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - An exception was thrown while closing send thread for session 0x10000003cb3000b.
-org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003cb3000b has expired
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy226.draw(Unknown Source)
+	at site.mufen.test.ApiTest.test_rpc(ApiTest.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.11:07:08.372 [main            ] WARN  ProfilerServerFilter   -  [DUBBO] [Dubbo-Provider] execute service site.mufen.trigger.api.IRaffleActivityService:1.0#draw cost 3830.322826 ms, this invocation almost (maybe already) timeout. Timeout: 1000ms
+client: null:0
+invocation context:
+remote.application=big-market;
+timeout=1000;
+thread info: 
+Start time: 2334810458906
++-[ Offset: 0.000000ms; Usage: 3830.322826ms, 100% ] Receive request. Server invoke begin.
+  +-[ Offset: 0.697720ms; Usage: 3821.186936ms, 99% ] Receive request. Server biz impl invoke begin., dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:07:08.379 [main            ] WARN  InvokerInvocationHandler -  [DUBBO] [Dubbo-Consumer] execute service site.mufen.trigger.api.IRaffleActivityService:1.0#draw cost 3923.629071 ms, this invocation almost (maybe already) timeout. Timeout: 1000ms
+invocation context:
+remote.application=big-market;
+timeout=1000;
+thread info: 
+Start time: 2334724540138
++-[ Offset: 0.000000ms; Usage: 3923.629071ms, 100% ] Receive request. Client invoke begin. ServiceKey: site.mufen.trigger.api.IRaffleActivityService:1.0 MethodName:draw
+  +-[ Offset: 16.148576ms; Usage: 3907.276057ms, 99% ] Invoker invoke. Target Address: 127.0.0.1, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:09:24.695 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.11:09:31.493 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.11:09:32.174 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:09:32.357 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:09:32.390 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:09:32.883 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:12:15.947 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 167981ms for session id 0x10000003a0e0002
+24-12-11.11:12:15.953 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0002 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 167981ms for session id 0x10000003a0e0002
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.11:12:18.852 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e0002 has expired
+24-12-11.11:12:18.852 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.11:12:18.853 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0002 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e0002 has expired
 	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
 	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
-24-12-10.17:22:39.594 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:22:43.849 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:22:44.348 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:22:44.522 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:22:44.547 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:23:21.189 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 25548ms for session id 0x10000003cb3000c
-24-12-10.17:23:21.197 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb3000c for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 25548ms for session id 0x10000003cb3000c
+24-12-11.11:13:38.807 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 68165ms for session id 0x10000003a0e0003
+24-12-11.11:13:38.807 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m21s624ms902µs381ns).
+24-12-11.11:13:38.807 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m21s625ms467µs765ns).
+24-12-11.11:13:38.807 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0003 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 68165ms for session id 0x10000003a0e0003
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:23:21.357 [xxl-job, JobThread-3-1733822601311] ERROR SendMessageTaskJob     - 定时任务，扫描MQ任务表发送消息失败。
-java.lang.InterruptedException: null
-	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
-	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1928)
-	at org.redisson.RedissonLock.tryLock(RedissonLock.java:237)
-	at site.mufen.trigger.job.SendMessageTaskJob.exec_db02(SendMessageTaskJob.java:85)
+24-12-11.11:13:38.818 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m21s636ms712µs811ns).
+24-12-11.11:13:38.816 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:mufen activityId:100301
+java.lang.NullPointerException: null
+	at site.mufen.domain.strategy.service.armory.StrategyArmoryDispatch.dispatchAlgorithm(StrategyArmoryDispatch.java:60)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:96)
+	at site.mufen.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain.logic(RuleWeightLogicChain.java:62)
+	at site.mufen.domain.strategy.service.rule.chain.impl.BlackListLogicChain.logic(BlackListLogicChain.java:45)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:47)
+	at site.mufen.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:57)
+	at site.mufen.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:169)
+	at site.mufen.trigger.http.RaffleActivityController$$FastClassBySpringCGLIB$$a7d3835.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at site.mufen.aop.RateLimiterAOP.doRouter(RateLimiterAOP.java:89)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
-	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
-24-12-10.17:23:21.362 [xxl-job, JobThread-2-1733822601311] ERROR SendMessageTaskJob     - 定时任务，扫描MQ任务表发送消息失败。
-java.lang.InterruptedException: null
-	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
-	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1928)
-	at org.redisson.RedissonLock.tryLock(RedissonLock.java:237)
-	at site.mufen.trigger.job.SendMessageTaskJob.exec_db01(SendMessageTaskJob.java:46)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.trigger.http.RaffleActivityController$$EnhancerBySpringCGLIB$$f7ae1b70.draw(<generated>)
+	at site.mufen.trigger.api.IRaffleActivityServiceDubboWrap0.invokeMethod(IRaffleActivityServiceDubboWrap0.java)
+	at org.apache.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:71)
+	at org.apache.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:99)
+	at org.apache.dubbo.rpc.filter.ClassLoaderCallbackFilter.invoke(ClassLoaderCallbackFilter.java:38)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:77)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:46)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:99)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:52)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.auth.filter.ProviderAuthFilter.invoke(ProviderAuthFilter.java:53)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ContextFilter.invoke(ContextFilter.java:131)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.GenericFilter.invoke(GenericFilter.java:191)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ClassLoaderFilter.invoke(ClassLoaderFilter.java:54)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.EchoFilter.invoke(EchoFilter.java:41)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.filter.ProfilerServerFilter.invoke(ProfilerServerFilter.java:56)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CallbackRegistrationInvoker.invoke(FilterChainBuilder.java:193)
+	at org.apache.dubbo.rpc.protocol.injvm.InjvmInvoker.doInvoke(InjvmInvoker.java:142)
+	at org.apache.dubbo.rpc.protocol.AbstractInvoker.doInvokeAndReturn(AbstractInvoker.java:221)
+	at org.apache.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:182)
+	at org.apache.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:78)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invokeWithContext(AbstractClusterInvoker.java:378)
+	at org.apache.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:80)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:340)
+	at org.apache.dubbo.rpc.cluster.router.RouterSnapshotFilter.invoke(RouterSnapshotFilter.java:46)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:99)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:51)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.cluster.filter.support.ConsumerContextFilter.invoke(ConsumerContextFilter.java:110)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CopyOfFilterChainNode.invoke(FilterChainBuilder.java:321)
+	at org.apache.dubbo.rpc.cluster.filter.FilterChainBuilder$CallbackRegistrationInvoker.invoke(FilterChainBuilder.java:193)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.AbstractCluster$ClusterFilterInvoker.invoke(AbstractCluster.java:92)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:97)
+	at org.apache.dubbo.rpc.proxy.InvocationUtil.invoke(InvocationUtil.java:55)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:73)
+	at site.mufen.trigger.api.IRaffleActivityServiceDubboProxy0.draw(IRaffleActivityServiceDubboProxy0.java)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
-	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
-24-12-10.17:23:21.393 [xxl-job, JobThread-1-1733822601313] ERROR UpdateAwardStockJob    - 定时任务，更新奖品消耗库存失败
-org.redisson.client.RedisException: java.lang.InterruptedException
-	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:114)
-	at org.redisson.RedissonObject.get(RedissonObject.java:90)
-	at org.redisson.RedissonLock.tryAcquire(RedissonLock.java:143)
-	at org.redisson.RedissonLock.tryLock(RedissonLock.java:264)
-	at site.mufen.trigger.job.UpdateAwardStockJob.exec(UpdateAwardStockJob.java:61)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy226.draw(Unknown Source)
+	at site.mufen.test.ApiTest.test_rpc(ApiTest.java:60)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
-	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
-Caused by: java.lang.InterruptedException: null
-	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
-	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
-	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:110)
-	... 10 common frames omitted
-24-12-10.17:24:05.206 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:24:09.339 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:24:09.832 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:24:09.988 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:24:10.010 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:24:56.513 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=45s887ms777µs650ns).
-24-12-10.17:24:56.513 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=45s887ms774µs364ns).
-24-12-10.17:24:56.513 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 26355ms for session id 0x10000003cb3000d
-24-12-10.17:24:56.513 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=45s886ms627µs566ns).
-24-12-10.17:27:49.839 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m53s325ms983µs403ns).
-24-12-10.17:27:49.839 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m53s325ms983µs223ns).
-24-12-10.17:27:49.839 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m53s325ms982µs41ns).
-24-12-10.17:27:50.018 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb3000d for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 26355ms for session id 0x10000003cb3000d
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.11:13:38.890 [main            ] WARN  ProfilerServerFilter   -  [DUBBO] [Dubbo-Provider] execute service site.mufen.trigger.api.IRaffleActivityService:1.0#draw cost 245892.098952 ms, this invocation almost (maybe already) timeout. Timeout: 1000ms
+client: null:0
+invocation context:
+remote.application=big-market;
+timeout=1000;
+thread info: 
+Start time: 2483266496629
++-[ Offset: 0.000000ms; Usage: 245892.098952ms, 100% ] Receive request. Server invoke begin.
+  +-[ Offset: 0.364633ms; Usage: 245869.294327ms, 99% ] Receive request. Server biz impl invoke begin., dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:13:38.947 [main            ] WARN  InvokerInvocationHandler -  [DUBBO] [Dubbo-Consumer] execute service site.mufen.trigger.api.IRaffleActivityService:1.0#draw cost 246042.315133 ms, this invocation almost (maybe already) timeout. Timeout: 1000ms
+invocation context:
+remote.application=big-market;
+timeout=1000;
+thread info: 
+Start time: 2483172562230
++-[ Offset: 0.000000ms; Usage: 246042.315133ms, 100% ] Receive request. Client invoke begin. ServiceKey: site.mufen.trigger.api.IRaffleActivityService:1.0 MethodName:draw
+  +-[ Offset: 11.782684ms; Usage: 246030.269524ms, 99% ] Invoker invoke. Target Address: 127.0.0.1, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:13:39.932 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e0003 has expired
+24-12-11.11:13:39.933 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - An exception was thrown while closing send thread for session 0x10000003a0e0003.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e0003 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.11:17:48.732 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.11:17:54.038 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.11:17:54.768 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:17:55.050 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.11:17:55.075 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:09:49.701 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:09:56.525 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:09:58.757 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:09:59.027 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:09:59.063 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:10:01.330 [main            ] ERROR RaffleStrategyController - 查询抽奖奖品列表配置失败 userId：mufen activityId:100301
+java.lang.NullPointerException: null
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository.queryAwardRuleLockCount(StrategyRepository.java:356)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$FastClassBySpringCGLIB$$75112ba5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$EnhancerBySpringCGLIB$$65794649.queryAwardRuleLockCount(<generated>)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.queryAwardRuleLockCount(DefaultRaffleStrategy.java:103)
+	at site.mufen.trigger.http.RaffleStrategyController.queryRaffleAwardList(RaffleStrategyController.java:112)
+	at site.mufen.test.trigger.RaffleStrategyControllerTest.test_queryRaffleAwardList(RaffleStrategyControllerTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.12:12:13.790 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:12:18.982 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:12:19.476 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:12:19.627 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:12:19.649 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:13:03.340 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 46410ms for session id 0x10000003a0e0006
+24-12-11.12:13:07.409 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0006 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 46410ms for session id 0x10000003a0e0006
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:27:50.091 [xxl-job, JobThread-3-1733822650138] ERROR SendMessageTaskJob     - 定时任务，扫描MQ任务表发送消息失败。
+24-12-11.12:16:23.627 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 196117. Adjusted session timeout ms: 18000
+24-12-11.12:16:23.627 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=3m15s531ms619µs127ns).
+24-12-11.12:16:23.628 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=3m15s534ms296µs537ns).
+24-12-11.12:16:23.628 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=3m15s530ms722µs608ns).
+24-12-11.12:16:26.398 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.12:16:26.907 [main            ] ERROR RaffleStrategyController - 查询抽奖奖品列表配置失败 userId：mufen activityId:100301
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'redissonConnectionFactory': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:220)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$1.orderedStream(DefaultListableBeanFactory.java:481)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.detectPersistenceExceptionTranslators(PersistenceExceptionTranslationInterceptor.java:167)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$EnhancerBySpringCGLIB$$75e8eb7d.queryAwardRuleLockCount(<generated>)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.queryAwardRuleLockCount(DefaultRaffleStrategy.java:103)
+	at site.mufen.trigger.http.RaffleStrategyController.queryRaffleAwardList(RaffleStrategyController.java:112)
+	at site.mufen.test.trigger.RaffleStrategyControllerTest.test_queryRaffleAwardList(RaffleStrategyControllerTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.12:23:38.541 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:23:44.203 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:23:44.766 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:23:44.911 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:23:44.933 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:24:18.417 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 16332ms for session id 0x10000003a0e0008
+24-12-11.12:24:32.803 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0008 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 16332ms for session id 0x10000003a0e0008
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.12:24:32.850 [main            ] ERROR RaffleStrategyController - 查询抽奖奖品列表配置失败 userId：mufen activityId:100301
+java.lang.NullPointerException: null
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository.queryAwardRuleLockCount(StrategyRepository.java:356)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$FastClassBySpringCGLIB$$75112ba5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$EnhancerBySpringCGLIB$$dc87ca5a.queryAwardRuleLockCount(<generated>)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.queryAwardRuleLockCount(DefaultRaffleStrategy.java:103)
+	at site.mufen.trigger.http.RaffleStrategyController.queryRaffleAwardList(RaffleStrategyController.java:112)
+	at site.mufen.test.trigger.RaffleStrategyControllerTest.test_queryRaffleAwardList(RaffleStrategyControllerTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.12:25:03.949 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:25:08.574 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:25:09.094 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:25:09.235 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:25:09.254 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:25:17.135 [xxl-job, JobThread-3-1733891117080] ERROR SendMessageTaskJob     - 定时任务，扫描MQ任务表发送消息失败。
 org.redisson.client.RedisException: java.lang.InterruptedException
 	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:114)
 	at org.redisson.RedissonObject.get(RedissonObject.java:90)
@@ -245,26 +515,885 @@ Caused by: java.lang.InterruptedException: null
 	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
 	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:110)
 	... 10 common frames omitted
-24-12-10.17:31:51.671 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:31:56.292 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:31:56.806 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:31:56.953 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:31:56.973 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:32:26.407 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 16924ms for session id 0x10000003cb3000e
-24-12-10.17:32:28.513 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb3000e for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 16924ms for session id 0x10000003cb3000e
+24-12-11.12:25:19.148 [xxl-job, JobThread-1-1733891117074] ERROR UpdateAwardStockJob    - 定时任务，更新奖品消耗库存失败
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Retail_HikariCP - Interrupted during connection acquisition
+### The error may exist in file [/home/mufen/Downloads/big-market/big-market-app/target/classes/mybatis/mapper/mysql/strategy_award_mapper.xml]
+### The error may involve site.mufen.infrastructure.dao.IStrategyAwardDao.queryOpenActivityStrategyAwardList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Retail_HikariCP - Interrupted during connection acquisition
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy157.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy181.queryOpenActivityStrategyAwardList(Unknown Source)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository.queryOpenActivityStrategyAwardList(StrategyRepository.java:417)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$FastClassBySpringCGLIB$$75112ba5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$EnhancerBySpringCGLIB$$d4c19dbe.queryOpenActivityStrategyAwardList(<generated>)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.queryOpenActivityStrategyAwardList(DefaultRaffleStrategy.java:98)
+	at site.mufen.trigger.job.UpdateAwardStockJob.exec(UpdateAwardStockJob.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
+	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Retail_HikariCP - Interrupted during connection acquisition
+### The error may exist in file [/home/mufen/Downloads/big-market/big-market-app/target/classes/mybatis/mapper/mysql/strategy_award_mapper.xml]
+### The error may involve site.mufen.infrastructure.dao.IStrategyAwardDao.queryOpenActivityStrategyAwardList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Retail_HikariCP - Interrupted during connection acquisition
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 26 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Retail_HikariCP - Interrupted during connection acquisition
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:83)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 32 common frames omitted
+Caused by: java.sql.SQLException: Retail_HikariCP - Interrupted during connection acquisition
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:162)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:194)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	... 42 common frames omitted
+Caused by: java.lang.InterruptedException: null
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:944)
+	at com.zaxxer.hikari.util.ConcurrentBag.borrow(ConcurrentBag.java:151)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:180)
+	... 48 common frames omitted
+24-12-11.12:30:06.095 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 271701ms for session id 0x10000003a0e0009
+24-12-11.12:30:06.095 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=4m45s266ms186µs486ns).
+24-12-11.12:30:06.095 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=4m45s266ms186µs616ns).
+24-12-11.12:30:06.095 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=4m45s266ms186µs165ns).
+24-12-11.12:30:06.095 [main            ] ERROR RaffleStrategyController - 查询抽奖奖品列表配置失败 userId：mufen activityId:100301
+java.lang.NullPointerException: null
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository.queryAwardRuleLockCount(StrategyRepository.java:356)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$FastClassBySpringCGLIB$$75112ba5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$EnhancerBySpringCGLIB$$d4c19dbe.queryAwardRuleLockCount(<generated>)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.queryAwardRuleLockCount(DefaultRaffleStrategy.java:103)
+	at site.mufen.trigger.http.RaffleStrategyController.queryRaffleAwardList(RaffleStrategyController.java:112)
+	at site.mufen.test.trigger.RaffleStrategyControllerTest.test_queryRaffleAwardList(RaffleStrategyControllerTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.12:30:06.106 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0009 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 271701ms for session id 0x10000003a0e0009
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
-24-12-10.17:32:34.850 [main-EventThread] WARN  ConnectionState        - Session expired event received
-24-12-10.17:32:34.850 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003cb3000e has expired
-24-12-10.17:32:34.851 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003cb3000e for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
-org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003cb3000e has expired
+24-12-11.12:30:06.243 [xxl-job, JobThread-4-1733891117074] ERROR UpdateActivitySkuStockJob - 定时任务，更新活动sku库存失败
+org.redisson.client.RedisException: java.lang.InterruptedException
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:114)
+	at org.redisson.RedissonObject.get(RedissonObject.java:90)
+	at org.redisson.RedissonLock.tryAcquire(RedissonLock.java:143)
+	at org.redisson.RedissonLock.tryLock(RedissonLock.java:222)
+	at site.mufen.trigger.job.UpdateActivitySkuStockJob.exec(UpdateActivitySkuStockJob.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
+	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
+Caused by: java.lang.InterruptedException: null
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:110)
+	... 10 common frames omitted
+24-12-11.12:30:08.046 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e0009 has expired
+24-12-11.12:30:08.046 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - An exception was thrown while closing send thread for session 0x10000003a0e0009.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e0009 has expired
 	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
 	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
-24-12-10.17:53:25.211 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
-24-12-10.17:53:29.802 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-24-12-10.17:53:31.203 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:53:31.344 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
-24-12-10.17:53:31.364 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:34:34.889 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:34:40.550 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:34:41.152 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:34:41.312 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:34:41.332 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:35:05.854 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 15322ms for session id 0x10000003a0e000a
+24-12-11.12:35:05.858 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e000a for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 15322ms for session id 0x10000003a0e000a
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.12:35:07.557 [main-EventThread] ERROR CuratorCacheImpl       - CuratorCache error
+java.lang.IllegalStateException: Expected state [STARTED] was [STOPPED]
+	at org.apache.curator.shaded.com.google.common.base.Preconditions.checkState(Preconditions.java:823)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkState(CuratorFrameworkImpl.java:423)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getData(CuratorFrameworkImpl.java:457)
+	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.nodeChanged(CuratorCacheImpl.java:258)
+	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.rebuild(CuratorCacheImpl.java:149)
+	at org.apache.curator.framework.listen.MappingListenerManager.lambda$forEach$0(MappingListenerManager.java:92)
+	at org.apache.curator.framework.listen.MappingListenerManager.forEach(MappingListenerManager.java:89)
+	at org.apache.curator.framework.listen.StandardListenerManager.forEach(StandardListenerManager.java:89)
+	at org.apache.curator.framework.recipes.watch.PersistentWatcher.lambda$reset$3(PersistentWatcher.java:160)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.sendToBackgroundCallback(CuratorFrameworkImpl.java:892)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:649)
+	at org.apache.curator.framework.imps.AddWatchBuilderImpl.lambda$performBackgroundOperation$1(AddWatchBuilderImpl.java:166)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:722)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:551)
+24-12-11.12:35:07.557 [main-EventThread] ERROR CuratorCacheImpl       - CuratorCache error
+java.lang.IllegalStateException: Expected state [STARTED] was [STOPPED]
+	at org.apache.curator.shaded.com.google.common.base.Preconditions.checkState(Preconditions.java:823)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkState(CuratorFrameworkImpl.java:423)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getData(CuratorFrameworkImpl.java:457)
+	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.nodeChanged(CuratorCacheImpl.java:258)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.concurrent.ConcurrentHashMap$ValueSpliterator.forEachRemaining(ConcurrentHashMap.java:3564)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.rebuild(CuratorCacheImpl.java:157)
+	at org.apache.curator.framework.listen.MappingListenerManager.lambda$forEach$0(MappingListenerManager.java:92)
+	at org.apache.curator.framework.listen.MappingListenerManager.forEach(MappingListenerManager.java:89)
+	at org.apache.curator.framework.listen.StandardListenerManager.forEach(StandardListenerManager.java:89)
+	at org.apache.curator.framework.recipes.watch.PersistentWatcher.lambda$reset$3(PersistentWatcher.java:160)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.sendToBackgroundCallback(CuratorFrameworkImpl.java:892)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:649)
+	at org.apache.curator.framework.imps.AddWatchBuilderImpl.lambda$performBackgroundOperation$1(AddWatchBuilderImpl.java:166)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:722)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:551)
+24-12-11.12:35:07.557 [main-EventThread] ERROR CuratorCacheImpl       - CuratorCache error
+java.lang.IllegalStateException: Expected state [STARTED] was [STOPPED]
+	at org.apache.curator.shaded.com.google.common.base.Preconditions.checkState(Preconditions.java:823)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkState(CuratorFrameworkImpl.java:423)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getData(CuratorFrameworkImpl.java:457)
+	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.nodeChanged(CuratorCacheImpl.java:258)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.concurrent.ConcurrentHashMap$ValueSpliterator.forEachRemaining(ConcurrentHashMap.java:3564)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.apache.curator.framework.recipes.cache.CuratorCacheImpl.rebuild(CuratorCacheImpl.java:157)
+	at org.apache.curator.framework.listen.MappingListenerManager.lambda$forEach$0(MappingListenerManager.java:92)
+	at org.apache.curator.framework.listen.MappingListenerManager.forEach(MappingListenerManager.java:89)
+	at org.apache.curator.framework.listen.StandardListenerManager.forEach(StandardListenerManager.java:89)
+	at org.apache.curator.framework.recipes.watch.PersistentWatcher.lambda$reset$3(PersistentWatcher.java:160)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.sendToBackgroundCallback(CuratorFrameworkImpl.java:892)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:649)
+	at org.apache.curator.framework.imps.AddWatchBuilderImpl.lambda$performBackgroundOperation$1(AddWatchBuilderImpl.java:166)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:722)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:551)
+24-12-11.12:41:24.810 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:41:29.476 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:41:30.107 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:41:30.262 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:41:30.291 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:41:30.866 [main            ] ERROR RaffleStrategyController - 查询抽奖奖品列表配置失败 userId：mufen activityId:100301
+java.lang.NullPointerException: null
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository.queryAwardRuleLockCount(StrategyRepository.java:356)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$FastClassBySpringCGLIB$$75112ba5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.infrastructure.adapter.repository.StrategyRepository$$EnhancerBySpringCGLIB$$4a731656.queryAwardRuleLockCount(<generated>)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.queryAwardRuleLockCount(DefaultRaffleStrategy.java:103)
+	at site.mufen.trigger.http.RaffleStrategyController.queryRaffleAwardList(RaffleStrategyController.java:112)
+	at site.mufen.test.trigger.RaffleStrategyControllerTest.test_queryRaffleAwardList(RaffleStrategyControllerTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.12:48:45.081 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:48:49.823 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:48:52.780 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:48:53.000 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:48:53.025 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:59:38.837 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.12:59:45.620 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.12:59:46.841 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:59:46.992 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:59:47.012 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.12:59:47.842 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:mufen activityId:100301
+java.lang.NumberFormatException: For input string: "100006_10:102,103"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at site.mufen.domain.strategy.service.armory.algorithm.impl.O1Algorithm.dispatchAlgorithm(O1Algorithm.java:54)
+	at site.mufen.domain.strategy.service.armory.StrategyArmoryDispatch.dispatchAlgorithm(StrategyArmoryDispatch.java:60)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:96)
+	at site.mufen.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain.logic(RuleWeightLogicChain.java:62)
+	at site.mufen.domain.strategy.service.rule.chain.impl.BlackListLogicChain.logic(BlackListLogicChain.java:45)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:47)
+	at site.mufen.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:57)
+	at site.mufen.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:169)
+	at site.mufen.trigger.http.RaffleActivityController$$FastClassBySpringCGLIB$$a7d3835.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at site.mufen.aop.RateLimiterAOP.doRouter(RateLimiterAOP.java:89)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.trigger.http.RaffleActivityController$$EnhancerBySpringCGLIB$$c38a41.draw(<generated>)
+	at site.mufen.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.14:43:43.155 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.14:43:49.992 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.14:43:51.406 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.14:43:51.569 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.14:43:51.593 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.14:44:04.587 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 17299ms for session id 0x10000003a0e000e
+24-12-11.14:44:04.590 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e000e for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 17299ms for session id 0x10000003a0e000e
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.14:44:14.014 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.14:44:14.014 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e000e has expired
+24-12-11.14:44:14.015 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e000e for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e000e has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.14:52:35.854 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=8m18s64ms439µs119ns).
+24-12-11.14:52:35.854 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 501810ms for session id 0x10000003a0e000f
+24-12-11.14:52:35.854 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=8m18s64ms416µs158ns).
+24-12-11.14:52:35.854 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=8m18s62ms206µs433ns).
+24-12-11.14:52:35.855 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e000f for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 501810ms for session id 0x10000003a0e000f
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.14:52:49.398 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e000f has expired
+24-12-11.14:52:49.398 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e000f for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e000f has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.14:52:49.398 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.14:55:05.622 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m29s768ms512µs333ns).
+24-12-11.14:55:05.622 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m29s769ms10µs594ns).
+24-12-11.14:55:05.622 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m29s768ms926µs574ns).
+24-12-11.14:55:05.623 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 135941ms for session id 0x10000003a0e0010
+24-12-11.14:55:05.623 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0010 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 135941ms for session id 0x10000003a0e0010
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.14:55:05.645 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:mufen activityId:100301
+java.lang.NumberFormatException: For input string: "100006_10:102,103"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at site.mufen.domain.strategy.service.armory.algorithm.impl.O1Algorithm.dispatchAlgorithm(O1Algorithm.java:54)
+	at site.mufen.domain.strategy.service.armory.StrategyArmoryDispatch.dispatchAlgorithm(StrategyArmoryDispatch.java:60)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:96)
+	at site.mufen.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain.logic(RuleWeightLogicChain.java:62)
+	at site.mufen.domain.strategy.service.rule.chain.impl.BlackListLogicChain.logic(BlackListLogicChain.java:45)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:47)
+	at site.mufen.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:57)
+	at site.mufen.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:169)
+	at site.mufen.trigger.http.RaffleActivityController$$FastClassBySpringCGLIB$$a7d3835.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at site.mufen.aop.RateLimiterAOP.doRouter(RateLimiterAOP.java:89)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.trigger.http.RaffleActivityController$$EnhancerBySpringCGLIB$$17afe6c1.draw(<generated>)
+	at site.mufen.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.14:58:49.535 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.14:58:56.345 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.14:58:56.861 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.14:58:57.005 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.14:58:57.025 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.14:59:46.847 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 39044ms for session id 0x10000003a0e0011
+24-12-11.14:59:46.894 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0011 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 39044ms for session id 0x10000003a0e0011
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.15:00:37.644 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=50s797ms184µs196ns).
+24-12-11.15:00:37.644 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=50s797ms301µs317ns).
+24-12-11.15:00:37.644 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=50s798ms749µs250ns).
+24-12-11.15:00:59.941 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.15:00:59.941 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e0011 has expired
+24-12-11.15:02:34.027 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m56s382ms915µs595ns).
+24-12-11.15:02:34.027 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m56s382ms153µs765ns).
+24-12-11.15:02:34.029 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m56s384ms912µs358ns).
+24-12-11.15:02:34.030 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 98505. Adjusted session timeout ms: 18000
+24-12-11.15:02:34.032 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0011 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e0011 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.15:02:56.374 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 19615. Adjusted session timeout ms: 18000
+24-12-11.15:02:56.375 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.15:15:58.622 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=12m50s53ms556µs38ns).
+24-12-11.15:15:58.625 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=12m50s53ms597µs787ns).
+24-12-11.15:15:58.626 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 769861ms for session id 0x10000003a0e0012
+24-12-11.15:15:58.625 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=12m50s53ms578µs220ns).
+24-12-11.15:15:58.667 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0012 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 769861ms for session id 0x10000003a0e0012
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.15:17:17.881 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m19s297ms543µs278ns).
+24-12-11.15:17:17.889 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m19s297ms584µs967ns).
+24-12-11.15:17:17.881 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m19s297ms544µs350ns).
+24-12-11.15:17:17.892 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 69329. Adjusted session timeout ms: 18000
+24-12-11.15:25:01.996 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=7m44s114ms6µs416ns).
+24-12-11.15:25:01.996 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=7m44s114ms39µs418ns).
+24-12-11.15:25:01.993 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=7m44s109ms177µs472ns).
+24-12-11.15:25:02.010 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.15:25:02.026 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 464123. Adjusted session timeout ms: 18000
+24-12-11.15:25:02.155 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.15:28:15.555 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=3m13s559ms668µs945ns).
+24-12-11.15:28:15.557 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=3m13s564ms475µs978ns).
+24-12-11.15:28:15.557 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=3m13s561ms565µs912ns).
+24-12-11.15:28:15.557 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 188371ms for session id 0x0
+24-12-11.15:28:15.562 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x0 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 188371ms for session id 0x0
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.15:28:15.914 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:mufen activityId:100301
+java.lang.NumberFormatException: For input string: "100006_10:102,103"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at site.mufen.domain.strategy.service.armory.algorithm.impl.O1Algorithm.dispatchAlgorithm(O1Algorithm.java:54)
+	at site.mufen.domain.strategy.service.armory.StrategyArmoryDispatch.dispatchAlgorithm(StrategyArmoryDispatch.java:60)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:96)
+	at site.mufen.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain.logic(RuleWeightLogicChain.java:62)
+	at site.mufen.domain.strategy.service.rule.chain.impl.BlackListLogicChain.logic(BlackListLogicChain.java:45)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:47)
+	at site.mufen.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:57)
+	at site.mufen.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:169)
+	at site.mufen.trigger.http.RaffleActivityController$$FastClassBySpringCGLIB$$a7d3835.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at site.mufen.aop.RateLimiterAOP.doRouter(RateLimiterAOP.java:89)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.trigger.http.RaffleActivityController$$EnhancerBySpringCGLIB$$48d7f93b.draw(<generated>)
+	at site.mufen.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.15:29:12.635 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.15:29:19.574 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.15:29:20.320 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:29:20.462 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:29:20.482 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:30:34.717 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=57s776ms849µs19ns).
+24-12-11.15:30:34.717 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m4s103ms66µs827ns).
+24-12-11.15:30:34.718 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 43528ms for session id 0x10000003a0e0015
+24-12-11.15:30:34.722 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0015 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 43528ms for session id 0x10000003a0e0015
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.15:30:34.722 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:mufen activityId:100301
+java.lang.NumberFormatException: For input string: "100006_10:102,103"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at site.mufen.domain.strategy.service.armory.algorithm.impl.O1Algorithm.dispatchAlgorithm(O1Algorithm.java:58)
+	at site.mufen.domain.strategy.service.armory.StrategyArmoryDispatch.dispatchAlgorithm(StrategyArmoryDispatch.java:60)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:95)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:101)
+	at site.mufen.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain.logic(RuleWeightLogicChain.java:62)
+	at site.mufen.domain.strategy.service.rule.chain.impl.BlackListLogicChain.logic(BlackListLogicChain.java:45)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:47)
+	at site.mufen.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:57)
+	at site.mufen.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:169)
+	at site.mufen.trigger.http.RaffleActivityController$$FastClassBySpringCGLIB$$a7d3835.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at site.mufen.aop.RateLimiterAOP.doRouter(RateLimiterAOP.java:89)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.trigger.http.RaffleActivityController$$EnhancerBySpringCGLIB$$5ee7c3a5.draw(<generated>)
+	at site.mufen.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.15:30:37.391 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e0015 has expired
+24-12-11.15:30:37.391 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.15:30:37.391 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0015 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e0015 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.15:31:37.950 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.15:31:42.582 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.15:31:43.179 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:31:43.331 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:31:43.352 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:32:06.191 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 12069ms for session id 0x10000003a0e0017
+24-12-11.15:32:15.442 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e0017 for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 12069ms for session id 0x10000003a0e0017
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.15:32:57.551 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m7s469ms738µs573ns).
+24-12-11.15:32:57.553 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m5s450ms740µs719ns).
+24-12-11.15:32:57.559 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:mufen activityId:100301
+java.lang.NumberFormatException: For input string: "100006_10:102,103"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at site.mufen.domain.strategy.service.armory.algorithm.impl.O1Algorithm.dispatchAlgorithm(O1Algorithm.java:58)
+	at site.mufen.domain.strategy.service.armory.StrategyArmoryDispatch.dispatchAlgorithm(StrategyArmoryDispatch.java:60)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:95)
+	at site.mufen.domain.strategy.service.armory.AbstractStrategyArmoryDispatch.getRandomAwardId(AbstractStrategyArmoryDispatch.java:101)
+	at site.mufen.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain.logic(RuleWeightLogicChain.java:62)
+	at site.mufen.domain.strategy.service.rule.chain.impl.BlackListLogicChain.logic(BlackListLogicChain.java:45)
+	at site.mufen.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:47)
+	at site.mufen.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:57)
+	at site.mufen.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:169)
+	at site.mufen.trigger.http.RaffleActivityController$$FastClassBySpringCGLIB$$a7d3835.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at site.mufen.aop.RateLimiterAOP.doRouter(RateLimiterAOP.java:89)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at site.mufen.trigger.http.RaffleActivityController$$EnhancerBySpringCGLIB$$cdabe388.draw(<generated>)
+	at site.mufen.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+24-12-11.15:35:30.027 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.15:35:33.995 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.15:35:34.554 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:35:34.729 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:35:34.750 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.15:35:36.262 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] ERROR AwardService           - 分发奖品，对应服务不存在。awardKey:openai_use_count
+24-12-11.16:53:12.853 [main            ] WARN  CuratorZookeeperClient - session timeout [18000] is less than connection timeout [30000]
+24-12-11.16:53:18.105 [main            ] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+24-12-11.16:53:21.601 [main            ] WARN  ServiceConfig          -  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.16:53:21.900 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.16:53:21.942 [main            ] WARN  MetadataUtils          -  [DUBBO] Remote Metadata Report Server is not provided or unavailable, will stop registering service definition to remote center!, dubbo version: 3.0.9, current host: 198.18.0.1
+24-12-11.16:53:37.613 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 16050ms for session id 0x10000003a0e001a
+24-12-11.16:53:37.618 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e001a for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 16050ms for session id 0x10000003a0e001a
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.16:53:45.661 [xxl-job, JobThread-2-1733907225574] ERROR SendMessageTaskJob     - 定时任务，扫描MQ任务表发送消息失败。
+org.redisson.client.RedisException: java.lang.InterruptedException
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:114)
+	at org.redisson.RedissonObject.get(RedissonObject.java:90)
+	at org.redisson.RedissonLock.tryAcquire(RedissonLock.java:143)
+	at org.redisson.RedissonLock.tryLock(RedissonLock.java:222)
+	at site.mufen.trigger.job.SendMessageTaskJob.exec_db01(SendMessageTaskJob.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
+	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
+Caused by: java.lang.InterruptedException: null
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:110)
+	... 10 common frames omitted
+24-12-11.16:53:45.661 [xxl-job, JobThread-1-1733907225574] ERROR UpdateAwardStockJob    - 定时任务，更新奖品消耗库存失败
+org.redisson.client.RedisException: java.lang.InterruptedException
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:114)
+	at org.redisson.RedissonObject.get(RedissonObject.java:90)
+	at org.redisson.RedissonLock.tryAcquire(RedissonLock.java:143)
+	at org.redisson.RedissonLock.tryLock(RedissonLock.java:222)
+	at site.mufen.trigger.job.UpdateAwardStockJob.exec(UpdateAwardStockJob.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
+	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
+Caused by: java.lang.InterruptedException: null
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:110)
+	... 10 common frames omitted
+24-12-11.16:53:45.661 [xxl-job, JobThread-4-1733907225579] ERROR UpdateActivitySkuStockJob - 定时任务，更新活动sku库存失败
+org.redisson.client.RedisException: java.lang.InterruptedException
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:114)
+	at org.redisson.RedissonObject.get(RedissonObject.java:90)
+	at org.redisson.RedissonLock.tryAcquire(RedissonLock.java:143)
+	at org.redisson.RedissonLock.tryLock(RedissonLock.java:222)
+	at site.mufen.trigger.job.UpdateActivitySkuStockJob.exec(UpdateActivitySkuStockJob.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.xxl.job.core.handler.impl.MethodJobHandler.execute(MethodJobHandler.java:31)
+	at com.xxl.job.core.thread.JobThread.run(JobThread.java:166)
+Caused by: java.lang.InterruptedException: null
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
+	at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:110)
+	... 10 common frames omitted
+24-12-11.16:53:46.389 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e001a has expired
+24-12-11.16:53:46.389 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.16:53:46.389 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e001a for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e001a has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.16:54:09.206 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e001b for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$EndOfStreamException: Unable to read additional data from server sessionid 0x10000003a0e001b, likely server has closed socket
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:75)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.16:54:14.697 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e001b has expired
+24-12-11.16:54:14.697 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.16:54:14.697 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e001b for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e001b has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)
+24-12-11.16:54:29.181 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 14458ms for session id 0x10000003a0e001c
+24-12-11.16:54:29.182 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e001c for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 14458ms for session id 0x10000003a0e001c
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.16:56:03.544 [Curator-ConnectionStateManager-0] WARN  ConnectionStateManager - Session timeout has elapsed while SUSPENDED. Injecting a session expiration. Elapsed ms: 93967. Adjusted session timeout ms: 18000
+24-12-11.16:56:03.544 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m34s363ms603µs723ns).
+24-12-11.16:56:03.545 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m34s362ms491µs393ns).
+24-12-11.16:56:03.548 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=2m6s646ms998µs734ns).
+24-12-11.16:56:10.281 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.16:57:17.416 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Client session timed out, have not heard from server in 64474ms for session id 0x10000003a0e001d
+24-12-11.16:57:17.417 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m13s873ms755µs37ns).
+24-12-11.16:57:17.416 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m13s873ms246µs137ns).
+24-12-11.16:57:17.416 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m13s872ms406µs521ns).
+24-12-11.16:57:17.417 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e001d for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 64474ms for session id 0x10000003a0e001d
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1230)
+24-12-11.16:57:36.950 [main-EventThread] WARN  ConnectionState        - Session expired event received
+24-12-11.16:57:36.950 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Unable to reconnect to ZooKeeper service, session 0x10000003a0e001d has expired
+24-12-11.16:57:36.951 [main-SendThread(127.0.0.1:2181)] WARN  ClientCnxn             - Session 0x10000003a0e001d for sever localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x10000003a0e001d has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1406)
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:84)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:348)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1262)

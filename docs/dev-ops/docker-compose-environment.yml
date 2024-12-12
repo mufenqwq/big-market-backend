@@ -150,7 +150,7 @@ services:
       - my-network
 
   # canal-server 伪装成mysql的从库
-  # docker cp canal-server:/home/admin/canal-server/conf/example/instance.properties /Users/xiaofuge/Documents/develop/github/xfg-studio/xfg-dev-tech-canal/docs/dev-ops/canal
+  # docker cp canal-server:/home/admin/canal-server/conf/example/instance.properties /Users/mufen/Documents/develop/github/xfg-studio/xfg-dev-tech-canal/docs/dev-ops/canal
   canal-server:
     image: canal/canal-server:v1.1.7
     container_name: canal-server
@@ -165,8 +165,8 @@ services:
       - my-network
   
   # canal-adapter 负责数据分发
-  # docker cp canal-adapter:/opt/canal-adapter/conf/application.yml /Users/xiaofuge/Documents/develop/github/xfg-studio/xfg-dev-tech-canal/docs/dev-ops/canal-adapter
-  # docker cp canal-adapter:/opt/canal-adapter/conf/rdb/mytest_user.yml /Users/xiaofuge/Documents/develop/github/xfg-studio/xfg-dev-tech-canal/docs/dev-ops/canal-adapter/rdb
+  # docker cp canal-adapter:/opt/canal-adapter/conf/application.yml /Users/mufen/Documents/develop/github/xfg-studio/xfg-dev-tech-canal/docs/dev-ops/canal-adapter
+  # docker cp canal-adapter:/opt/canal-adapter/conf/rdb/mytest_user.yml /Users/mufen/Documents/develop/github/xfg-studio/xfg-dev-tech-canal/docs/dev-ops/canal-adapter/rdb
   canal-adapter:
     image: coopersoft/canal-adapter:v1.1.6
     container_name: canal-adapter

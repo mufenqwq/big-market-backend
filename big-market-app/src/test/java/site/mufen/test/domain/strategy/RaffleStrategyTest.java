@@ -47,7 +47,7 @@ public class RaffleStrategyTest {
     public void test_performRaffle() throws InterruptedException {
         for (int i = 0; i < 3; i++) {
             RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
-                    .userId("xiaofuge")
+                    .userId("mufen")
                     .strategyId(100006L)
                     .build();
 
@@ -75,7 +75,7 @@ public class RaffleStrategyTest {
     @Test
     public void test_raffle_center_rule_lock() {
         RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
-                .userId("xiaofuge")
+                .userId("mufen")
                 .strategyId(100003L)
                 .build();
 

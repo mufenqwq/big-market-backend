@@ -77,7 +77,7 @@ public abstract class AbstractStrategyArmoryDispatch implements IStrategyArmory,
             List<Integer> ruleWeightValues = ruleWeightValueMap.get(key);
             ArrayList<StrategyAwardEntity> strategyAwardEntitiesClone = new ArrayList<>(strategyAwardEntities);
             strategyAwardEntitiesClone.removeIf(entity -> !ruleWeightValues.contains(entity.getAwardId()));
-            armoryAlgorithm(String.valueOf(strategyId).concat("_").concat(key), strategyAwardEntitiesClone);
+            armoryAlgorithm(String.valueOf(strategyId).concat(Constants.UNDERLINE).concat(key), strategyAwardEntitiesClone);
         }
 
         return true;
@@ -87,13 +87,18 @@ public abstract class AbstractStrategyArmoryDispatch implements IStrategyArmory,
 
     @Override
     public Integer getRandomAwardId(Long strategyId) {
-        return dispatchAlgorithm(String.valueOf(strategyId));
+        return getRandomAwardId(String.valueOf(strategyId));
+    }
+
+    @Override
+    public Integer getRandomAwardId(String key) {
+        return dispatchAlgorithm(key);
     }
 
     @Override
     public Integer getRandomAwardId(Long strategyId, String ruleWeightValue) {
-        String key = String.valueOf(strategyId).concat("_").concat(ruleWeightValue);
-        return dispatchAlgorithm(key);
+        String key = String.valueOf(strategyId).concat(Constants.UNDERLINE).concat(ruleWeightValue);
+        return getRandomAwardId(key);
     }
 
     @Override

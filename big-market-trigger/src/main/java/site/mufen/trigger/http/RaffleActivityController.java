@@ -88,7 +88,7 @@ public class RaffleActivityController implements IRaffleActivityService {
      * @return 装配结果
      * <p>
      * 接口：<a href="http://localhost:8091/api/v1/raffle/activity/armory">/api/v1/raffle/activity/armory</a>
-     * 入参：{"activityId":100001,"userId":"xiaofuge"}
+     * 入参：{"activityId":100001,"userId":"mufen"}
      * <p>
      * curl --request GET \
      * --url 'http://localhost:8091/api/v1/raffle/activity/armory?activityId=100301'
@@ -131,13 +131,13 @@ public class RaffleActivityController implements IRaffleActivityService {
      * @return 抽奖结果
      * <p>
      * 接口：<a href="http://localhost:8091/api/v1/raffle/activity/draw">/api/v1/raffle/activity/draw</a>
-     * 入参：{"activityId":100001,"userId":"xiaofuge"}
+     * 入参：{"activityId":100001,"userId":"mufen"}
      * <p>
      * curl --request POST \
      * --url http://localhost:8091/api/v1/raffle/activity/draw \
      * --header 'content-type: application/json' \
      * --data '{
-     * "userId":"xiaofuge",
+     * "userId":"mufen",
      * "activityId": 100301
      * }'
      */
@@ -234,9 +234,9 @@ public class RaffleActivityController implements IRaffleActivityService {
      * @return 签到返利结果
      * <p>
      * 接口：<a href="http://localhost:8091/api/v1/raffle/activity/calendar_sign_rebate">/api/v1/raffle/activity/calendar_sign_rebate</a>
-     * 入参：xiaofuge
+     * 入参：mufen
      * <p>
-     * curl -X POST http://localhost:8091/api/v1/raffle/activity/calendar_sign_rebate -d "userId=xiaofuge" -H "Content-Type: application/x-www-form-urlencoded"
+     * curl -X POST http://localhost:8091/api/v1/raffle/activity/calendar_sign_rebate -d "userId=mufen" -H "Content-Type: application/x-www-form-urlencoded"
      */
     @PostMapping("calendar_sign_rebate")
     @Override

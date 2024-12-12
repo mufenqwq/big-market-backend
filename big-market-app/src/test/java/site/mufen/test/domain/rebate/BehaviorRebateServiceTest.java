@@ -30,7 +30,7 @@ public class BehaviorRebateServiceTest {
     @Test
     public void test_createOrder() throws InterruptedException {
         BehaviorEntity behaviorEntity = new BehaviorEntity();
-        behaviorEntity.setUserId("xiaofuge");
+        behaviorEntity.setUserId("mufen");
         behaviorEntity.setBehaviorTypeVO(BehaviorTypeVO.SIGN);
         // 重复的 OutBusinessNo 会报错唯一索引冲突，这也是保证幂等的手段，确保不会多记账
         behaviorEntity.setOutBusinessNo("20241019");

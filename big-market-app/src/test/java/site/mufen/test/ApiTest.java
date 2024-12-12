@@ -56,7 +56,7 @@ public class ApiTest {
     public void test_rpc() {
         ActivityDrawRequestDTO request = new ActivityDrawRequestDTO();
         request.setActivityId(100301L);
-        request.setUserId("xiaofuge");
+        request.setUserId("mufen");
         Response<ActivityDrawResponseDTO> response = raffleActivityService.draw(request);
 
         log.info("请求参数：{}", JSON.toJSONString(request));

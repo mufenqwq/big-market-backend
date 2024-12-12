@@ -51,7 +51,7 @@ public class RaffleActivityOrderDaoTest {
     @Test
     public void test_insert() {
         RaffleActivityOrder raffleActivityOrder = new RaffleActivityOrder();
-        raffleActivityOrder.setUserId("xiaofuge");
+        raffleActivityOrder.setUserId("mufen");
         raffleActivityOrder.setActivityId(100301L);
         raffleActivityOrder.setActivityName("测试活动");
         raffleActivityOrder.setStrategyId(100006L);
@@ -64,7 +64,7 @@ public class RaffleActivityOrderDaoTest {
 
     @Test
     public void test_queryRaffleActivityOrderByUserId() {
-        String userId = "xiaofuge";
+        String userId = "mufen";
         List<RaffleActivityOrder> raffleActivityOrders = raffleActivityOrderDao.queryRaffleActivityOrderByUserId(userId);
         log.info("测试结果：{}", JSON.toJSONString(raffleActivityOrders));
     }

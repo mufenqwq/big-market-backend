@@ -42,7 +42,7 @@ public class RaffleActivityAccountQuotaServiceTest {
     @Test
     public void test_createSkuRechargeOrder_duplicate() {
         SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
-        skuRechargeEntity.setUserId("xiaofuge");
+        skuRechargeEntity.setUserId("mufen");
         skuRechargeEntity.setSku(9011L);
         // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
         skuRechargeEntity.setOutBusinessNo("700091009119");
@@ -62,7 +62,7 @@ public class RaffleActivityAccountQuotaServiceTest {
         for (int i = 0; i < 20; i++) {
             try {
                 SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
-                skuRechargeEntity.setUserId("xiaofuge");
+                skuRechargeEntity.setUserId("mufen");
                 skuRechargeEntity.setSku(9011L);
                 // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
                 skuRechargeEntity.setOutBusinessNo(RandomStringUtils.randomNumeric(12));
@@ -80,7 +80,7 @@ public class RaffleActivityAccountQuotaServiceTest {
     @Test
     public void test_credit_pay_trade() {
         SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
-        skuRechargeEntity.setUserId("xiaofuge");
+        skuRechargeEntity.setUserId("mufen");
         skuRechargeEntity.setSku(9011L);
         // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
         skuRechargeEntity.setOutBusinessNo("70009240609005");

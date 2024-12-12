@@ -28,7 +28,7 @@
                 update_time = now()
         where user_id = #{userId} and available_amount + #{availableAmount} >= 0
     </update>
-    <select id="queryUserCreditAccount" resultType="site.mufen.infrastructure.dao.po.UserCreditAccount">
+    <select id="queryUserCreditAccount" resultMap="dataMap">
         select user_id, total_amount, available_amount, account_status
             from user_credit_account
         where user_id = #{userId}

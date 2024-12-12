@@ -34,7 +34,7 @@ public class AwardServiceTest {
     public void test_saveUserAwardRecord() throws InterruptedException {
         for (int i = 0; i < 100; i++) {
             UserAwardRecordEntity userAwardRecordEntity = new UserAwardRecordEntity();
-            userAwardRecordEntity.setUserId("xiaofuge");
+            userAwardRecordEntity.setUserId("mufen");
             userAwardRecordEntity.setActivityId(100301L);
             userAwardRecordEntity.setStrategyId(100006L);
             userAwardRecordEntity.setOrderId(RandomStringUtils.randomNumeric(12));

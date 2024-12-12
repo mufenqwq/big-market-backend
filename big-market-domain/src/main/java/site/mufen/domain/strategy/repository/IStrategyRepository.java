@@ -30,6 +30,7 @@ public interface IStrategyRepository {
 
     int getRateRange(String key);
 
+    Integer getStrategyAwardAssemble(String key, int rateKey);
     Integer getStrategyAwardAssemble(Long strategyId, int rateKey);
 
     StrategyEntity queryStrategyEntityByStrategyId(Long strategyId);
